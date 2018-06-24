@@ -1,0 +1,15 @@
+{
+    "name": "Swift",
+    "package": "Swift",
+    "index": "./docs.swift.org/swift-book/LanguageGuide/TheBasics.html",
+    "selectors": {
+        "title": "Guide",
+		".section .section h2": "Section"
+    },
+    "ignore": [
+        "ABOUT"
+    ],
+    "icon32x32": "./Swift_logo.svg.png",
+    "allowJS": false,
+    "ExternalURL": ""
+}
