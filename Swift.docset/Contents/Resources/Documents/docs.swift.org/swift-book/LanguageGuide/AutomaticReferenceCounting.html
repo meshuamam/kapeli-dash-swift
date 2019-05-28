@@ -118,12 +118,12 @@
 
         
   <div class="section" id="automatic-reference-counting">
-<h1>Automatic Reference Counting<a class="headerlink" href="AutomaticReferenceCounting.html#automatic-reference-counting" title="Permalink to this headline">&para;</a></h1>
+<h1>Automatic Reference Counting<a class="headerlink" href="AutomaticReferenceCounting.html#automatic-reference-counting" title="Permalink to this headline"> </a></h1>
 <p>Swift uses <em>Automatic Reference Counting</em> (ARC) to track and manage your app&rsquo;s memory usage. In most cases, this means that memory management &ldquo;just works&rdquo; in Swift, and you do not need to think about memory management yourself. ARC automatically frees up the memory used by class instances when those instances are no longer needed.</p>
 <p>However, in a few cases ARC requires more information about the relationships between parts of your code in order to manage memory for you. This chapter describes those situations and shows how you enable ARC to manage all of your app&rsquo;s memory. Using ARC in Swift is very similar to the approach described in <a class="reference external" href="https://developer.apple.com/library/content/releasenotes/ObjectiveC/RN-TransitioningToARC/Introduction/Introduction.html">Transitioning to ARC Release Notes</a> for using ARC with Objective-C.</p>
 <p>Reference counting applies only to instances of classes. Structures and enumerations are value types, not reference types, and are not stored and passed by reference.</p>
 <div class="section" id="ID49">
-<a class="dashingAutolink" name="autolink-28"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/How%20ARC%20Works%C2%B6"></a><h2>How ARC Works<a class="headerlink" href="AutomaticReferenceCounting.html#ID49" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-28"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/How%20ARC%20Works"></a><h2>How ARC Works<a class="headerlink" href="AutomaticReferenceCounting.html#ID49" title="Permalink to this headline"> </a></h2>
 <p>Every time you create a new instance of a class, ARC allocates a chunk of memory to store information about that instance. This memory holds information about the type of the instance, together with the values of any stored properties associated with that instance.</p>
 <p>Additionally, when an instance is no longer needed, ARC frees up the memory used by that instance so that the memory can be used for other purposes instead. This ensures that class instances do not take up space in memory when they are no longer needed.</p>
 <p>However, if ARC were to deallocate an instance that was still in use, it would no longer be possible to access that instance&rsquo;s properties, or call that instance&rsquo;s methods. Indeed, if you tried to access the instance, your app would most likely crash.</p>
@@ -131,7 +131,7 @@
 <p>To make this possible, whenever you assign a class instance to a property, constant, or variable, that property, constant, or variable makes a <em>strong reference</em> to the instance. The reference is called a &ldquo;strong&rdquo; reference because it keeps a firm hold on that instance, and does not allow it to be deallocated for as long as that strong reference remains.</p>
 </div>
 <div class="section" id="ID50">
-<a class="dashingAutolink" name="autolink-29"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/ARC%20in%20Action%C2%B6"></a><h2>ARC in Action<a class="headerlink" href="AutomaticReferenceCounting.html#ID50" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-29"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/ARC%20in%20Action"></a><h2>ARC in Action<a class="headerlink" href="AutomaticReferenceCounting.html#ID50" title="Permalink to this headline"> </a></h2>
 <p>Here&rsquo;s an example of how Automatic Reference Counting works. This example starts with a simple class called <code class="docutils literal notranslate"><span class="pre">Person</span></code>, which defines a stored constant property called <code class="docutils literal notranslate"><span class="pre">name</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">Person</span> {
 </li><li>    <span class="k">let</span> <span class="nv">name</span>: <span class="nc">String</span>
@@ -171,7 +171,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID51">
-<a class="dashingAutolink" name="autolink-30"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Strong%20Reference%20Cycles%20Between%20Class%20Instances%C2%B6"></a><h2>Strong Reference Cycles Between Class Instances<a class="headerlink" href="AutomaticReferenceCounting.html#ID51" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-30"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Strong%20Reference%20Cycles%20Between%20Class%20Instances"></a><h2>Strong Reference Cycles Between Class Instances<a class="headerlink" href="AutomaticReferenceCounting.html#ID51" title="Permalink to this headline"> </a></h2>
 <p>In the examples above, ARC is able to track the number of references to the new <code class="docutils literal notranslate"><span class="pre">Person</span></code> instance you create and to deallocate that <code class="docutils literal notranslate"><span class="pre">Person</span></code> instance when it&rsquo;s no longer needed.</p>
 <p>However, it&rsquo;s possible to write code in which an instance of a class <em>never</em> gets to a point where it has zero strong references. This can happen if two class instances hold a strong reference to each other, such that each instance keeps the other alive. This is known as a <em>strong reference cycle</em>.</p>
 <p>You resolve strong reference cycles by defining some of the relationships between classes as weak or unowned references instead of as strong references. This process is described in <a class="reference internal" href="AutomaticReferenceCounting.html#ID52"><span class="std std-ref">Resolving Strong Reference Cycles Between Class Instances</span></a>. However, before you learn how to resolve a strong reference cycle, it&rsquo;s useful to understand how such a cycle is caused.</p>
@@ -219,12 +219,12 @@
 <p>The strong references between the <code class="docutils literal notranslate"><span class="pre">Person</span></code> instance and the <code class="docutils literal notranslate"><span class="pre">Apartment</span></code> instance remain and cannot be broken.</p>
 </div>
 <div class="section" id="ID52">
-<a class="dashingAutolink" name="autolink-31"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Resolving%20Strong%20Reference%20Cycles%20Between%20Class%20Instances%C2%B6"></a><h2>Resolving Strong Reference Cycles Between Class Instances<a class="headerlink" href="AutomaticReferenceCounting.html#ID52" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-31"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Resolving%20Strong%20Reference%20Cycles%20Between%20Class%20Instances"></a><h2>Resolving Strong Reference Cycles Between Class Instances<a class="headerlink" href="AutomaticReferenceCounting.html#ID52" title="Permalink to this headline"> </a></h2>
 <p>Swift provides two ways to resolve strong reference cycles when you work with properties of class type: weak references and unowned references.</p>
 <p>Weak and unowned references enable one instance in a reference cycle to refer to the other instance <em>without</em> keeping a strong hold on it. The instances can then refer to each other without creating a strong reference cycle.</p>
 <p>Use a weak reference when the other instance has a shorter lifetime&mdash;that is, when the other instance can be deallocated first. In the <code class="docutils literal notranslate"><span class="pre">Apartment</span></code> example above, it&rsquo;s appropriate for an apartment to be able to have no tenant at some point in its lifetime, and so a weak reference is an appropriate way to break the reference cycle in this case. In contrast, use an unowned reference when the other instance has the same lifetime or a longer lifetime.</p>
 <div class="section" id="ID53">
-<h3>Weak References<a class="headerlink" href="AutomaticReferenceCounting.html#ID53" title="Permalink to this headline">&para;</a></h3>
+<h3>Weak References<a class="headerlink" href="AutomaticReferenceCounting.html#ID53" title="Permalink to this headline"> </a></h3>
 <p>A <em>weak reference</em> is a reference that does not keep a strong hold on the instance it refers to, and so does not stop ARC from disposing of the referenced instance. This behavior prevents the reference from becoming part of a strong reference cycle. You indicate a weak reference by placing the <code class="docutils literal notranslate"><span class="pre">weak</span></code> keyword before a property or variable declaration.</p>
 <p>Because a weak reference does not keep a strong hold on the instance it refers to, it&rsquo;s possible for that instance to be deallocated while the weak reference is still referring to it. Therefore, ARC automatically sets a weak reference to <code class="docutils literal notranslate"><span class="pre">nil</span></code> when the instance that it refers to is deallocated. And, because weak references need to allow their value to be changed to <code class="docutils literal notranslate"><span class="pre">nil</span></code> at runtime, they are always declared as variables, rather than constants, of an optional type.</p>
 <p>You can check for the existence of a value in the weak reference, just like any other optional value, and you will never end up with a reference to an invalid instance that no longer exists.</p>
@@ -277,7 +277,7 @@
 </div>
 </div>
 <div class="section" id="ID54">
-<h3>Unowned References<a class="headerlink" href="AutomaticReferenceCounting.html#ID54" title="Permalink to this headline">&para;</a></h3>
+<h3>Unowned References<a class="headerlink" href="AutomaticReferenceCounting.html#ID54" title="Permalink to this headline"> </a></h3>
 <p>Like a weak reference, an <em>unowned reference</em> does not keep a strong hold on the instance it refers to. Unlike a weak reference, however, an unowned reference is used when the other instance has the same lifetime or a longer lifetime. You indicate an unowned reference by placing the <code class="docutils literal notranslate"><span class="pre">unowned</span></code> keyword before a property or variable declaration.</p>
 <p>An unowned reference is expected to always have a value. As a result, ARC never sets an unowned reference&rsquo;s value to <code class="docutils literal notranslate"><span class="pre">nil</span></code>, which means that unowned references are defined using non-optional types.</p>
 <div class="admonition important">
@@ -337,7 +337,7 @@
 </div>
 </div>
 <div class="section" id="ID55">
-<h3>Unowned References and Implicitly Unwrapped Optional Properties<a class="headerlink" href="AutomaticReferenceCounting.html#ID55" title="Permalink to this headline">&para;</a></h3>
+<h3>Unowned References and Implicitly Unwrapped Optional Properties<a class="headerlink" href="AutomaticReferenceCounting.html#ID55" title="Permalink to this headline"> </a></h3>
 <p>The examples for weak and unowned references above cover two of the more common scenarios in which it&rsquo;s necessary to break a strong reference cycle.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Person</span></code> and <code class="docutils literal notranslate"><span class="pre">Apartment</span></code> example shows a situation where two properties, both of which are allowed to be <code class="docutils literal notranslate"><span class="pre">nil</span></code>, have the potential to cause a strong reference cycle. This scenario is best resolved with a weak reference.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Customer</span></code> and <code class="docutils literal notranslate"><span class="pre">CreditCard</span></code> example shows a situation where one property that is allowed to be <code class="docutils literal notranslate"><span class="pre">nil</span></code> and another property that cannot be <code class="docutils literal notranslate"><span class="pre">nil</span></code> have the potential to cause a strong reference cycle. This scenario is best resolved with an unowned reference.</p>
@@ -375,7 +375,7 @@
 </div>
 </div>
 <div class="section" id="ID56">
-<a class="dashingAutolink" name="autolink-32"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Strong%20Reference%20Cycles%20for%20Closures%C2%B6"></a><h2>Strong Reference Cycles for Closures<a class="headerlink" href="AutomaticReferenceCounting.html#ID56" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-32"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Strong%20Reference%20Cycles%20for%20Closures"></a><h2>Strong Reference Cycles for Closures<a class="headerlink" href="AutomaticReferenceCounting.html#ID56" title="Permalink to this headline"> </a></h2>
 <p>You saw above how a strong reference cycle can be created when two class instance properties hold a strong reference to each other. You also saw how to use weak and unowned references to break these strong reference cycles.</p>
 <p>A strong reference cycle can also occur if you assign a closure to a property of a class instance, and the body of that closure captures the instance. This capture might occur because the closure&rsquo;s body accesses a property of the instance, such as <code class="docutils literal notranslate"><span class="pre">self.someProperty</span></code>, or because the closure calls a method on the instance, such as <code class="docutils literal notranslate"><span class="pre">self.someMethod()</span></code>. In either case, these accesses cause the closure to &ldquo;capture&rdquo; <code class="docutils literal notranslate"><span class="pre">self</span></code>, creating a strong reference cycle.</p>
 <p>This strong reference cycle occurs because closures, like classes, are <em>reference types</em>. When you assign a closure to a property, you are assigning a <em>reference</em> to that closure. In essence, it&rsquo;s the same problem as above&mdash;two strong references are keeping each other alive. However, rather than two class instances, this time it&rsquo;s a class instance and a closure that are keeping each other alive.</p>
@@ -445,14 +445,14 @@
 <p>Note that the message in the <code class="docutils literal notranslate"><span class="pre">HTMLElement</span></code> deinitializer is not printed, which shows that the <code class="docutils literal notranslate"><span class="pre">HTMLElement</span></code> instance is not deallocated.</p>
 </div>
 <div class="section" id="ID57">
-<a class="dashingAutolink" name="autolink-33"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Resolving%20Strong%20Reference%20Cycles%20for%20Closures%C2%B6"></a><h2>Resolving Strong Reference Cycles for Closures<a class="headerlink" href="AutomaticReferenceCounting.html#ID57" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-33"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Resolving%20Strong%20Reference%20Cycles%20for%20Closures"></a><h2>Resolving Strong Reference Cycles for Closures<a class="headerlink" href="AutomaticReferenceCounting.html#ID57" title="Permalink to this headline"> </a></h2>
 <p>You resolve a strong reference cycle between a closure and a class instance by defining a <em>capture list</em> as part of the closure&rsquo;s definition. A capture list defines the rules to use when capturing one or more reference types within the closure&rsquo;s body. As with strong reference cycles between two class instances, you declare each captured reference to be a weak or unowned reference rather than a strong reference. The appropriate choice of weak or unowned depends on the relationships between the different parts of your code.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Swift requires you to write <code class="docutils literal notranslate"><span class="pre">self.someProperty</span></code> or <code class="docutils literal notranslate"><span class="pre">self.someMethod()</span></code> (rather than just <code class="docutils literal notranslate"><span class="pre">someProperty</span></code> or <code class="docutils literal notranslate"><span class="pre">someMethod()</span></code>) whenever you refer to a member of <code class="docutils literal notranslate"><span class="pre">self</span></code> within a closure. This helps you remember that it&rsquo;s possible to capture <code class="docutils literal notranslate"><span class="pre">self</span></code> by accident.</p>
 </div>
 <div class="section" id="ID58">
-<h3>Defining a Capture List<a class="headerlink" href="AutomaticReferenceCounting.html#ID58" title="Permalink to this headline">&para;</a></h3>
+<h3>Defining a Capture List<a class="headerlink" href="AutomaticReferenceCounting.html#ID58" title="Permalink to this headline"> </a></h3>
 <p>Each item in a capture list is a pairing of the <code class="docutils literal notranslate"><span class="pre">weak</span></code> or <code class="docutils literal notranslate"><span class="pre">unowned</span></code> keyword with a reference to a class instance (such as <code class="docutils literal notranslate"><span class="pre">self</span></code>) or a variable initialized with some value (such as <code class="docutils literal notranslate"><span class="pre">delegate</span> <span class="pre">=</span> <span class="pre">self.delegate!</span></code>). These pairings are written within a pair of square braces, separated by commas.</p>
 <p>Place the capture list before a closure&rsquo;s parameter list and return type if they are provided:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">lazy</span> <span class="k">var</span> <span class="nv">someClosure</span>: (<span class="nc">Int</span>, <span class="nc">String</span>) -&gt; <span class="nc">String</span> = {
@@ -468,7 +468,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID59">
-<h3>Weak and Unowned References<a class="headerlink" href="AutomaticReferenceCounting.html#ID59" title="Permalink to this headline">&para;</a></h3>
+<h3>Weak and Unowned References<a class="headerlink" href="AutomaticReferenceCounting.html#ID59" title="Permalink to this headline"> </a></h3>
 <p>Define a capture in a closure as an unowned reference when the closure and the instance it captures will always refer to each other, and will always be deallocated at the same time.</p>
 <p>Conversely, define a capture as a weak reference when the captured reference may become <code class="docutils literal notranslate"><span class="pre">nil</span></code> at some point in the future. Weak references are always of an optional type, and automatically become <code class="docutils literal notranslate"><span class="pre">nil</span></code> when the instance they reference is deallocated. This enables you to check for their existence within the closure&rsquo;s body.</p>
 <div class="admonition note">

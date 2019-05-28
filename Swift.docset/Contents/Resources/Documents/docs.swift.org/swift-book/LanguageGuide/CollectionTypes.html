@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <a class="dashingAutolink" name="autolink-56"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Collection%20Types%20%E2%80%94%20The%20Swift%20Programming%20Language%20%28Swift%205%29"></a><title>Collection Types &mdash; The Swift Programming Language (Swift 5)</title>
+    <a class="dashingAutolink" name="autolink-61"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Collection%20Types%20%E2%80%94%20The%20Swift%20Programming%20Language%20%28Swift%205%29"></a><title>Collection Types &mdash; The Swift Programming Language (Swift 5)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -136,7 +136,7 @@
 
         
   <div class="section" id="collection-types">
-<h1>Collection Types<a class="headerlink" href="CollectionTypes.html#collection-types" title="Permalink to this headline">&para;</a></h1>
+<h1>Collection Types<a class="headerlink" href="CollectionTypes.html#collection-types" title="Permalink to this headline"> </a></h1>
 <p>Swift provides three primary <em>collection types</em>, known as arrays, sets, and dictionaries, for storing collections of values. Arrays are ordered collections of values. Sets are unordered collections of unique values. Dictionaries are unordered collections of key-value associations.</p>
 <img alt="../_images/CollectionTypes_intro_2x.png" class="align-center" src="../_images/CollectionTypes_intro_2x.png" style="width: 670px;"/>
 <p>Arrays, sets, and dictionaries in Swift are always clear about the types of values and keys that they can store. This means that you cannot insert a value of the wrong type into a collection by mistake. It also means you can be confident about the type of values you will retrieve from a collection.</p>
@@ -145,7 +145,7 @@
 <p class="last">Swift&rsquo;s array, set, and dictionary types are implemented as <em>generic collections</em>. For more about generic types and collections, see <a class="reference internal" href="Generics.html"><span class="doc">Generics</span></a>.</p>
 </div>
 <div class="section" id="ID106">
-<a class="dashingAutolink" name="autolink-57"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Mutability%20of%20Collections%C2%B6"></a><h2>Mutability of Collections<a class="headerlink" href="CollectionTypes.html#ID106" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-56"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Mutability%20of%20Collections"></a><h2>Mutability of Collections<a class="headerlink" href="CollectionTypes.html#ID106" title="Permalink to this headline"> </a></h2>
 <p>If you create an array, a set, or a dictionary, and assign it to a variable, the collection that is created will be <em>mutable</em>. This means that you can change (or <em>mutate</em>) the collection after it&rsquo;s created by adding, removing, or changing items in the collection. If you assign an array, a set, or a dictionary to a constant, that collection is <em>immutable</em>, and its size and contents cannot be changed.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -153,7 +153,7 @@
 </div>
 </div>
 <div class="section" id="ID107">
-<a class="dashingAutolink" name="autolink-58"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Arrays%C2%B6"></a><h2>Arrays<a class="headerlink" href="CollectionTypes.html#ID107" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-57"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Arrays"></a><h2>Arrays<a class="headerlink" href="CollectionTypes.html#ID107" title="Permalink to this headline"> </a></h2>
 <p>An <em>array</em> stores values of the same type in an ordered list. The same value can appear in an array multiple times at different positions.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -161,11 +161,11 @@
 <p class="last">For more information about using <code class="docutils literal notranslate"><span class="pre">Array</span></code> with Foundation and Cocoa, see <a class="reference external" href="https://developer.apple.com/documentation/swift/array#2846730">Bridging Between Array and NSArray</a>.</p>
 </div>
 <div class="section" id="ID108">
-<h3>Array Type Shorthand Syntax<a class="headerlink" href="CollectionTypes.html#ID108" title="Permalink to this headline">&para;</a></h3>
+<h3>Array Type Shorthand Syntax<a class="headerlink" href="CollectionTypes.html#ID108" title="Permalink to this headline"> </a></h3>
 <p>The type of a Swift array is written in full as <code class="docutils literal notranslate"><span class="pre">Array&lt;Element&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">Element</span></code> is the type of values the array is allowed to store. You can also write the type of an array in shorthand form as <code class="docutils literal notranslate"><span class="pre">[Element]</span></code>. Although the two forms are functionally identical, the shorthand form is preferred and is used throughout this guide when referring to the type of an array.</p>
 </div>
 <div class="section" id="ID500">
-<h3>Creating an Empty Array<a class="headerlink" href="CollectionTypes.html#ID500" title="Permalink to this headline">&para;</a></h3>
+<h3>Creating an Empty Array<a class="headerlink" href="CollectionTypes.html#ID500" title="Permalink to this headline"> </a></h3>
 <p>You can create an empty array of a certain type using initializer syntax:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">someInts</span> = [<span class="nv">Int</span>]()
 </li><li><span class="nv">print</span>(<span class="s">&#34;someInts is of type [Int] with </span>\<span class="p">(</span><span class="nv">someInts</span>.<span class="nv">count</span><span class="p">)</span><span class="s"> items.&#34;</span>)
@@ -180,14 +180,14 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID501">
-<h3>Creating an Array with a Default Value<a class="headerlink" href="CollectionTypes.html#ID501" title="Permalink to this headline">&para;</a></h3>
+<h3>Creating an Array with a Default Value<a class="headerlink" href="CollectionTypes.html#ID501" title="Permalink to this headline"> </a></h3>
 <p>Swift&rsquo;s <code class="docutils literal notranslate"><span class="pre">Array</span></code> type also provides an initializer for creating an array of a certain size with all of its values set to the same default value. You pass this initializer a default value of the appropriate type (called <code class="docutils literal notranslate"><span class="pre">repeating</span></code>): and the number of times that value is repeated in the new array (called <code class="docutils literal notranslate"><span class="pre">count</span></code>):</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">threeDoubles</span> = <span class="nv">Array</span>(<span class="nv">repeating</span>: <span class="m">0.0</span>, <span class="nv">count</span>: <span class="m">3</span>)
 </li><li><span class="c">// threeDoubles is of type [Double], and equals [0.0, 0.0, 0.0]</span>
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID502">
-<h3>Creating an Array by Adding Two Arrays Together<a class="headerlink" href="CollectionTypes.html#ID502" title="Permalink to this headline">&para;</a></h3>
+<h3>Creating an Array by Adding Two Arrays Together<a class="headerlink" href="CollectionTypes.html#ID502" title="Permalink to this headline"> </a></h3>
 <p>You can create a new array by adding together two existing arrays with compatible types with the addition operator (<code class="docutils literal notranslate"><span class="pre">+</span></code>). The new array&rsquo;s type is inferred from the type of the two arrays you add together:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">anotherThreeDoubles</span> = <span class="nv">Array</span>(<span class="nv">repeating</span>: <span class="m">2.5</span>, <span class="nv">count</span>: <span class="m">3</span>)
 </li><li><span class="c">// anotherThreeDoubles is of type [Double], and equals [2.5, 2.5, 2.5]</span>
@@ -197,7 +197,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID109">
-<h3>Creating an Array with an Array Literal<a class="headerlink" href="CollectionTypes.html#ID109" title="Permalink to this headline">&para;</a></h3>
+<h3>Creating an Array with an Array Literal<a class="headerlink" href="CollectionTypes.html#ID109" title="Permalink to this headline"> </a></h3>
 <p>You can also initialize an array with an <em>array literal</em>, which is a shorthand way to write one or more values as an array collection. An array literal is written as a list of values, separated by commas, surrounded by a pair of square brackets:</p>
 <div class="syntax-outline highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li>[<span class="gi">value 1</span>, <span class="gi">value 2</span>, <span class="gi">value 3</span>]
 </li></ol></div></div></div>
@@ -217,7 +217,7 @@
 <p>Because all values in the array literal are of the same type, Swift can infer that <code class="docutils literal notranslate"><span class="pre">[String]</span></code> is the correct type to use for the <code class="docutils literal notranslate"><span class="pre">shoppingList</span></code> variable.</p>
 </div>
 <div class="section" id="ID110">
-<h3>Accessing and Modifying an Array<a class="headerlink" href="CollectionTypes.html#ID110" title="Permalink to this headline">&para;</a></h3>
+<h3>Accessing and Modifying an Array<a class="headerlink" href="CollectionTypes.html#ID110" title="Permalink to this headline"> </a></h3>
 <p>You access and modify an array through its methods and properties, or by using subscript syntax.</p>
 <p>To find out the number of items in an array, check its read-only <code class="docutils literal notranslate"><span class="pre">count</span></code> property:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">print</span>(<span class="s">&#34;The shopping list contains </span>\<span class="p">(</span><span class="nv">shoppingList</span>.<span class="nv">count</span><span class="p">)</span><span class="s"> items.&#34;</span>)
@@ -286,7 +286,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID111">
-<h3>Iterating Over an Array<a class="headerlink" href="CollectionTypes.html#ID111" title="Permalink to this headline">&para;</a></h3>
+<h3>Iterating Over an Array<a class="headerlink" href="CollectionTypes.html#ID111" title="Permalink to this headline"> </a></h3>
 <p>You can iterate over the entire set of values in an array with the <code class="docutils literal notranslate"><span class="pre">for</span></code>-<code class="docutils literal notranslate"><span class="pre">in</span></code> loop:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">for</span> <span class="nv">item</span> <span class="k">in</span> <span class="nv">shoppingList</span> {
 </li><li>    <span class="nv">print</span>(<span class="nv">item</span>)
@@ -311,7 +311,7 @@
 </div>
 </div>
 <div class="section" id="ID484">
-<a class="dashingAutolink" name="autolink-59"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Sets%C2%B6"></a><h2>Sets<a class="headerlink" href="CollectionTypes.html#ID484" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-58"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Sets"></a><h2>Sets<a class="headerlink" href="CollectionTypes.html#ID484" title="Permalink to this headline"> </a></h2>
 <p>A <em>set</em> stores distinct values of the same type in a collection with no defined ordering. You can use a set instead of an array when the order of items is not important, or when you need to ensure that an item only appears once.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -319,7 +319,7 @@
 <p class="last">For more information about using <code class="docutils literal notranslate"><span class="pre">Set</span></code> with Foundation and Cocoa, see <a class="reference external" href="https://developer.apple.com/documentation/swift/set#2845530">Bridging Between Set and NSSet</a>.</p>
 </div>
 <div class="section" id="ID493">
-<h3>Hash Values for Set Types<a class="headerlink" href="CollectionTypes.html#ID493" title="Permalink to this headline">&para;</a></h3>
+<h3>Hash Values for Set Types<a class="headerlink" href="CollectionTypes.html#ID493" title="Permalink to this headline"> </a></h3>
 <p>A type must be <em>hashable</em> in order to be stored in a set&mdash;that is, the type must provide a way to compute a <em>hash value</em> for itself. A hash value is an <code class="docutils literal notranslate"><span class="pre">Int</span></code> value that is the same for all objects that compare equally, such that if <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code>, it follows that <code class="docutils literal notranslate"><span class="pre">a.hashValue</span> <span class="pre">==</span> <span class="pre">b.hashValue</span></code>.</p>
 <p>All of Swift&rsquo;s basic types (such as <code class="docutils literal notranslate"><span class="pre">String</span></code>, <code class="docutils literal notranslate"><span class="pre">Int</span></code>, <code class="docutils literal notranslate"><span class="pre">Double</span></code>, and <code class="docutils literal notranslate"><span class="pre">Bool</span></code>) are hashable by default, and can be used as set value types or dictionary key types. Enumeration case values without associated values (as described in <a class="reference internal" href="Enumerations.html"><span class="doc">Enumeration</span></a>) are also hashable by default.</p>
 <div class="admonition note">
@@ -335,11 +335,11 @@
 </div>
 </div>
 <div class="section" id="ID485">
-<h3>Set Type Syntax<a class="headerlink" href="CollectionTypes.html#ID485" title="Permalink to this headline">&para;</a></h3>
+<h3>Set Type Syntax<a class="headerlink" href="CollectionTypes.html#ID485" title="Permalink to this headline"> </a></h3>
 <p>The type of a Swift set is written as <code class="docutils literal notranslate"><span class="pre">Set&lt;Element&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">Element</span></code> is the type that the set is allowed to store. Unlike arrays, sets do not have an equivalent shorthand form.</p>
 </div>
 <div class="section" id="ID503">
-<h3>Creating and Initializing an Empty Set<a class="headerlink" href="CollectionTypes.html#ID503" title="Permalink to this headline">&para;</a></h3>
+<h3>Creating and Initializing an Empty Set<a class="headerlink" href="CollectionTypes.html#ID503" title="Permalink to this headline"> </a></h3>
 <p>You can create an empty set of a certain type using initializer syntax:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">letters</span> = <span class="nv">Set</span>&lt;<span class="nc">Character</span>&gt;()
 </li><li><span class="nv">print</span>(<span class="s">&#34;letters is of type Set&lt;Character&gt; with </span>\<span class="p">(</span><span class="nv">letters</span>.<span class="nv">count</span><span class="p">)</span><span class="s"> items.&#34;</span>)
@@ -357,7 +357,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID504">
-<h3>Creating a Set with an Array Literal<a class="headerlink" href="CollectionTypes.html#ID504" title="Permalink to this headline">&para;</a></h3>
+<h3>Creating a Set with an Array Literal<a class="headerlink" href="CollectionTypes.html#ID504" title="Permalink to this headline"> </a></h3>
 <p>You can also initialize a set with an array literal, as a shorthand way to write one or more values as a set collection.</p>
 <p>The example below creates a set called <code class="docutils literal notranslate"><span class="pre">favoriteGenres</span></code> to store <code class="docutils literal notranslate"><span class="pre">String</span></code> values:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">favoriteGenres</span>: <span class="nc">Set</span>&lt;<span class="nc">String</span>&gt; = [<span class="s">&#34;Rock&#34;</span>, <span class="s">&#34;Classical&#34;</span>, <span class="s">&#34;Hip hop&#34;</span>]
@@ -374,7 +374,7 @@
 <p>Because all values in the array literal are of the same type, Swift can infer that <code class="docutils literal notranslate"><span class="pre">Set&lt;String&gt;</span></code> is the correct type to use for the <code class="docutils literal notranslate"><span class="pre">favoriteGenres</span></code> variable.</p>
 </div>
 <div class="section" id="ID488">
-<h3>Accessing and Modifying a Set<a class="headerlink" href="CollectionTypes.html#ID488" title="Permalink to this headline">&para;</a></h3>
+<h3>Accessing and Modifying a Set<a class="headerlink" href="CollectionTypes.html#ID488" title="Permalink to this headline"> </a></h3>
 <p>You access and modify a set through its methods and properties.</p>
 <p>To find out the number of items in a set, check its read-only <code class="docutils literal notranslate"><span class="pre">count</span></code> property:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">print</span>(<span class="s">&#34;I have </span>\<span class="p">(</span><span class="nv">favoriteGenres</span>.<span class="nv">count</span><span class="p">)</span><span class="s"> favorite music genres.&#34;</span>)
@@ -410,7 +410,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID489">
-<h3>Iterating Over a Set<a class="headerlink" href="CollectionTypes.html#ID489" title="Permalink to this headline">&para;</a></h3>
+<h3>Iterating Over a Set<a class="headerlink" href="CollectionTypes.html#ID489" title="Permalink to this headline"> </a></h3>
 <p>You can iterate over the values in a set with a <code class="docutils literal notranslate"><span class="pre">for</span></code>-<code class="docutils literal notranslate"><span class="pre">in</span></code> loop.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">for</span> <span class="nv">genre</span> <span class="k">in</span> <span class="nv">favoriteGenres</span> {
 </li><li>    <span class="nv">print</span>(<span class="s">&#34;</span>\<span class="p">(</span><span class="nv">genre</span><span class="p">)</span><span class="s">&#34;</span>)
@@ -431,10 +431,10 @@
 </div>
 </div>
 <div class="section" id="ID490">
-<a class="dashingAutolink" name="autolink-60"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Performing%20Set%20Operations%C2%B6"></a><h2>Performing Set Operations<a class="headerlink" href="CollectionTypes.html#ID490" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-59"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Performing%20Set%20Operations"></a><h2>Performing Set Operations<a class="headerlink" href="CollectionTypes.html#ID490" title="Permalink to this headline"> </a></h2>
 <p>You can efficiently perform fundamental set operations, such as combining two sets together, determining which values two sets have in common, or determining whether two sets contain all, some, or none of the same values.</p>
 <div class="section" id="ID505">
-<h3>Fundamental Set Operations<a class="headerlink" href="CollectionTypes.html#ID505" title="Permalink to this headline">&para;</a></h3>
+<h3>Fundamental Set Operations<a class="headerlink" href="CollectionTypes.html#ID505" title="Permalink to this headline"> </a></h3>
 <p>The illustration below depicts two sets&mdash;<code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>&mdash;with the results of various set operations represented by the shaded regions.</p>
 <img alt="../_images/setVennDiagram_2x.png" class="align-center" src="../_images/setVennDiagram_2x.png" style="width: 561px;"/>
 <ul class="simple">
@@ -458,7 +458,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID506">
-<h3>Set Membership and Equality<a class="headerlink" href="CollectionTypes.html#ID506" title="Permalink to this headline">&para;</a></h3>
+<h3>Set Membership and Equality<a class="headerlink" href="CollectionTypes.html#ID506" title="Permalink to this headline"> </a></h3>
 <p>The illustration below depicts three sets&mdash;<code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> and <code class="docutils literal notranslate"><span class="pre">c</span></code>&mdash;with overlapping regions representing elements shared among sets. Set <code class="docutils literal notranslate"><span class="pre">a</span></code> is a <em>superset</em> of set <code class="docutils literal notranslate"><span class="pre">b</span></code>, because <code class="docutils literal notranslate"><span class="pre">a</span></code> contains all elements in <code class="docutils literal notranslate"><span class="pre">b</span></code>. Conversely, set <code class="docutils literal notranslate"><span class="pre">b</span></code> is a <em>subset</em> of set <code class="docutils literal notranslate"><span class="pre">a</span></code>, because all elements in <code class="docutils literal notranslate"><span class="pre">b</span></code> are also contained by <code class="docutils literal notranslate"><span class="pre">a</span></code>. Set <code class="docutils literal notranslate"><span class="pre">b</span></code> and set <code class="docutils literal notranslate"><span class="pre">c</span></code> are <em>disjoint</em> with one another, because they share no elements in common.</p>
 <img alt="../_images/setEulerDiagram_2x.png" class="align-center" src="../_images/setEulerDiagram_2x.png" style="width: 551px;"/>
 <ul class="simple">
@@ -482,7 +482,7 @@
 </div>
 </div>
 <div class="section" id="ID113">
-<a class="dashingAutolink" name="autolink-61"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Dictionaries%C2%B6"></a><h2>Dictionaries<a class="headerlink" href="CollectionTypes.html#ID113" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-60"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Dictionaries"></a><h2>Dictionaries<a class="headerlink" href="CollectionTypes.html#ID113" title="Permalink to this headline"> </a></h2>
 <p>A <em>dictionary</em> stores associations between keys of the same type and values of the same type in a collection with no defined ordering. Each value is associated with a unique <em>key</em>, which acts as an identifier for that value within the dictionary. Unlike items in an array, items in a dictionary do not have a specified order. You use a dictionary when you need to look up values based on their identifier, in much the same way that a real-world dictionary is used to look up the definition for a particular word.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -490,7 +490,7 @@
 <p class="last">For more information about using <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> with Foundation and Cocoa, see <a class="reference external" href="https://developer.apple.com/documentation/swift/dictionary#2846239">Bridging Between Dictionary and NSDictionary</a>.</p>
 </div>
 <div class="section" id="ID114">
-<h3>Dictionary Type Shorthand Syntax<a class="headerlink" href="CollectionTypes.html#ID114" title="Permalink to this headline">&para;</a></h3>
+<h3>Dictionary Type Shorthand Syntax<a class="headerlink" href="CollectionTypes.html#ID114" title="Permalink to this headline"> </a></h3>
 <p>The type of a Swift dictionary is written in full as <code class="docutils literal notranslate"><span class="pre">Dictionary&lt;Key,</span> <span class="pre">Value&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">Key</span></code> is the type of value that can be used as a dictionary key, and <code class="docutils literal notranslate"><span class="pre">Value</span></code> is the type of value that the dictionary stores for those keys.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -499,7 +499,7 @@
 <p>You can also write the type of a dictionary in shorthand form as <code class="docutils literal notranslate"><span class="pre">[Key:</span> <span class="pre">Value]</span></code>. Although the two forms are functionally identical, the shorthand form is preferred and is used throughout this guide when referring to the type of a dictionary.</p>
 </div>
 <div class="section" id="ID118">
-<h3>Creating an Empty Dictionary<a class="headerlink" href="CollectionTypes.html#ID118" title="Permalink to this headline">&para;</a></h3>
+<h3>Creating an Empty Dictionary<a class="headerlink" href="CollectionTypes.html#ID118" title="Permalink to this headline"> </a></h3>
 <p>As with arrays, you can create an empty <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> of a certain type by using initializer syntax:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">namesOfIntegers</span> = [<span class="nv">Int</span>: <span class="nv">String</span>]()
 </li><li><span class="c">// namesOfIntegers is an empty [Int: String] dictionary</span>
@@ -513,7 +513,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID507">
-<h3>Creating a Dictionary with a Dictionary Literal<a class="headerlink" href="CollectionTypes.html#ID507" title="Permalink to this headline">&para;</a></h3>
+<h3>Creating a Dictionary with a Dictionary Literal<a class="headerlink" href="CollectionTypes.html#ID507" title="Permalink to this headline"> </a></h3>
 <p>You can also initialize a dictionary with a <em>dictionary literal</em>, which has a similar syntax to the array literal seen earlier. A dictionary literal is a shorthand way to write one or more key-value pairs as a <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> collection.</p>
 <p>A <em>key-value pair</em> is a combination of a key and a value. In a dictionary literal, the key and value in each key-value pair are separated by a colon. The key-value pairs are written as a list, separated by commas, surrounded by a pair of square brackets:</p>
 <div class="syntax-outline highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li>[<span class="gi">key 1</span>: <span class="gi">value 1</span>, <span class="gi">key 2</span>: <span class="gi">value 2</span>, <span class="gi">key 3</span>: <span class="gi">value 3</span>]
@@ -534,7 +534,7 @@
 <p>Because all keys in the literal are of the same type as each other, and likewise all values are of the same type as each other, Swift can infer that <code class="docutils literal notranslate"><span class="pre">[String:</span> <span class="pre">String]</span></code> is the correct type to use for the <code class="docutils literal notranslate"><span class="pre">airports</span></code> dictionary.</p>
 </div>
 <div class="section" id="ID116">
-<h3>Accessing and Modifying a Dictionary<a class="headerlink" href="CollectionTypes.html#ID116" title="Permalink to this headline">&para;</a></h3>
+<h3>Accessing and Modifying a Dictionary<a class="headerlink" href="CollectionTypes.html#ID116" title="Permalink to this headline"> </a></h3>
 <p>You access and modify a dictionary through its methods and properties, or by using subscript syntax.</p>
 <p>As with an array, you find out the number of items in a <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> by checking its read-only <code class="docutils literal notranslate"><span class="pre">count</span></code> property:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">print</span>(<span class="s">&#34;The airports dictionary contains </span>\<span class="p">(</span><span class="nv">airports</span>.<span class="nv">count</span><span class="p">)</span><span class="s"> items.&#34;</span>)
@@ -587,7 +587,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID117">
-<h3>Iterating Over a Dictionary<a class="headerlink" href="CollectionTypes.html#ID117" title="Permalink to this headline">&para;</a></h3>
+<h3>Iterating Over a Dictionary<a class="headerlink" href="CollectionTypes.html#ID117" title="Permalink to this headline"> </a></h3>
 <p>You can iterate over the key-value pairs in a dictionary with a <code class="docutils literal notranslate"><span class="pre">for</span></code>-<code class="docutils literal notranslate"><span class="pre">in</span></code> loop. Each item in the dictionary is returned as a <code class="docutils literal notranslate"><span class="pre">(key,</span> <span class="pre">value)</span></code> tuple, and you can decompose the tuple&rsquo;s members into temporary constants or variables as part of the iteration:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">for</span> (<span class="nv">airportCode</span>, <span class="nv">airportName</span>) <span class="k">in</span> <span class="nv">airports</span> {
 </li><li>    <span class="nv">print</span>(<span class="s">&#34;</span>\<span class="p">(</span><span class="nv">airportCode</span><span class="p">)</span><span class="s">: </span>\<span class="p">(</span><span class="nv">airportName</span><span class="p">)</span><span class="s">&#34;</span>)

@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <a class="dashingAutolink" name="autolink-27"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Advanced%20Operators%20%E2%80%94%20The%20Swift%20Programming%20Language%20%28Swift%205%29"></a><title>Advanced Operators &mdash; The Swift Programming Language (Swift 5)</title>
+    <a class="dashingAutolink" name="autolink-22"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Advanced%20Operators%20%E2%80%94%20The%20Swift%20Programming%20Language%20%28Swift%205%29"></a><title>Advanced Operators &mdash; The Swift Programming Language (Swift 5)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -130,17 +130,17 @@
 
         
   <div class="section" id="advanced-operators">
-<h1>Advanced Operators<a class="headerlink" href="AdvancedOperators.html#advanced-operators" title="Permalink to this headline">&para;</a></h1>
+<h1>Advanced Operators<a class="headerlink" href="AdvancedOperators.html#advanced-operators" title="Permalink to this headline"> </a></h1>
 <p>In addition to the operators described in <a class="reference internal" href="BasicOperators.html"><span class="doc">Basic Operators</span></a>, Swift provides several advanced operators that perform more complex value manipulation. These include all of the bitwise and bit shifting operators you will be familiar with from C and Objective-C.</p>
 <p>Unlike arithmetic operators in C, arithmetic operators in Swift do not overflow by default. Overflow behavior is trapped and reported as an error. To opt in to overflow behavior, use Swift&rsquo;s second set of arithmetic operators that overflow by default, such as the overflow addition operator (<code class="docutils literal notranslate"><span class="pre">&amp;+</span></code>). All of these overflow operators begin with an ampersand (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>).</p>
 <p>When you define your own structures, classes, and enumerations, it can be useful to provide your own implementations of the standard Swift operators for these custom types. Swift makes it easy to provide tailored implementations of these operators and to determine exactly what their behavior should be for each type you create.</p>
 <p>You&rsquo;re not limited to the predefined operators. Swift gives you the freedom to define your own custom infix, prefix, postfix, and assignment operators, with custom precedence and associativity values. These operators can be used and adopted in your code like any of the predefined operators, and you can even extend existing types to support the custom operators you define.</p>
 <div class="section" id="ID29">
-<a class="dashingAutolink" name="autolink-22"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Bitwise%20Operators%C2%B6"></a><h2>Bitwise Operators<a class="headerlink" href="AdvancedOperators.html#ID29" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-23"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Bitwise%20Operators"></a><h2>Bitwise Operators<a class="headerlink" href="AdvancedOperators.html#ID29" title="Permalink to this headline"> </a></h2>
 <p><em>Bitwise operators</em> enable you to manipulate the individual raw data bits within a data structure. They are often used in low-level programming, such as graphics programming and device driver creation. Bitwise operators can also be useful when you work with raw data from external sources, such as encoding and decoding data for communication over a custom protocol.</p>
 <p>Swift supports all of the bitwise operators found in C, as described below.</p>
 <div class="section" id="ID30">
-<h3>Bitwise NOT Operator<a class="headerlink" href="AdvancedOperators.html#ID30" title="Permalink to this headline">&para;</a></h3>
+<h3>Bitwise NOT Operator<a class="headerlink" href="AdvancedOperators.html#ID30" title="Permalink to this headline"> </a></h3>
 <p>The <em>bitwise NOT operator</em> (<code class="docutils literal notranslate"><span class="pre">~</span></code>) inverts all bits in a number:</p>
 <img alt="../_images/bitwiseNOT_2x.png" class="align-center" src="../_images/bitwiseNOT_2x.png" style="width: 447px;"/>
 <p>The bitwise NOT operator is a prefix operator, and appears immediately before the value it operates on, without any white space:</p>
@@ -151,7 +151,7 @@
 <p>The bitwise NOT operator is then used to create a new constant called <code class="docutils literal notranslate"><span class="pre">invertedBits</span></code>, which is equal to <code class="docutils literal notranslate"><span class="pre">initialBits</span></code>, but with all of the bits inverted. Zeros become ones, and ones become zeros. The value of <code class="docutils literal notranslate"><span class="pre">invertedBits</span></code> is <code class="docutils literal notranslate"><span class="pre">11110000</span></code>, which is equal to an unsigned decimal value of <code class="docutils literal notranslate"><span class="pre">240</span></code>.</p>
 </div>
 <div class="section" id="ID31">
-<h3>Bitwise AND Operator<a class="headerlink" href="AdvancedOperators.html#ID31" title="Permalink to this headline">&para;</a></h3>
+<h3>Bitwise AND Operator<a class="headerlink" href="AdvancedOperators.html#ID31" title="Permalink to this headline"> </a></h3>
 <p>The <em>bitwise AND operator</em> (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>) combines the bits of two numbers. It returns a new number whose bits are set to <code class="docutils literal notranslate"><span class="pre">1</span></code> only if the bits were equal to <code class="docutils literal notranslate"><span class="pre">1</span></code> in <em>both</em> input numbers:</p>
 <img alt="../_images/bitwiseAND_2x.png" class="align-center" src="../_images/bitwiseAND_2x.png" style="width: 447px;"/>
 <p>In the example below, the values of <code class="docutils literal notranslate"><span class="pre">firstSixBits</span></code> and <code class="docutils literal notranslate"><span class="pre">lastSixBits</span></code> both have four middle bits equal to <code class="docutils literal notranslate"><span class="pre">1</span></code>. The bitwise AND operator combines them to make the number <code class="docutils literal notranslate"><span class="pre">00111100</span></code>, which is equal to an unsigned decimal value of <code class="docutils literal notranslate"><span class="pre">60</span></code>:</p>
@@ -161,7 +161,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID32">
-<h3>Bitwise OR Operator<a class="headerlink" href="AdvancedOperators.html#ID32" title="Permalink to this headline">&para;</a></h3>
+<h3>Bitwise OR Operator<a class="headerlink" href="AdvancedOperators.html#ID32" title="Permalink to this headline"> </a></h3>
 <p>The <em>bitwise OR operator</em> (<code class="docutils literal notranslate"><span class="pre">|</span></code>) compares the bits of two numbers. The operator returns a new number whose bits are set to <code class="docutils literal notranslate"><span class="pre">1</span></code> if the bits are equal to <code class="docutils literal notranslate"><span class="pre">1</span></code> in <em>either</em> input number:</p>
 <img alt="../_images/bitwiseOR_2x.png" class="align-center" src="../_images/bitwiseOR_2x.png" style="width: 447px;"/>
 <p>In the example below, the values of <code class="docutils literal notranslate"><span class="pre">someBits</span></code> and <code class="docutils literal notranslate"><span class="pre">moreBits</span></code> have different bits set to <code class="docutils literal notranslate"><span class="pre">1</span></code>. The bitwise OR operator combines them to make the number <code class="docutils literal notranslate"><span class="pre">11111110</span></code>, which equals an unsigned decimal of <code class="docutils literal notranslate"><span class="pre">254</span></code>:</p>
@@ -171,7 +171,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID33">
-<h3>Bitwise XOR Operator<a class="headerlink" href="AdvancedOperators.html#ID33" title="Permalink to this headline">&para;</a></h3>
+<h3>Bitwise XOR Operator<a class="headerlink" href="AdvancedOperators.html#ID33" title="Permalink to this headline"> </a></h3>
 <p>The <em>bitwise XOR operator</em>, or &ldquo;exclusive OR operator&rdquo; (<code class="docutils literal notranslate"><span class="pre">^</span></code>), compares the bits of two numbers. The operator returns a new number whose bits are set to <code class="docutils literal notranslate"><span class="pre">1</span></code> where the input bits are different and are set to <code class="docutils literal notranslate"><span class="pre">0</span></code> where the input bits are the same:</p>
 <img alt="../_images/bitwiseXOR_2x.png" class="align-center" src="../_images/bitwiseXOR_2x.png" style="width: 447px;"/>
 <p>In the example below, the values of <code class="docutils literal notranslate"><span class="pre">firstBits</span></code> and <code class="docutils literal notranslate"><span class="pre">otherBits</span></code> each have a bit set to <code class="docutils literal notranslate"><span class="pre">1</span></code> in a location that the other does not. The bitwise XOR operator sets both of these bits to <code class="docutils literal notranslate"><span class="pre">1</span></code> in its output value. All of the other bits in <code class="docutils literal notranslate"><span class="pre">firstBits</span></code> and <code class="docutils literal notranslate"><span class="pre">otherBits</span></code> match and are set to <code class="docutils literal notranslate"><span class="pre">0</span></code> in the output value:</p>
@@ -181,11 +181,11 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID34">
-<h3>Bitwise Left and Right Shift Operators<a class="headerlink" href="AdvancedOperators.html#ID34" title="Permalink to this headline">&para;</a></h3>
+<h3>Bitwise Left and Right Shift Operators<a class="headerlink" href="AdvancedOperators.html#ID34" title="Permalink to this headline"> </a></h3>
 <p>The <em>bitwise left shift operator</em> (<code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>) and <em>bitwise right shift operator</em> (<code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>) move all bits in a number to the left or the right by a certain number of places, according to the rules defined below.</p>
 <p>Bitwise left and right shifts have the effect of multiplying or dividing an integer by a factor of two. Shifting an integer&rsquo;s bits to the left by one position doubles its value, whereas shifting it to the right by one position halves its value.</p>
 <div class="section" id="ID35">
-<h4>Shifting Behavior for Unsigned Integers<a class="headerlink" href="AdvancedOperators.html#ID35" title="Permalink to this headline">&para;</a></h4>
+<h4>Shifting Behavior for Unsigned Integers<a class="headerlink" href="AdvancedOperators.html#ID35" title="Permalink to this headline"> </a></h4>
 <p>The bit-shifting behavior for unsigned integers is as follows:</p>
 <ol class="arabic simple">
 <li>Existing bits are moved to the left or right by the requested number of places.</li>
@@ -216,7 +216,7 @@
 <p>Finally, the blue component is obtained by performing a bitwise AND between the numbers <code class="docutils literal notranslate"><span class="pre">0xCC6699</span></code> and <code class="docutils literal notranslate"><span class="pre">0x0000FF</span></code>, which gives an output value of <code class="docutils literal notranslate"><span class="pre">0x000099</span></code>. There&rsquo;s no need to shift this to the right, as <code class="docutils literal notranslate"><span class="pre">0x000099</span></code> already equals <code class="docutils literal notranslate"><span class="pre">0x99</span></code>, which has a decimal value of <code class="docutils literal notranslate"><span class="pre">153</span></code>.</p>
 </div>
 <div class="section" id="ID36">
-<h4>Shifting Behavior for Signed Integers<a class="headerlink" href="AdvancedOperators.html#ID36" title="Permalink to this headline">&para;</a></h4>
+<h4>Shifting Behavior for Signed Integers<a class="headerlink" href="AdvancedOperators.html#ID36" title="Permalink to this headline"> </a></h4>
 <p>The shifting behavior is more complex for signed integers than for unsigned integers, because of the way signed integers are represented in binary. (The examples below are based on 8-bit signed integers for simplicity, but the same principles apply for signed integers of any size.)</p>
 <p>Signed integers use their first bit (known as the <em>sign bit</em>) to indicate whether the integer is positive or negative. A sign bit of <code class="docutils literal notranslate"><span class="pre">0</span></code> means positive, and a sign bit of <code class="docutils literal notranslate"><span class="pre">1</span></code> means negative.</p>
 <p>The remaining bits (known as the <em>value bits</em>) store the actual value. Positive numbers are stored in exactly the same way as for unsigned integers, counting upwards from <code class="docutils literal notranslate"><span class="pre">0</span></code>. Here&rsquo;s how the bits inside an <code class="docutils literal notranslate"><span class="pre">Int8</span></code> look for the number <code class="docutils literal notranslate"><span class="pre">4</span></code>:</p>
@@ -238,7 +238,7 @@
 </div>
 </div>
 <div class="section" id="ID37">
-<a class="dashingAutolink" name="autolink-23"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Overflow%20Operators%C2%B6"></a><h2>Overflow Operators<a class="headerlink" href="AdvancedOperators.html#ID37" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-24"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Overflow%20Operators"></a><h2>Overflow Operators<a class="headerlink" href="AdvancedOperators.html#ID37" title="Permalink to this headline"> </a></h2>
 <p>If you try to insert a number into an integer constant or variable that cannot hold that value, by default Swift reports an error rather than allowing an invalid value to be created. This behavior gives extra safety when you work with numbers that are too large or too small.</p>
 <p>For example, the <code class="docutils literal notranslate"><span class="pre">Int16</span></code> integer type can hold any signed integer between <code class="docutils literal notranslate"><span class="pre">-32768</span></code> and <code class="docutils literal notranslate"><span class="pre">32767</span></code>. Trying to set an <code class="docutils literal notranslate"><span class="pre">Int16</span></code> constant or variable to a number outside of this range causes an error:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">potentialOverflow</span> = <span class="nv">Int16</span>.<span class="nv">max</span>
@@ -254,7 +254,7 @@
 <li>Overflow multiplication (<code class="docutils literal notranslate"><span class="pre">&amp;*</span></code>)</li>
 </ul>
 <div class="section" id="ID38">
-<h3>Value Overflow<a class="headerlink" href="AdvancedOperators.html#ID38" title="Permalink to this headline">&para;</a></h3>
+<h3>Value Overflow<a class="headerlink" href="AdvancedOperators.html#ID38" title="Permalink to this headline"> </a></h3>
 <p>Numbers can overflow in both the positive and negative direction.</p>
 <p>Here&rsquo;s an example of what happens when an unsigned integer is allowed to overflow in the positive direction, using the overflow addition operator (<code class="docutils literal notranslate"><span class="pre">&amp;+</span></code>):</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">unsignedOverflow</span> = <span class="nv">UInt8</span>.<span class="nv">max</span>
@@ -284,7 +284,7 @@
 </div>
 </div>
 <div class="section" id="ID41">
-<a class="dashingAutolink" name="autolink-24"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Precedence%20and%20Associativity%C2%B6"></a><h2>Precedence and Associativity<a class="headerlink" href="AdvancedOperators.html#ID41" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-25"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Precedence%20and%20Associativity"></a><h2>Precedence and Associativity<a class="headerlink" href="AdvancedOperators.html#ID41" title="Permalink to this headline"> </a></h2>
 <p>Operator <em>precedence</em> gives some operators higher priority than others; these operators are applied first.</p>
 <p>Operator <em>associativity</em> defines how operators of the same precedence are grouped together&mdash;either grouped from the left, or grouped from the right. Think of it as meaning &ldquo;they associate with the expression to their left,&rdquo; or &ldquo;they associate with the expression to their right.&rdquo;</p>
 <p>It is important to consider each operator&rsquo;s precedence and associativity when working out the order in which a compound expression will be calculated. For example, operator precedence explains why the following expression equals <code class="docutils literal notranslate"><span class="pre">17</span></code>.</p>
@@ -315,7 +315,7 @@
 </div>
 </div>
 <div class="section" id="ID42">
-<a class="dashingAutolink" name="autolink-25"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Operator%20Methods%C2%B6"></a><h2>Operator Methods<a class="headerlink" href="AdvancedOperators.html#ID42" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-26"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Operator%20Methods"></a><h2>Operator Methods<a class="headerlink" href="AdvancedOperators.html#ID42" title="Permalink to this headline"> </a></h2>
 <p>Classes and structures can provide their own implementations of existing operators. This is known as <em>overloading</em> the existing operators.</p>
 <p>The example below shows how to implement the arithmetic addition operator (<code class="docutils literal notranslate"><span class="pre">+</span></code>) for a custom structure. The arithmetic addition operator is a <em>binary operator</em> because it operates on two targets and is said to be <em>infix</em> because it appears in between those two targets.</p>
 <p>The example defines a <code class="docutils literal notranslate"><span class="pre">Vector2D</span></code> structure for a two-dimensional position vector <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code>, followed by a definition of an <em>operator method</em> to add together instances of the <code class="docutils literal notranslate"><span class="pre">Vector2D</span></code> structure:</p>
@@ -340,7 +340,7 @@
 <p>This example adds together the vectors <code class="docutils literal notranslate"><span class="pre">(3.0,</span> <span class="pre">1.0)</span></code> and <code class="docutils literal notranslate"><span class="pre">(2.0,</span> <span class="pre">4.0)</span></code> to make the vector <code class="docutils literal notranslate"><span class="pre">(5.0,</span> <span class="pre">5.0)</span></code>, as illustrated below.</p>
 <img alt="../_images/vectorAddition_2x.png" class="align-center" src="../_images/vectorAddition_2x.png" style="width: 387px;"/>
 <div class="section" id="ID43">
-<h3>Prefix and Postfix Operators<a class="headerlink" href="AdvancedOperators.html#ID43" title="Permalink to this headline">&para;</a></h3>
+<h3>Prefix and Postfix Operators<a class="headerlink" href="AdvancedOperators.html#ID43" title="Permalink to this headline"> </a></h3>
 <p>The example shown above demonstrates a custom implementation of a binary infix operator. Classes and structures can also provide implementations of the standard <em>unary operators</em>. Unary operators operate on a single target. They are <em>prefix</em> if they precede their target (such as <code class="docutils literal notranslate"><span class="pre">-a</span></code>) and <em>postfix</em> operators if they follow their target (such as <code class="docutils literal notranslate"><span class="pre">b!</span></code>).</p>
 <p>You implement a prefix or postfix unary operator by writing the <code class="docutils literal notranslate"><span class="pre">prefix</span></code> or <code class="docutils literal notranslate"><span class="pre">postfix</span></code> modifier before the <code class="docutils literal notranslate"><span class="pre">func</span></code> keyword when declaring the operator method:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">Vector2D</span> {
@@ -359,7 +359,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID44">
-<h3>Compound Assignment Operators<a class="headerlink" href="AdvancedOperators.html#ID44" title="Permalink to this headline">&para;</a></h3>
+<h3>Compound Assignment Operators<a class="headerlink" href="AdvancedOperators.html#ID44" title="Permalink to this headline"> </a></h3>
 <p><em>Compound assignment operators</em> combine assignment (<code class="docutils literal notranslate"><span class="pre">=</span></code>) with another operation. For example, the addition assignment operator (<code class="docutils literal notranslate"><span class="pre">+=</span></code>) combines addition and assignment into a single operation. You mark a compound assignment operator&rsquo;s left input parameter type as <code class="docutils literal notranslate"><span class="pre">inout</span></code>, because the parameter&rsquo;s value will be modified directly from within the operator method.</p>
 <p>The example below implements an addition assignment operator method for <code class="docutils literal notranslate"><span class="pre">Vector2D</span></code> instances:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">Vector2D</span> {
@@ -380,7 +380,7 @@
 </div>
 </div>
 <div class="section" id="ID45">
-<h3>Equivalence Operators<a class="headerlink" href="AdvancedOperators.html#ID45" title="Permalink to this headline">&para;</a></h3>
+<h3>Equivalence Operators<a class="headerlink" href="AdvancedOperators.html#ID45" title="Permalink to this headline"> </a></h3>
 <p>By default, custom classes and structures don&rsquo;t have an implementation of the <em>equivalence operators</em>, known as the <em>equal to</em> operator (<code class="docutils literal notranslate"><span class="pre">==</span></code>) and <em>not equal to</em> operator (<code class="docutils literal notranslate"><span class="pre">!=</span></code>). You usually implement the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator, and use the standard library&rsquo;s default implementation of the <code class="docutils literal notranslate"><span class="pre">!=</span></code> operator that negates the result of the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator. There are two ways to implement the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator: You can implement it yourself, or for many types, you can ask Swift to synthesize an implementation for you. In both cases, you add conformance to the standard library&rsquo;s <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> protocol.</p>
 <p>You provide an implementation of the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator in the same way as you implement other infix operators:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">Vector2D</span>: <span class="nc">Equatable</span> {
@@ -420,7 +420,7 @@
 </div>
 </div>
 <div class="section" id="ID46">
-<a class="dashingAutolink" name="autolink-26"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Custom%20Operators%C2%B6"></a><h2>Custom Operators<a class="headerlink" href="AdvancedOperators.html#ID46" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-27"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Custom%20Operators"></a><h2>Custom Operators<a class="headerlink" href="AdvancedOperators.html#ID46" title="Permalink to this headline"> </a></h2>
 <p>You can declare and implement your own <em>custom operators</em> in addition to the standard operators provided by Swift. For a list of characters that can be used to define custom operators, see <a class="reference internal" href="../ReferenceManual/LexicalStructure.html#ID418"><span class="std std-ref">Operators</span></a>.</p>
 <p>New operators are declared at a global level using the <code class="docutils literal notranslate"><span class="pre">operator</span></code> keyword, and are marked with the <code class="docutils literal notranslate"><span class="pre">prefix</span></code>, <code class="docutils literal notranslate"><span class="pre">infix</span></code> or <code class="docutils literal notranslate"><span class="pre">postfix</span></code> modifiers:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">prefix</span> <span class="k">operator</span> +++
@@ -439,7 +439,7 @@
 </li><li><span class="c">// afterDoubling also has values of (2.0, 8.0)</span>
 </li></ol></div></div></div>
 <div class="section" id="ID47">
-<h3>Precedence for Custom Infix Operators<a class="headerlink" href="AdvancedOperators.html#ID47" title="Permalink to this headline">&para;</a></h3>
+<h3>Precedence for Custom Infix Operators<a class="headerlink" href="AdvancedOperators.html#ID47" title="Permalink to this headline"> </a></h3>
 <p>Custom infix operators each belong to a precedence group. A precedence group specifies an operator&rsquo;s precedence relative to other infix operators, as well as the operator&rsquo;s associativity. See <a class="reference internal" href="AdvancedOperators.html#ID41"><span class="std std-ref">Precedence and Associativity</span></a> for an explanation of how these characteristics affect an infix operator&rsquo;s interaction with other infix operators.</p>
 <p>A custom infix operator that is not explicitly placed into a precedence group is given a default precedence group with a precedence immediately higher than the precedence of the ternary conditional operator.</p>
 <p>The following example defines a new custom infix operator called <code class="docutils literal notranslate"><span class="pre">+-</span></code>, which belongs to the precedence group <code class="docutils literal notranslate"><span class="pre">AdditionPrecedence</span></code>:</p>

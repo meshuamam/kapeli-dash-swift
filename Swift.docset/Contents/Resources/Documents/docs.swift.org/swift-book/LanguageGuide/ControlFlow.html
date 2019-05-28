@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <a class="dashingAutolink" name="autolink-68"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Control%20Flow%20%E2%80%94%20The%20Swift%20Programming%20Language%20%28Swift%205%29"></a><title>Control Flow &mdash; The Swift Programming Language (Swift 5)</title>
+    <a class="dashingAutolink" name="autolink-62"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Control%20Flow%20%E2%80%94%20The%20Swift%20Programming%20Language%20%28Swift%205%29"></a><title>Control Flow &mdash; The Swift Programming Language (Swift 5)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -135,12 +135,12 @@
 
         
   <div class="section" id="ID462">
-<h1>Control Flow<a class="headerlink" href="ControlFlow.html#ID462" title="Permalink to this headline">&para;</a></h1>
+<h1>Control Flow<a class="headerlink" href="ControlFlow.html#ID462" title="Permalink to this headline"> </a></h1>
 <p>Swift provides a variety of control flow statements. These include <code class="docutils literal notranslate"><span class="pre">while</span></code> loops to perform a task multiple times; <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">guard</span></code>, and <code class="docutils literal notranslate"><span class="pre">switch</span></code> statements to execute different branches of code based on certain conditions; and statements such as <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> to transfer the flow of execution to another point in your code.</p>
 <p>Swift also provides a <code class="docutils literal notranslate"><span class="pre">for</span></code>-<code class="docutils literal notranslate"><span class="pre">in</span></code> loop that makes it easy to iterate over arrays, dictionaries, ranges, strings, and other sequences.</p>
 <p>Swift&rsquo;s <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement is considerably more powerful than its counterpart in many C-like languages. Cases can match many different patterns, including interval matches, tuples, and casts to a specific type. Matched values in a <code class="docutils literal notranslate"><span class="pre">switch</span></code> case can be bound to temporary constants or variables for use within the case&rsquo;s body, and complex matching conditions can be expressed with a <code class="docutils literal notranslate"><span class="pre">where</span></code> clause for each case.</p>
 <div class="section" id="ID121">
-<a class="dashingAutolink" name="autolink-62"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/For-In%20Loops%C2%B6"></a><h2>For-In Loops<a class="headerlink" href="ControlFlow.html#ID121" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-63"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/For-In%20Loops"></a><h2>For-In Loops<a class="headerlink" href="ControlFlow.html#ID121" title="Permalink to this headline"> </a></h2>
 <p>You use the <code class="docutils literal notranslate"><span class="pre">for</span></code>-<code class="docutils literal notranslate"><span class="pre">in</span></code> loop to iterate over a sequence, such as items in an array, ranges of numbers, or characters in a string.</p>
 <p>This example uses a <code class="docutils literal notranslate"><span class="pre">for</span></code>-<code class="docutils literal notranslate"><span class="pre">in</span></code> loop to iterate over the items in an array:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">names</span> = [<span class="s">&#34;Anna&#34;</span>, <span class="s">&#34;Alex&#34;</span>, <span class="s">&#34;Brian&#34;</span>, <span class="s">&#34;Jack&#34;</span>]
@@ -206,14 +206,14 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID124">
-<a class="dashingAutolink" name="autolink-63"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/While%20Loops%C2%B6"></a><h2>While Loops<a class="headerlink" href="ControlFlow.html#ID124" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-64"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/While%20Loops"></a><h2>While Loops<a class="headerlink" href="ControlFlow.html#ID124" title="Permalink to this headline"> </a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">while</span></code> loop performs a set of statements until a condition becomes <code class="docutils literal notranslate"><span class="pre">false</span></code>. These kinds of loops are best used when the number of iterations is not known before the first iteration begins. Swift provides two kinds of <code class="docutils literal notranslate"><span class="pre">while</span></code> loops:</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">while</span></code> evaluates its condition at the start of each pass through the loop.</li>
 <li><code class="docutils literal notranslate"><span class="pre">repeat</span></code>-<code class="docutils literal notranslate"><span class="pre">while</span></code> evaluates its condition at the end of each pass through the loop.</li>
 </ul>
 <div class="section" id="ID125">
-<h3>While<a class="headerlink" href="ControlFlow.html#ID125" title="Permalink to this headline">&para;</a></h3>
+<h3>While<a class="headerlink" href="ControlFlow.html#ID125" title="Permalink to this headline"> </a></h3>
 <p>A <code class="docutils literal notranslate"><span class="pre">while</span></code> loop starts by evaluating a single condition. If the condition is <code class="docutils literal notranslate"><span class="pre">true</span></code>, a set of statements is repeated until the condition becomes <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 <p>Here&rsquo;s the general form of a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop:</p>
 <div class="syntax-outline highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">while</span> <span class="gi">condition</span> {
@@ -264,7 +264,7 @@
 <p>A <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is appropriate in this case, because the length of the game is not clear at the start of the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop. Instead, the loop is executed until a particular condition is satisfied.</p>
 </div>
 <div class="section" id="ID126">
-<h3>Repeat-While<a class="headerlink" href="ControlFlow.html#ID126" title="Permalink to this headline">&para;</a></h3>
+<h3>Repeat-While<a class="headerlink" href="ControlFlow.html#ID126" title="Permalink to this headline"> </a></h3>
 <p>The other variation of the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, known as the <code class="docutils literal notranslate"><span class="pre">repeat</span></code>-<code class="docutils literal notranslate"><span class="pre">while</span></code> loop, performs a single pass through the loop block first, <em>before</em> considering the loop&rsquo;s condition. It then continues to repeat the loop until the condition is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -301,11 +301,11 @@
 </div>
 </div>
 <div class="section" id="ID127">
-<a class="dashingAutolink" name="autolink-64"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Conditional%20Statements%C2%B6"></a><h2>Conditional Statements<a class="headerlink" href="ControlFlow.html#ID127" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-65"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Conditional%20Statements"></a><h2>Conditional Statements<a class="headerlink" href="ControlFlow.html#ID127" title="Permalink to this headline"> </a></h2>
 <p>It is often useful to execute different pieces of code based on certain conditions. You might want to run an extra piece of code when an error occurs, or to display a message when a value becomes too high or too low. To do this, you make parts of your code <em>conditional</em>.</p>
 <p>Swift provides two ways to add conditional branches to your code: the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement and the <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement. Typically, you use the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to evaluate simple conditions with only a few possible outcomes. The <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement is better suited to more complex conditions with multiple possible permutations and is useful in situations where pattern matching can help select an appropriate code branch to execute.</p>
 <div class="section" id="ID128">
-<h3>If<a class="headerlink" href="ControlFlow.html#ID128" title="Permalink to this headline">&para;</a></h3>
+<h3>If<a class="headerlink" href="ControlFlow.html#ID128" title="Permalink to this headline"> </a></h3>
 <p>In its simplest form, the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement has a single <code class="docutils literal notranslate"><span class="pre">if</span></code> condition. It executes a set of statements only if that condition is <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">temperatureInFahrenheit</span> = <span class="m">30</span>
 </li><li><span class="k">if</span> <span class="nv">temperatureInFahrenheit</span> &lt;= <span class="m">32</span> {
@@ -347,7 +347,7 @@
 <p>Because the temperature is neither too cold nor too warm to trigger the <code class="docutils literal notranslate"><span class="pre">if</span></code> or <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> conditions, no message is printed.</p>
 </div>
 <div class="section" id="ID129">
-<h3>Switch<a class="headerlink" href="ControlFlow.html#ID129" title="Permalink to this headline">&para;</a></h3>
+<h3>Switch<a class="headerlink" href="ControlFlow.html#ID129" title="Permalink to this headline"> </a></h3>
 <p>A <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement considers a value and compares it against several possible matching patterns. It then executes an appropriate block of code, based on the first pattern that matches successfully. A <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement provides an alternative to the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement for responding to multiple potential states.</p>
 <p>In its simplest form, a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement compares a value against one or more values of the same type.</p>
 <div class="syntax-outline highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">switch</span> <span class="gi">some value to consider</span> {
@@ -377,7 +377,7 @@
 </li></ol></div></div></div>
 <p>The <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement&rsquo;s first case matches the first letter of the English alphabet, <code class="docutils literal notranslate"><span class="pre">a</span></code>, and its second case matches the last letter, <code class="docutils literal notranslate"><span class="pre">z</span></code>. Because the <code class="docutils literal notranslate"><span class="pre">switch</span></code> must have a case for every possible character, not just every alphabetic character, this <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement uses a <code class="docutils literal notranslate"><span class="pre">default</span></code> case to match all characters other than <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code>. This provision ensures that the <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement is exhaustive.</p>
 <div class="section" id="ID130">
-<h4>No Implicit Fallthrough<a class="headerlink" href="ControlFlow.html#ID130" title="Permalink to this headline">&para;</a></h4>
+<h4>No Implicit Fallthrough<a class="headerlink" href="ControlFlow.html#ID130" title="Permalink to this headline"> </a></h4>
 <p>In contrast with <code class="docutils literal notranslate"><span class="pre">switch</span></code> statements in C and Objective-C, <code class="docutils literal notranslate"><span class="pre">switch</span></code> statements in Swift do not fall through the bottom of each case and into the next one by default. Instead, the entire <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement finishes its execution as soon as the first matching <code class="docutils literal notranslate"><span class="pre">switch</span></code> case is completed, without requiring an explicit <code class="docutils literal notranslate"><span class="pre">break</span></code> statement. This makes the <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement safer and easier to use than the one in C and avoids executing more than one <code class="docutils literal notranslate"><span class="pre">switch</span></code> case by mistake.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -412,7 +412,7 @@
 </div>
 </div>
 <div class="section" id="ID131">
-<h4>Interval Matching<a class="headerlink" href="ControlFlow.html#ID131" title="Permalink to this headline">&para;</a></h4>
+<h4>Interval Matching<a class="headerlink" href="ControlFlow.html#ID131" title="Permalink to this headline"> </a></h4>
 <p>Values in <code class="docutils literal notranslate"><span class="pre">switch</span></code> cases can be checked for their inclusion in an interval. This example uses number intervals to provide a natural-language count for numbers of any size:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">approximateCount</span> = <span class="m">62</span>
 </li><li><span class="k">let</span> <span class="nv">countedThings</span> = <span class="s">&#34;moons orbiting Saturn&#34;</span>
@@ -437,7 +437,7 @@
 <p>In the above example, <code class="docutils literal notranslate"><span class="pre">approximateCount</span></code> is evaluated in a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement. Each <code class="docutils literal notranslate"><span class="pre">case</span></code> compares that value to a number or interval. Because the value of <code class="docutils literal notranslate"><span class="pre">approximateCount</span></code> falls between 12 and 100, <code class="docutils literal notranslate"><span class="pre">naturalCount</span></code> is assigned the value <code class="docutils literal notranslate"><span class="pre">&#34;dozens</span> <span class="pre">of&#34;</span></code>, and execution is transferred out of the <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement.</p>
 </div>
 <div class="section" id="ID132">
-<h4>Tuples<a class="headerlink" href="ControlFlow.html#ID132" title="Permalink to this headline">&para;</a></h4>
+<h4>Tuples<a class="headerlink" href="ControlFlow.html#ID132" title="Permalink to this headline"> </a></h4>
 <p>You can use tuples to test multiple values in the same <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement. Each element of the tuple can be tested against a different value or interval of values. Alternatively, use the underscore character (<code class="docutils literal notranslate"><span class="pre">_</span></code>), also known as the wildcard pattern, to match any possible value.</p>
 <p>The example below takes an (x, y) point, expressed as a simple tuple of type <code class="docutils literal notranslate"><span class="pre">(Int,</span> <span class="pre">Int)</span></code>, and categorizes it on the graph that follows the example.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">somePoint</span> = (<span class="m">1</span>, <span class="m">1</span>)
@@ -460,7 +460,7 @@
 <p>Unlike C, Swift allows multiple <code class="docutils literal notranslate"><span class="pre">switch</span></code> cases to consider the same value or values. In fact, the point (0, 0) could match all <em>four</em> of the cases in this example. However, if multiple matches are possible, the first matching case is always used. The point (0, 0) would match <code class="docutils literal notranslate"><span class="pre">case</span> <span class="pre">(0,</span> <span class="pre">0)</span></code> first, and so all other matching cases would be ignored.</p>
 </div>
 <div class="section" id="ID133">
-<h4>Value Bindings<a class="headerlink" href="ControlFlow.html#ID133" title="Permalink to this headline">&para;</a></h4>
+<h4>Value Bindings<a class="headerlink" href="ControlFlow.html#ID133" title="Permalink to this headline"> </a></h4>
 <p>A <code class="docutils literal notranslate"><span class="pre">switch</span></code> case can name the value or values it matches to temporary constants or variables, for use in the body of the case. This behavior is known as <em>value binding</em>, because the values are bound to temporary constants or variables within the case&rsquo;s body.</p>
 <p>The example below takes an (x, y) point, expressed as a tuple of type <code class="docutils literal notranslate"><span class="pre">(Int,</span> <span class="pre">Int)</span></code>, and categorizes it on the graph that follows:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">anotherPoint</span> = (<span class="m">2</span>, <span class="m">0</span>)
@@ -481,7 +481,7 @@
 <p>This <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement does not have a <code class="docutils literal notranslate"><span class="pre">default</span></code> case. The final case, <code class="docutils literal notranslate"><span class="pre">case</span> <span class="pre">let</span> <span class="pre">(x,</span> <span class="pre">y)</span></code>, declares a tuple of two placeholder constants that can match any value. Because <code class="docutils literal notranslate"><span class="pre">anotherPoint</span></code> is always a tuple of two values, this case matches all possible remaining values, and a <code class="docutils literal notranslate"><span class="pre">default</span></code> case is not needed to make the <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement exhaustive.</p>
 </div>
 <div class="section" id="ID134">
-<h4>Where<a class="headerlink" href="ControlFlow.html#ID134" title="Permalink to this headline">&para;</a></h4>
+<h4>Where<a class="headerlink" href="ControlFlow.html#ID134" title="Permalink to this headline"> </a></h4>
 <p>A <code class="docutils literal notranslate"><span class="pre">switch</span></code> case can use a <code class="docutils literal notranslate"><span class="pre">where</span></code> clause to check for additional conditions.</p>
 <p>The example below categorizes an (x, y) point on the following graph:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">yetAnotherPoint</span> = (<span class="m">1</span>, <span class="m">-1</span>)
@@ -501,7 +501,7 @@
 <p>As in the previous example, the final case matches all possible remaining values, and so a <code class="docutils literal notranslate"><span class="pre">default</span></code> case is not needed to make the <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement exhaustive.</p>
 </div>
 <div class="section" id="ID548">
-<h4>Compound Cases<a class="headerlink" href="ControlFlow.html#ID548" title="Permalink to this headline">&para;</a></h4>
+<h4>Compound Cases<a class="headerlink" href="ControlFlow.html#ID548" title="Permalink to this headline"> </a></h4>
 <p>Multiple switch cases that share the same body can be combined by writing several patterns after <code class="docutils literal notranslate"><span class="pre">case</span></code>, with a comma between each of the patterns. If any of the patterns match, then the case is considered to match. The patterns can be written over multiple lines if the list is long. For example:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">someCharacter</span>: <span class="nc">Character</span> = <span class="s">&#34;e&#34;</span>
 </li><li><span class="k">switch</span> <span class="nv">someCharacter</span> {
@@ -531,7 +531,7 @@
 </div>
 </div>
 <div class="section" id="ID135">
-<a class="dashingAutolink" name="autolink-65"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Control%20Transfer%20Statements%C2%B6"></a><h2>Control Transfer Statements<a class="headerlink" href="ControlFlow.html#ID135" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-66"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Control%20Transfer%20Statements"></a><h2>Control Transfer Statements<a class="headerlink" href="ControlFlow.html#ID135" title="Permalink to this headline"> </a></h2>
 <p><em>Control transfer statements</em> change the order in which your code is executed, by transferring control from one piece of code to another. Swift has five control transfer statements:</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">continue</span></code></li>
@@ -542,7 +542,7 @@
 </ul>
 <p>The <code class="docutils literal notranslate"><span class="pre">continue</span></code>, <code class="docutils literal notranslate"><span class="pre">break</span></code>, and <code class="docutils literal notranslate"><span class="pre">fallthrough</span></code> statements are described below. The <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is described in <a class="reference internal" href="Functions.html"><span class="doc">Functions</span></a>, and the <code class="docutils literal notranslate"><span class="pre">throw</span></code> statement is described in <a class="reference internal" href="ErrorHandling.html#ID510"><span class="std std-ref">Propagating Errors Using Throwing Functions</span></a>.</p>
 <div class="section" id="ID136">
-<h3>Continue<a class="headerlink" href="ControlFlow.html#ID136" title="Permalink to this headline">&para;</a></h3>
+<h3>Continue<a class="headerlink" href="ControlFlow.html#ID136" title="Permalink to this headline"> </a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement tells a loop to stop what it is doing and start again at the beginning of the next iteration through the loop. It says &ldquo;I am done with the current loop iteration&rdquo; without leaving the loop altogether.</p>
 <p>The following example removes all vowels and spaces from a lowercase string to create a cryptic puzzle phrase:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">puzzleInput</span> = <span class="s">&#34;great minds think alike&#34;</span>
@@ -560,14 +560,14 @@
 <p>The code above calls the <code class="docutils literal notranslate"><span class="pre">continue</span></code> keyword whenever it matches a vowel or a space, causing the current iteration of the loop to end immediately and to jump straight to the start of the next iteration.</p>
 </div>
 <div class="section" id="ID137">
-<h3>Break<a class="headerlink" href="ControlFlow.html#ID137" title="Permalink to this headline">&para;</a></h3>
+<h3>Break<a class="headerlink" href="ControlFlow.html#ID137" title="Permalink to this headline"> </a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">break</span></code> statement ends execution of an entire control flow statement immediately. The <code class="docutils literal notranslate"><span class="pre">break</span></code> statement can be used inside a <code class="docutils literal notranslate"><span class="pre">switch</span></code> or loop statement when you want to terminate the execution of the <code class="docutils literal notranslate"><span class="pre">switch</span></code> or loop statement earlier than would otherwise be the case.</p>
 <div class="section" id="ID138">
-<h4>Break in a Loop Statement<a class="headerlink" href="ControlFlow.html#ID138" title="Permalink to this headline">&para;</a></h4>
+<h4>Break in a Loop Statement<a class="headerlink" href="ControlFlow.html#ID138" title="Permalink to this headline"> </a></h4>
 <p>When used inside a loop statement, <code class="docutils literal notranslate"><span class="pre">break</span></code> ends the loop&rsquo;s execution immediately and transfers control to the code after the loop&rsquo;s closing brace (<code class="docutils literal notranslate"><span class="pre">}</span></code>). No further code from the current iteration of the loop is executed, and no further iterations of the loop are started.</p>
 </div>
 <div class="section" id="ID139">
-<h4>Break in a Switch Statement<a class="headerlink" href="ControlFlow.html#ID139" title="Permalink to this headline">&para;</a></h4>
+<h4>Break in a Switch Statement<a class="headerlink" href="ControlFlow.html#ID139" title="Permalink to this headline"> </a></h4>
 <p>When used inside a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement, <code class="docutils literal notranslate"><span class="pre">break</span></code> causes the <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement to end its execution immediately and to transfer control to the code after the <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement&rsquo;s closing brace (<code class="docutils literal notranslate"><span class="pre">}</span></code>).</p>
 <p>This behavior can be used to match and ignore one or more cases in a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement. Because Swift&rsquo;s <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement is exhaustive and does not allow empty cases, it is sometimes necessary to deliberately match and ignore a case in order to make your intentions explicit. You do this by writing the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement as the entire body of the case you want to ignore. When that case is matched by the <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement, the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement inside the case ends the <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement&rsquo;s execution immediately.</p>
 <div class="admonition note">
@@ -602,7 +602,7 @@
 </div>
 </div>
 <div class="section" id="ID140">
-<h3>Fallthrough<a class="headerlink" href="ControlFlow.html#ID140" title="Permalink to this headline">&para;</a></h3>
+<h3>Fallthrough<a class="headerlink" href="ControlFlow.html#ID140" title="Permalink to this headline"> </a></h3>
 <p>In Swift, <code class="docutils literal notranslate"><span class="pre">switch</span></code> statements don&rsquo;t fall through the bottom of each case and into the next one. That is, the entire <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement completes its execution as soon as the first matching case is completed. By contrast, C requires you to insert an explicit <code class="docutils literal notranslate"><span class="pre">break</span></code> statement at the end of every <code class="docutils literal notranslate"><span class="pre">switch</span></code> case to prevent fallthrough. Avoiding default fallthrough means that Swift <code class="docutils literal notranslate"><span class="pre">switch</span></code> statements are much more concise and predictable than their counterparts in C, and thus they avoid executing multiple <code class="docutils literal notranslate"><span class="pre">switch</span></code> cases by mistake.</p>
 <p>If you need C-style fallthrough behavior, you can opt in to this behavior on a case-by-case basis with the <code class="docutils literal notranslate"><span class="pre">fallthrough</span></code> keyword. The example below uses <code class="docutils literal notranslate"><span class="pre">fallthrough</span></code> to create a textual description of a number.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">integerToDescribe</span> = <span class="m">5</span>
@@ -626,7 +626,7 @@
 </div>
 </div>
 <div class="section" id="ID141">
-<h3>Labeled Statements<a class="headerlink" href="ControlFlow.html#ID141" title="Permalink to this headline">&para;</a></h3>
+<h3>Labeled Statements<a class="headerlink" href="ControlFlow.html#ID141" title="Permalink to this headline"> </a></h3>
 <p>In Swift, you can nest loops and conditional statements inside other loops and conditional statements to create complex control flow structures. However, loops and conditional statements can both use the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement to end their execution prematurely. Therefore, it is sometimes useful to be explicit about which loop or conditional statement you want a <code class="docutils literal notranslate"><span class="pre">break</span></code> statement to terminate. Similarly, if you have multiple nested loops, it can be useful to be explicit about which loop the <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement should affect.</p>
 <p>To achieve these aims, you can mark a loop statement or conditional statement with a <em>statement label</em>. With a conditional statement, you can use a statement label with the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement to end the execution of the labeled statement. With a loop statement, you can use a statement label with the <code class="docutils literal notranslate"><span class="pre">break</span></code> or <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement to end or continue the execution of the labeled statement.</p>
 <p>A labeled statement is indicated by placing a label on the same line as the statement&rsquo;s introducer keyword, followed by a colon. Here&rsquo;s an example of this syntax for a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, although the principle is the same for all loops and <code class="docutils literal notranslate"><span class="pre">switch</span></code> statements:</p>
@@ -683,7 +683,7 @@
 </div>
 </div>
 <div class="section" id="ID525">
-<a class="dashingAutolink" name="autolink-66"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Early%20Exit%C2%B6"></a><h2>Early Exit<a class="headerlink" href="ControlFlow.html#ID525" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-67"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Early%20Exit"></a><h2>Early Exit<a class="headerlink" href="ControlFlow.html#ID525" title="Permalink to this headline"> </a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">guard</span></code> statement, like an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, executes statements depending on the Boolean value of an expression. You use a <code class="docutils literal notranslate"><span class="pre">guard</span></code> statement to require that a condition must be true in order for the code after the <code class="docutils literal notranslate"><span class="pre">guard</span></code> statement to be executed. Unlike an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, a <code class="docutils literal notranslate"><span class="pre">guard</span></code> statement always has an <code class="docutils literal notranslate"><span class="pre">else</span></code> clause&mdash;the code inside the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause is executed if the condition is not true.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">func</span> <span class="nv">greet</span>(<span class="nv">person</span>: [<span class="nc">String</span>: <span class="nc">String</span>]) {
 </li><li>    <span class="k">guard</span> <span class="k">let</span> <span class="nv">name</span> = <span class="nv">person</span>[<span class="s">&#34;name&#34;</span>] <span class="k">else</span> {
@@ -712,7 +712,7 @@
 <p>Using a <code class="docutils literal notranslate"><span class="pre">guard</span></code> statement for requirements improves the readability of your code, compared to doing the same check with an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. It lets you write the code that&rsquo;s typically executed without wrapping it in an <code class="docutils literal notranslate"><span class="pre">else</span></code> block, and it lets you keep the code that handles a violated requirement next to the requirement.</p>
 </div>
 <div class="section" id="ID523">
-<a class="dashingAutolink" name="autolink-67"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Checking%20API%20Availability%C2%B6"></a><h2>Checking API Availability<a class="headerlink" href="ControlFlow.html#ID523" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-68"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Checking%20API%20Availability"></a><h2>Checking API Availability<a class="headerlink" href="ControlFlow.html#ID523" title="Permalink to this headline"> </a></h2>
 <p>Swift has built-in support for checking API availability, which ensures that you don&rsquo;t accidentally use APIs that are unavailable on a given deployment target.</p>
 <p>The compiler uses availability information in the SDK to verify that all of the APIs used in your code are available on the deployment target specified by your project. Swift reports an error at compile time if you try to use an API that isn&rsquo;t available.</p>
 <p>You use an <em>availability condition</em> in an <code class="docutils literal notranslate"><span class="pre">if</span></code> or <code class="docutils literal notranslate"><span class="pre">guard</span></code> statement to conditionally execute a block of code, depending on whether the APIs you want to use are available at runtime. The compiler uses the information from the availability condition when it verifies that the APIs in that block of code are available.</p>

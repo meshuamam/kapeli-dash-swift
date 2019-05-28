@@ -111,11 +111,11 @@
 
         
   <div class="section" id="nested-types">
-<h1>Nested Types<a class="headerlink" href="NestedTypes.html#nested-types" title="Permalink to this headline">¶</a></h1>
+<h1>Nested Types<a class="headerlink" href="NestedTypes.html#nested-types" title="Permalink to this headline"> </a></h1>
 <p>Enumerations are often created to support a specific class or structure’s functionality. Similarly, it can be convenient to define utility classes and structures purely for use within the context of a more complex type. To accomplish this, Swift enables you to define <em>nested types</em>, whereby you nest supporting enumerations, classes, and structures within the definition of the type they support.</p>
 <p>To nest a type within another type, write its definition within the outer braces of the type it supports. Types can be nested to as many levels as are required.</p>
 <div class="section" id="ID243">
-<h2>Nested Types in Action<a class="headerlink" href="NestedTypes.html#ID243" title="Permalink to this headline">¶</a></h2>
+<h2>Nested Types in Action<a class="headerlink" href="NestedTypes.html#ID243" title="Permalink to this headline"> </a></h2>
 <p>The example below defines a structure called <code class="docutils literal notranslate"><span class="pre">BlackjackCard</span></code>, which models a playing card as used in the game of Blackjack. The <code class="docutils literal notranslate"><span class="pre">BlackjackCard</span></code> structure contains two nested enumeration types called <code class="docutils literal notranslate"><span class="pre">Suit</span></code> and <code class="docutils literal notranslate"><span class="pre">Rank</span></code>.</p>
 <p>In Blackjack, the Ace cards have a value of either one or eleven. This feature is represented by a structure called <code class="docutils literal notranslate"><span class="pre">Values</span></code>, which is nested within the <code class="docutils literal notranslate"><span class="pre">Rank</span></code> enumeration:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">BlackjackCard</span> {
@@ -173,7 +173,7 @@
 <p>Even though <code class="docutils literal notranslate"><span class="pre">Rank</span></code> and <code class="docutils literal notranslate"><span class="pre">Suit</span></code> are nested within <code class="docutils literal notranslate"><span class="pre">BlackjackCard</span></code>, their type can be inferred from context, and so the initialization of this instance is able to refer to the enumeration cases by their case names (<code class="docutils literal notranslate"><span class="pre">.ace</span></code> and <code class="docutils literal notranslate"><span class="pre">.spades</span></code>) alone. In the example above, the <code class="docutils literal notranslate"><span class="pre">description</span></code> property correctly reports that the Ace of Spades has a value of <code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">11</span></code>.</p>
 </div>
 <div class="section" id="ID244">
-<h2>Referring to Nested Types<a class="headerlink" href="NestedTypes.html#ID244" title="Permalink to this headline">¶</a></h2>
+<h2>Referring to Nested Types<a class="headerlink" href="NestedTypes.html#ID244" title="Permalink to this headline"> </a></h2>
 <p>To use a nested type outside of its definition context, prefix its name with the name of the type it is nested within:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">heartsSymbol</span> = <span class="nv">BlackjackCard</span>.<span class="nv">Suit</span>.<span class="nv">hearts</span>.<span class="nv">rawValue</span>
 </li><li><span class="c">// heartsSymbol is &quot;♡&quot;</span>

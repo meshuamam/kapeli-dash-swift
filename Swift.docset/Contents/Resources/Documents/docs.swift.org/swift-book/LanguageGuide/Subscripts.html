@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <a class="dashingAutolink" name="autolink-181"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Subscripts%20%E2%80%94%20The%20Swift%20Programming%20Language%20%28Swift%205%29"></a><title>Subscripts &mdash; The Swift Programming Language (Swift 5)</title>
+    <a class="dashingAutolink" name="autolink-178"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Subscripts%20%E2%80%94%20The%20Swift%20Programming%20Language%20%28Swift%205%29"></a><title>Subscripts &mdash; The Swift Programming Language (Swift 5)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -106,11 +106,11 @@
 
         
   <div class="section" id="subscripts">
-<h1>Subscripts<a class="headerlink" href="Subscripts.html#subscripts" title="Permalink to this headline">&para;</a></h1>
+<h1>Subscripts<a class="headerlink" href="Subscripts.html#subscripts" title="Permalink to this headline"> </a></h1>
 <p>Classes, structures, and enumerations can define <em>subscripts</em>, which are shortcuts for accessing the member elements of a collection, list, or sequence. You use subscripts to set and retrieve values by index without needing separate methods for setting and retrieval. For example, you access elements in an <code class="docutils literal notranslate"><span class="pre">Array</span></code> instance as <code class="docutils literal notranslate"><span class="pre">someArray[index]</span></code> and elements in a <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> instance as <code class="docutils literal notranslate"><span class="pre">someDictionary[key]</span></code>.</p>
 <p>You can define multiple subscripts for a single type, and the appropriate subscript overload to use is selected based on the type of index value you pass to the subscript. Subscripts are not limited to a single dimension, and you can define subscripts with multiple input parameters to suit your custom type&rsquo;s needs.</p>
 <div class="section" id="ID306">
-<a class="dashingAutolink" name="autolink-178"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Subscript%20Syntax%C2%B6"></a><h2>Subscript Syntax<a class="headerlink" href="Subscripts.html#ID306" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-179"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Subscript%20Syntax"></a><h2>Subscript Syntax<a class="headerlink" href="Subscripts.html#ID306" title="Permalink to this headline"> </a></h2>
 <p>Subscripts enable you to query instances of a type by writing one or more values in square brackets after the instance name. Their syntax is similar to both instance method syntax and computed property syntax. You write subscript definitions with the <code class="docutils literal notranslate"><span class="pre">subscript</span></code> keyword, and specify one or more input parameters and a return type, in the same way as instance methods. Unlike instance methods, subscripts can be read-write or read-only. This behavior is communicated by a getter and setter in the same way as for computed properties:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">subscript</span>(<span class="nv">index</span>: <span class="nc">Int</span>) -&gt; <span class="nc">Int</span> {
 </li><li>    <span class="k">get</span> {
@@ -146,7 +146,7 @@
 </div>
 </div>
 <div class="section" id="ID307">
-<a class="dashingAutolink" name="autolink-179"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Subscript%20Usage%C2%B6"></a><h2>Subscript Usage<a class="headerlink" href="Subscripts.html#ID307" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-180"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Subscript%20Usage"></a><h2>Subscript Usage<a class="headerlink" href="Subscripts.html#ID307" title="Permalink to this headline"> </a></h2>
 <p>The exact meaning of &ldquo;subscript&rdquo; depends on the context in which it is used. Subscripts are typically used as a shortcut for accessing the member elements in a collection, list, or sequence. You are free to implement subscripts in the most appropriate way for your particular class or structure&rsquo;s functionality.</p>
 <p>For example, Swift&rsquo;s <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> type implements a subscript to set and retrieve the values stored in a <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> instance. You can set a value in a dictionary by providing a key of the dictionary&rsquo;s key type within subscript brackets, and assigning a value of the dictionary&rsquo;s value type to the subscript:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">numberOfLegs</span> = [<span class="s">&#34;spider&#34;</span>: <span class="m">8</span>, <span class="s">&#34;ant&#34;</span>: <span class="m">6</span>, <span class="s">&#34;cat&#34;</span>: <span class="m">4</span>]
@@ -160,7 +160,7 @@
 </div>
 </div>
 <div class="section" id="ID308">
-<a class="dashingAutolink" name="autolink-180"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Subscript%20Options%C2%B6"></a><h2>Subscript Options<a class="headerlink" href="Subscripts.html#ID308" title="Permalink to this headline">&para;</a></h2>
+<a class="dashingAutolink" name="autolink-181"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Subscript%20Options"></a><h2>Subscript Options<a class="headerlink" href="Subscripts.html#ID308" title="Permalink to this headline"> </a></h2>
 <p>Subscripts can take any number of input parameters, and these input parameters can be of any type. Subscripts can also return any type. Subscripts can use variadic parameters, but they can&rsquo;t use in-out parameters or provide default parameter values.</p>
 <p>A class or structure can provide as many subscript implementations as it needs, and the appropriate subscript to be used will be inferred based on the types of the value or values that are contained within the subscript brackets at the point that the subscript is used. This definition of multiple subscripts is known as <em>subscript overloading</em>.</p>
 <p>While it is most common for a subscript to take a single parameter, you can also define a subscript with multiple parameters if it is appropriate for your type. The following example defines a <code class="docutils literal notranslate"><span class="pre">Matrix</span></code> structure, which represents a two-dimensional matrix of <code class="docutils literal notranslate"><span class="pre">Double</span></code> values. The <code class="docutils literal notranslate"><span class="pre">Matrix</span></code> structure&rsquo;s subscript takes two integer parameters:</p>

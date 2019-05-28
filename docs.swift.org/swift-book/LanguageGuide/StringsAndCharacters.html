@@ -144,7 +144,7 @@
 
         
   <div class="section" id="strings-and-characters">
-<h1>Strings and Characters<a class="headerlink" href="StringsAndCharacters.html#strings-and-characters" title="Permalink to this headline">¶</a></h1>
+<h1>Strings and Characters<a class="headerlink" href="StringsAndCharacters.html#strings-and-characters" title="Permalink to this headline"> </a></h1>
 <p>A <em>string</em> is a series of characters, such as <code class="docutils literal notranslate"><span class="pre">&quot;hello,</span> <span class="pre">world&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;albatross&quot;</span></code>. Swift strings are represented by the <code class="docutils literal notranslate"><span class="pre">String</span></code> type. The contents of a <code class="docutils literal notranslate"><span class="pre">String</span></code> can be accessed in various ways, including as a collection of <code class="docutils literal notranslate"><span class="pre">Character</span></code> values.</p>
 <p>Swift’s <code class="docutils literal notranslate"><span class="pre">String</span></code> and <code class="docutils literal notranslate"><span class="pre">Character</span></code> types provide a fast, Unicode-compliant way to work with text in your code. The syntax for string creation and manipulation is lightweight and readable, with a string literal syntax that is similar to C. String concatenation is as simple as combining two strings with the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator, and string mutability is managed by choosing between a constant or a variable, just like any other value in Swift. You can also use strings to insert constants, variables, literals, and expressions into longer strings, in a process known as string interpolation. This makes it easy to create custom string values for display, storage, and printing.</p>
 <p>Despite this simplicity of syntax, Swift’s <code class="docutils literal notranslate"><span class="pre">String</span></code> type is a fast, modern string implementation. Every string is composed of encoding-independent Unicode characters, and provides support for accessing those characters in various Unicode representations.</p>
@@ -154,14 +154,14 @@
 <p class="last">For more information about using <code class="docutils literal notranslate"><span class="pre">String</span></code> with Foundation and Cocoa, see <a class="reference external" href="https://developer.apple.com/documentation/swift/string#2919514">Bridging Between String and NSString</a>.</p>
 </div>
 <div class="section" id="ID286">
-<h2>String Literals<a class="headerlink" href="StringsAndCharacters.html#ID286" title="Permalink to this headline">¶</a></h2>
+<h2>String Literals<a class="headerlink" href="StringsAndCharacters.html#ID286" title="Permalink to this headline"> </a></h2>
 <p>You can include predefined <code class="docutils literal notranslate"><span class="pre">String</span></code> values within your code as <em>string literals</em>. A string literal is a sequence of characters surrounded by double quotation marks (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>).</p>
 <p>Use a string literal as an initial value for a constant or variable:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">someString</span> = <span class="s">&quot;Some string literal value&quot;</span>
 </li></ol></div></div></div>
 <p>Note that Swift infers a type of <code class="docutils literal notranslate"><span class="pre">String</span></code> for the <code class="docutils literal notranslate"><span class="pre">someString</span></code> constant because it’s initialized with a string literal value.</p>
 <div class="section" id="ID564">
-<h3>Multiline String Literals<a class="headerlink" href="StringsAndCharacters.html#ID564" title="Permalink to this headline">¶</a></h3>
+<h3>Multiline String Literals<a class="headerlink" href="StringsAndCharacters.html#ID564" title="Permalink to this headline"> </a></h3>
 <p>If you need a string that spans several lines, use a multiline string literal—a sequence of characters surrounded by three double quotation marks:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">quotation</span> = <span class="s">&quot;&quot;&quot;</span>
 </li><li><span class="s">The White Rabbit put on his spectacles.  &quot;Where shall I begin,</span>
@@ -199,7 +199,7 @@
 <p>In the example above, even though the entire multiline string literal is indented, the first and last lines in the string don’t begin with any whitespace. The middle line has more indentation than the closing quotation marks, so it starts with that extra four-space indentation.</p>
 </div>
 <div class="section" id="ID295">
-<h3>Special Characters in String Literals<a class="headerlink" href="StringsAndCharacters.html#ID295" title="Permalink to this headline">¶</a></h3>
+<h3>Special Characters in String Literals<a class="headerlink" href="StringsAndCharacters.html#ID295" title="Permalink to this headline"> </a></h3>
 <p>String literals can include the following special characters:</p>
 <ul class="simple">
 <li>The escaped special characters <code class="docutils literal notranslate"><span class="pre">\0</span></code> (null character), <code class="docutils literal notranslate"><span class="pre">\\</span></code> (backslash), <code class="docutils literal notranslate"><span class="pre">\t</span></code> (horizontal tab), <code class="docutils literal notranslate"><span class="pre">\n</span></code> (line feed), <code class="docutils literal notranslate"><span class="pre">\r</span></code> (carriage return), <code class="docutils literal notranslate"><span class="pre">\&quot;</span></code> (double quotation mark) and <code class="docutils literal notranslate"><span class="pre">\'</span></code> (single quotation mark)</li>
@@ -220,7 +220,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID606">
-<h3>Extended String Delimiters<a class="headerlink" href="StringsAndCharacters.html#ID606" title="Permalink to this headline">¶</a></h3>
+<h3>Extended String Delimiters<a class="headerlink" href="StringsAndCharacters.html#ID606" title="Permalink to this headline"> </a></h3>
 <p>You can place a string literal within <em>extended delimiters</em> to include special characters in a string without invoking their effect. You place your string within quotation marks (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>) and surround that with number signs (<code class="docutils literal notranslate"><span class="pre">#</span></code>). For example, printing the string literal <code class="docutils literal notranslate"><span class="pre">#&quot;Line</span> <span class="pre">1\nLine</span> <span class="pre">2&quot;#</span></code> prints the line feed escape sequence (<code class="docutils literal notranslate"><span class="pre">\n</span></code>) rather than printing the string across two lines.</p>
 <p>If you need the special effects of a character in a string literal, match the number of number signs within the string following the escape character (<code class="docutils literal notranslate"><span class="pre">\</span></code>). For example, if your string is <code class="docutils literal notranslate"><span class="pre">#&quot;Line</span> <span class="pre">1\nLine</span> <span class="pre">2&quot;#</span></code> and you want to break the line, you can use <code class="docutils literal notranslate"><span class="pre">#&quot;Line</span> <span class="pre">1\#nLine</span> <span class="pre">2&quot;#</span></code> instead. Similarly, <code class="docutils literal notranslate"><span class="pre">###&quot;Line1\###nLine2&quot;###</span></code> also breaks the line.</p>
 <p>String literals created using extended delimiters can also be multiline string literals. You can use extended delimiters to include the text <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code> in a multiline string, overriding the default behavior that ends the literal. For example:</p>
@@ -231,7 +231,7 @@
 </div>
 </div>
 <div class="section" id="ID287">
-<h2>Initializing an Empty String<a class="headerlink" href="StringsAndCharacters.html#ID287" title="Permalink to this headline">¶</a></h2>
+<h2>Initializing an Empty String<a class="headerlink" href="StringsAndCharacters.html#ID287" title="Permalink to this headline"> </a></h2>
 <p>To create an empty <code class="docutils literal notranslate"><span class="pre">String</span></code> value as the starting point for building a longer string, either assign an empty string literal to a variable, or initialize a new <code class="docutils literal notranslate"><span class="pre">String</span></code> instance with initializer syntax:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">emptyString</span> = <span class="s">&quot;&quot;</span>               <span class="c">// empty string literal</span>
 </li><li><span class="k">var</span> <span class="nv">anotherEmptyString</span> = <span class="nv">String</span>()  <span class="c">// initializer syntax</span>
@@ -245,7 +245,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID288">
-<h2>String Mutability<a class="headerlink" href="StringsAndCharacters.html#ID288" title="Permalink to this headline">¶</a></h2>
+<h2>String Mutability<a class="headerlink" href="StringsAndCharacters.html#ID288" title="Permalink to this headline"> </a></h2>
 <p>You indicate whether a particular <code class="docutils literal notranslate"><span class="pre">String</span></code> can be modified (or <em>mutated</em>) by assigning it to a variable (in which case it can be modified), or to a constant (in which case it can’t be modified):</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">variableString</span> = <span class="s">&quot;Horse&quot;</span>
 </li><li><span class="nv">variableString</span> += <span class="s">&quot; and carriage&quot;</span>
@@ -261,13 +261,13 @@
 </div>
 </div>
 <div class="section" id="ID289">
-<h2>Strings Are Value Types<a class="headerlink" href="StringsAndCharacters.html#ID289" title="Permalink to this headline">¶</a></h2>
+<h2>Strings Are Value Types<a class="headerlink" href="StringsAndCharacters.html#ID289" title="Permalink to this headline"> </a></h2>
 <p>Swift’s <code class="docutils literal notranslate"><span class="pre">String</span></code> type is a <em>value type</em>. If you create a new <code class="docutils literal notranslate"><span class="pre">String</span></code> value, that <code class="docutils literal notranslate"><span class="pre">String</span></code> value is <em>copied</em> when it’s passed to a function or method, or when it’s assigned to a constant or variable. In each case, a new copy of the existing <code class="docutils literal notranslate"><span class="pre">String</span></code> value is created, and the new copy is passed or assigned, not the original version. Value types are described in <a class="reference internal" href="ClassesAndStructures.html#ID88"><span class="std std-ref">Structures and Enumerations Are Value Types</span></a>.</p>
 <p>Swift’s copy-by-default <code class="docutils literal notranslate"><span class="pre">String</span></code> behavior ensures that when a function or method passes you a <code class="docutils literal notranslate"><span class="pre">String</span></code> value, it’s clear that you own that exact <code class="docutils literal notranslate"><span class="pre">String</span></code> value, regardless of where it came from. You can be confident that the string you are passed won’t be modified unless you modify it yourself.</p>
 <p>Behind the scenes, Swift’s compiler optimizes string usage so that actual copying takes place only when absolutely necessary. This means you always get great performance when working with strings as value types.</p>
 </div>
 <div class="section" id="ID290">
-<h2>Working with Characters<a class="headerlink" href="StringsAndCharacters.html#ID290" title="Permalink to this headline">¶</a></h2>
+<h2>Working with Characters<a class="headerlink" href="StringsAndCharacters.html#ID290" title="Permalink to this headline"> </a></h2>
 <p>You can access the individual <code class="docutils literal notranslate"><span class="pre">Character</span></code> values for a <code class="docutils literal notranslate"><span class="pre">String</span></code> by iterating over the string with a <code class="docutils literal notranslate"><span class="pre">for</span></code>-<code class="docutils literal notranslate"><span class="pre">in</span></code> loop:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">for</span> <span class="nv">character</span> <span class="k">in</span> <span class="s">&quot;Dog!🐶&quot;</span> {
 </li><li>    <span class="nv">print</span>(<span class="nv">character</span>)
@@ -290,7 +290,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID291">
-<h2>Concatenating Strings and Characters<a class="headerlink" href="StringsAndCharacters.html#ID291" title="Permalink to this headline">¶</a></h2>
+<h2>Concatenating Strings and Characters<a class="headerlink" href="StringsAndCharacters.html#ID291" title="Permalink to this headline"> </a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">String</span></code> values can be added together (or <em>concatenated</em>) with the addition operator (<code class="docutils literal notranslate"><span class="pre">+</span></code>) to create a new <code class="docutils literal notranslate"><span class="pre">String</span></code> value:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">string1</span> = <span class="s">&quot;hello&quot;</span>
 </li><li><span class="k">let</span> <span class="nv">string2</span> = <span class="s">&quot; there&quot;</span>
@@ -338,7 +338,7 @@
 <p>In the code above, concatenating <code class="docutils literal notranslate"><span class="pre">badStart</span></code> with <code class="docutils literal notranslate"><span class="pre">end</span></code> produces a two-line string, which isn’t the desired result. Because the last line of <code class="docutils literal notranslate"><span class="pre">badStart</span></code> doesn’t end with a line break, that line gets combined with the first line of <code class="docutils literal notranslate"><span class="pre">end</span></code>. In contrast, both lines of <code class="docutils literal notranslate"><span class="pre">goodStart</span></code> end with a line break, so when it’s combined with <code class="docutils literal notranslate"><span class="pre">end</span></code> the result has three lines, as expected.</p>
 </div>
 <div class="section" id="ID292">
-<h2>String Interpolation<a class="headerlink" href="StringsAndCharacters.html#ID292" title="Permalink to this headline">¶</a></h2>
+<h2>String Interpolation<a class="headerlink" href="StringsAndCharacters.html#ID292" title="Permalink to this headline"> </a></h2>
 <p><em>String interpolation</em> is a way to construct a new <code class="docutils literal notranslate"><span class="pre">String</span></code> value from a mix of constants, variables, literals, and expressions by including their values inside a string literal. You can use string interpolation in both single-line and multiline string literals. Each item that you insert into the string literal is wrapped in a pair of parentheses, prefixed by a backslash (<code class="docutils literal notranslate"><span class="pre">\</span></code>):</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">multiplier</span> = <span class="m">3</span>
 </li><li><span class="k">let</span> <span class="nv">message</span> = <span class="s">&quot;</span>\<span class="p">(</span><span class="nv">multiplier</span><span class="p">)</span><span class="s"> times 2.5 is </span>\<span class="p">(</span><span class="nv">Double</span>(<span class="nv">multiplier</span>) * <span class="m">2.5</span><span class="p">)</span><span class="s">&quot;</span>
@@ -360,15 +360,15 @@
 </div>
 </div>
 <div class="section" id="ID293">
-<h2>Unicode<a class="headerlink" href="StringsAndCharacters.html#ID293" title="Permalink to this headline">¶</a></h2>
+<h2>Unicode<a class="headerlink" href="StringsAndCharacters.html#ID293" title="Permalink to this headline"> </a></h2>
 <p><em>Unicode</em> is an international standard for encoding, representing, and processing text in different writing systems. It enables you to represent almost any character from any language in a standardized form, and to read and write those characters to and from an external source such as a text file or web page. Swift’s <code class="docutils literal notranslate"><span class="pre">String</span></code> and <code class="docutils literal notranslate"><span class="pre">Character</span></code> types are fully Unicode-compliant, as described in this section.</p>
 <div class="section" id="ID294">
-<h3>Unicode Scalar Values<a class="headerlink" href="StringsAndCharacters.html#ID294" title="Permalink to this headline">¶</a></h3>
+<h3>Unicode Scalar Values<a class="headerlink" href="StringsAndCharacters.html#ID294" title="Permalink to this headline"> </a></h3>
 <p>Behind the scenes, Swift’s native <code class="docutils literal notranslate"><span class="pre">String</span></code> type is built from <em>Unicode scalar values</em>. A Unicode scalar value is a unique 21-bit number for a character or modifier, such as <code class="docutils literal notranslate"><span class="pre">U+0061</span></code> for <code class="docutils literal notranslate"><span class="pre">LATIN</span> <span class="pre">SMALL</span> <span class="pre">LETTER</span> <span class="pre">A</span></code> (<code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>), or <code class="docutils literal notranslate"><span class="pre">U+1F425</span></code> for <code class="docutils literal notranslate"><span class="pre">FRONT-FACING</span> <span class="pre">BABY</span> <span class="pre">CHICK</span></code> (<code class="docutils literal notranslate"><span class="pre">&quot;🐥&quot;</span></code>).</p>
 <p>Note that not all 21-bit Unicode scalar values are assigned to a character—some scalars are reserved for future assignment or for use in UTF-16 encoding. Scalar values that have been assigned to a character typically also have a name, such as <code class="docutils literal notranslate"><span class="pre">LATIN</span> <span class="pre">SMALL</span> <span class="pre">LETTER</span> <span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">FRONT-FACING</span> <span class="pre">BABY</span> <span class="pre">CHICK</span></code> in the examples above.</p>
 </div>
 <div class="section" id="ID296">
-<h3>Extended Grapheme Clusters<a class="headerlink" href="StringsAndCharacters.html#ID296" title="Permalink to this headline">¶</a></h3>
+<h3>Extended Grapheme Clusters<a class="headerlink" href="StringsAndCharacters.html#ID296" title="Permalink to this headline"> </a></h3>
 <p>Every instance of Swift’s <code class="docutils literal notranslate"><span class="pre">Character</span></code> type represents a single <em>extended grapheme cluster</em>. An extended grapheme cluster is a sequence of one or more Unicode scalars that (when combined) produce a single human-readable character.</p>
 <p>Here’s an example. The letter <code class="docutils literal notranslate"><span class="pre">é</span></code> can be represented as the single Unicode scalar <code class="docutils literal notranslate"><span class="pre">é</span></code> (<code class="docutils literal notranslate"><span class="pre">LATIN</span> <span class="pre">SMALL</span> <span class="pre">LETTER</span> <span class="pre">E</span> <span class="pre">WITH</span> <span class="pre">ACUTE</span></code>, or <code class="docutils literal notranslate"><span class="pre">U+00E9</span></code>). However, the same letter can also be represented as a <em>pair</em> of scalars—a standard letter <code class="docutils literal notranslate"><span class="pre">e</span></code> (<code class="docutils literal notranslate"><span class="pre">LATIN</span> <span class="pre">SMALL</span> <span class="pre">LETTER</span> <span class="pre">E</span></code>, or <code class="docutils literal notranslate"><span class="pre">U+0065</span></code>), followed by the <code class="docutils literal notranslate"><span class="pre">COMBINING</span> <span class="pre">ACUTE</span> <span class="pre">ACCENT</span></code> scalar (<code class="docutils literal notranslate"><span class="pre">U+0301</span></code>). The <code class="docutils literal notranslate"><span class="pre">COMBINING</span> <span class="pre">ACUTE</span> <span class="pre">ACCENT</span></code> scalar is graphically applied to the scalar that precedes it, turning an <code class="docutils literal notranslate"><span class="pre">e</span></code> into an <code class="docutils literal notranslate"><span class="pre">é</span></code> when it’s rendered by a Unicode-aware text-rendering system.</p>
 <p>In both cases, the letter <code class="docutils literal notranslate"><span class="pre">é</span></code> is represented as a single Swift <code class="docutils literal notranslate"><span class="pre">Character</span></code> value that represents an extended grapheme cluster. In the first case, the cluster contains a single scalar; in the second case, it’s a cluster of two scalars:</p>
@@ -392,7 +392,7 @@
 </div>
 </div>
 <div class="section" id="ID297">
-<h2>Counting Characters<a class="headerlink" href="StringsAndCharacters.html#ID297" title="Permalink to this headline">¶</a></h2>
+<h2>Counting Characters<a class="headerlink" href="StringsAndCharacters.html#ID297" title="Permalink to this headline"> </a></h2>
 <p>To retrieve a count of the <code class="docutils literal notranslate"><span class="pre">Character</span></code> values in a string, use the <code class="docutils literal notranslate"><span class="pre">count</span></code> property of the string:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">unusualMenagerie</span> = <span class="s">&quot;Koala 🐨, Snail 🐌, Penguin 🐧, Dromedary 🐪&quot;</span>
 </li><li><span class="nv">print</span>(<span class="s">&quot;unusualMenagerie has </span>\<span class="p">(</span><span class="nv">unusualMenagerie</span>.<span class="nv">count</span><span class="p">)</span><span class="s"> characters&quot;</span>)
@@ -416,10 +416,10 @@
 </div>
 </div>
 <div class="section" id="ID494">
-<h2>Accessing and Modifying a String<a class="headerlink" href="StringsAndCharacters.html#ID494" title="Permalink to this headline">¶</a></h2>
+<h2>Accessing and Modifying a String<a class="headerlink" href="StringsAndCharacters.html#ID494" title="Permalink to this headline"> </a></h2>
 <p>You access and modify a string through its methods and properties, or by using subscript syntax.</p>
 <div class="section" id="ID534">
-<h3>String Indices<a class="headerlink" href="StringsAndCharacters.html#ID534" title="Permalink to this headline">¶</a></h3>
+<h3>String Indices<a class="headerlink" href="StringsAndCharacters.html#ID534" title="Permalink to this headline"> </a></h3>
 <p>Each <code class="docutils literal notranslate"><span class="pre">String</span></code> value has an associated <em>index type</em>, <code class="docutils literal notranslate"><span class="pre">String.Index</span></code>, which corresponds to the position of each <code class="docutils literal notranslate"><span class="pre">Character</span></code> in the string.</p>
 <p>As mentioned above, different characters can require different amounts of memory to store, so in order to determine which <code class="docutils literal notranslate"><span class="pre">Character</span></code> is at a particular position, you must iterate over each Unicode scalar from the start or end of that <code class="docutils literal notranslate"><span class="pre">String</span></code>. For this reason, Swift strings can’t be indexed by integer values.</p>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">startIndex</span></code> property to access the position of the first <code class="docutils literal notranslate"><span class="pre">Character</span></code> of a <code class="docutils literal notranslate"><span class="pre">String</span></code>. The <code class="docutils literal notranslate"><span class="pre">endIndex</span></code> property is the position after the last character in a <code class="docutils literal notranslate"><span class="pre">String</span></code>. As a result, the <code class="docutils literal notranslate"><span class="pre">endIndex</span></code> property isn’t a valid argument to a string’s subscript. If a <code class="docutils literal notranslate"><span class="pre">String</span></code> is empty, <code class="docutils literal notranslate"><span class="pre">startIndex</span></code> and <code class="docutils literal notranslate"><span class="pre">endIndex</span></code> are equal.</p>
@@ -452,7 +452,7 @@
 </div>
 </div>
 <div class="section" id="ID496">
-<h3>Inserting and Removing<a class="headerlink" href="StringsAndCharacters.html#ID496" title="Permalink to this headline">¶</a></h3>
+<h3>Inserting and Removing<a class="headerlink" href="StringsAndCharacters.html#ID496" title="Permalink to this headline"> </a></h3>
 <p>To insert a single character into a string at a specified index, use the <code class="docutils literal notranslate"><span class="pre">insert(_:at:)</span></code> method, and to insert the contents of another string at a specified index, use the <code class="docutils literal notranslate"><span class="pre">insert(contentsOf:at:)</span></code> method.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">welcome</span> = <span class="s">&quot;hello&quot;</span>
 </li><li><span class="nv">welcome</span>.<span class="nv">insert</span>(<span class="s">&quot;!&quot;</span>, <span class="nv">at</span>: <span class="nv">welcome</span>.<span class="nv">endIndex</span>)
@@ -476,7 +476,7 @@
 </div>
 </div>
 <div class="section" id="ID555">
-<h2>Substrings<a class="headerlink" href="StringsAndCharacters.html#ID555" title="Permalink to this headline">¶</a></h2>
+<h2>Substrings<a class="headerlink" href="StringsAndCharacters.html#ID555" title="Permalink to this headline"> </a></h2>
 <p>When you get a substring from a string—for example, using a subscript or a method like <code class="docutils literal notranslate"><span class="pre">prefix(_:)</span></code>—the result is an instance of <a class="reference external" href="https://developer.apple.com/documentation/swift/substring"><code class="docutils literal notranslate"><span class="pre">Substring</span></code></a>, not another string. Substrings in Swift have most of the same methods as strings, which means you can work with substrings the same way you work with strings. However, unlike strings, you use substrings for only a short amount of time while performing actions on a string. When you’re ready to store the result for a longer time, you convert the substring to an instance of <code class="docutils literal notranslate"><span class="pre">String</span></code>. For example:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">greeting</span> = <span class="s">&quot;Hello, world!&quot;</span>
 </li><li><span class="k">let</span> <span class="nv">index</span> = <span class="nv">greeting</span>.<span class="nv">firstIndex</span>(<span class="nv">of</span>: <span class="s">&quot;,&quot;</span>) ?? <span class="nv">greeting</span>.<span class="nv">endIndex</span>
@@ -495,10 +495,10 @@
 </div>
 </div>
 <div class="section" id="ID298">
-<h2>Comparing Strings<a class="headerlink" href="StringsAndCharacters.html#ID298" title="Permalink to this headline">¶</a></h2>
+<h2>Comparing Strings<a class="headerlink" href="StringsAndCharacters.html#ID298" title="Permalink to this headline"> </a></h2>
 <p>Swift provides three ways to compare textual values: string and character equality, prefix equality, and suffix equality.</p>
 <div class="section" id="ID299">
-<h3>String and Character Equality<a class="headerlink" href="StringsAndCharacters.html#ID299" title="Permalink to this headline">¶</a></h3>
+<h3>String and Character Equality<a class="headerlink" href="StringsAndCharacters.html#ID299" title="Permalink to this headline"> </a></h3>
 <p>String and character equality is checked with the “equal to” operator (<code class="docutils literal notranslate"><span class="pre">==</span></code>) and the “not equal to” operator (<code class="docutils literal notranslate"><span class="pre">!=</span></code>), as described in <a class="reference internal" href="BasicOperators.html#ID70"><span class="std std-ref">Comparison Operators</span></a>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">quotation</span> = <span class="s">&quot;We&#39;re a lot alike, you and I.&quot;</span>
 </li><li><span class="k">let</span> <span class="nv">sameQuotation</span> = <span class="s">&quot;We&#39;re a lot alike, you and I.&quot;</span>
@@ -536,7 +536,7 @@
 </div>
 </div>
 <div class="section" id="ID300">
-<h3>Prefix and Suffix Equality<a class="headerlink" href="StringsAndCharacters.html#ID300" title="Permalink to this headline">¶</a></h3>
+<h3>Prefix and Suffix Equality<a class="headerlink" href="StringsAndCharacters.html#ID300" title="Permalink to this headline"> </a></h3>
 <p>To check whether a string has a particular string prefix or suffix, call the string’s <code class="docutils literal notranslate"><span class="pre">hasPrefix(_:)</span></code> and <code class="docutils literal notranslate"><span class="pre">hasSuffix(_:)</span></code> methods, both of which take a single argument of type <code class="docutils literal notranslate"><span class="pre">String</span></code> and return a Boolean value.</p>
 <p>The examples below consider an array of strings representing the scene locations from the first two acts of Shakespeare’s <em>Romeo and Juliet</em>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">romeoAndJuliet</span> = [
@@ -583,7 +583,7 @@
 </div>
 </div>
 <div class="section" id="ID301">
-<h2>Unicode Representations of Strings<a class="headerlink" href="StringsAndCharacters.html#ID301" title="Permalink to this headline">¶</a></h2>
+<h2>Unicode Representations of Strings<a class="headerlink" href="StringsAndCharacters.html#ID301" title="Permalink to this headline"> </a></h2>
 <p>When a Unicode string is written to a text file or some other storage, the Unicode scalars in that string are encoded in one of several Unicode-defined <em>encoding forms</em>. Each form encodes the string in small chunks known as <em>code units</em>. These include the UTF-8 encoding form (which encodes a string as 8-bit code units), the UTF-16 encoding form (which encodes a string as 16-bit code units), and the UTF-32 encoding form (which encodes a string as 32-bit code units).</p>
 <p>Swift provides several different ways to access Unicode representations of strings. You can iterate over the string with a <code class="docutils literal notranslate"><span class="pre">for</span></code>-<code class="docutils literal notranslate"><span class="pre">in</span></code> statement, to access its individual <code class="docutils literal notranslate"><span class="pre">Character</span></code> values as Unicode extended grapheme clusters. This process is described in <a class="reference internal" href="StringsAndCharacters.html#ID290"><span class="std std-ref">Working with Characters</span></a>.</p>
 <p>Alternatively, access a <code class="docutils literal notranslate"><span class="pre">String</span></code> value in one of three other Unicode-compliant representations:</p>
@@ -596,7 +596,7 @@
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">dogString</span> = <span class="s">&quot;Dog‼🐶&quot;</span>
 </li></ol></div></div></div>
 <div class="section" id="ID302">
-<h3>UTF-8 Representation<a class="headerlink" href="StringsAndCharacters.html#ID302" title="Permalink to this headline">¶</a></h3>
+<h3>UTF-8 Representation<a class="headerlink" href="StringsAndCharacters.html#ID302" title="Permalink to this headline"> </a></h3>
 <p>You can access a UTF-8 representation of a <code class="docutils literal notranslate"><span class="pre">String</span></code> by iterating over its <code class="docutils literal notranslate"><span class="pre">utf8</span></code> property. This property is of type <code class="docutils literal notranslate"><span class="pre">String.UTF8View</span></code>, which is a collection of unsigned 8-bit (<code class="docutils literal notranslate"><span class="pre">UInt8</span></code>) values, one for each byte in the string’s UTF-8 representation:</p>
 <img alt="../_images/UTF8_2x.png" class="align-center" src="../_images/UTF8_2x.png" style="width: 476px;" />
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">for</span> <span class="nv">codeUnit</span> <span class="k">in</span> <span class="nv">dogString</span>.<span class="nv">utf8</span> {
@@ -608,7 +608,7 @@
 <p>In the example above, the first three decimal <code class="docutils literal notranslate"><span class="pre">codeUnit</span></code> values (<code class="docutils literal notranslate"><span class="pre">68</span></code>, <code class="docutils literal notranslate"><span class="pre">111</span></code>, <code class="docutils literal notranslate"><span class="pre">103</span></code>) represent the characters <code class="docutils literal notranslate"><span class="pre">D</span></code>, <code class="docutils literal notranslate"><span class="pre">o</span></code>, and <code class="docutils literal notranslate"><span class="pre">g</span></code>, whose UTF-8 representation is the same as their ASCII representation. The next three decimal <code class="docutils literal notranslate"><span class="pre">codeUnit</span></code> values (<code class="docutils literal notranslate"><span class="pre">226</span></code>, <code class="docutils literal notranslate"><span class="pre">128</span></code>, <code class="docutils literal notranslate"><span class="pre">188</span></code>) are a three-byte UTF-8 representation of the <code class="docutils literal notranslate"><span class="pre">DOUBLE</span> <span class="pre">EXCLAMATION</span> <span class="pre">MARK</span></code> character. The last four <code class="docutils literal notranslate"><span class="pre">codeUnit</span></code> values (<code class="docutils literal notranslate"><span class="pre">240</span></code>, <code class="docutils literal notranslate"><span class="pre">159</span></code>, <code class="docutils literal notranslate"><span class="pre">144</span></code>, <code class="docutils literal notranslate"><span class="pre">182</span></code>) are a four-byte UTF-8 representation of the <code class="docutils literal notranslate"><span class="pre">DOG</span> <span class="pre">FACE</span></code> character.</p>
 </div>
 <div class="section" id="ID303">
-<h3>UTF-16 Representation<a class="headerlink" href="StringsAndCharacters.html#ID303" title="Permalink to this headline">¶</a></h3>
+<h3>UTF-16 Representation<a class="headerlink" href="StringsAndCharacters.html#ID303" title="Permalink to this headline"> </a></h3>
 <p>You can access a UTF-16 representation of a <code class="docutils literal notranslate"><span class="pre">String</span></code> by iterating over its <code class="docutils literal notranslate"><span class="pre">utf16</span></code> property. This property is of type <code class="docutils literal notranslate"><span class="pre">String.UTF16View</span></code>, which is a collection of unsigned 16-bit (<code class="docutils literal notranslate"><span class="pre">UInt16</span></code>) values, one for each 16-bit code unit in the string’s UTF-16 representation:</p>
 <img alt="../_images/UTF16_2x.png" class="align-center" src="../_images/UTF16_2x.png" style="width: 477px;" />
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">for</span> <span class="nv">codeUnit</span> <span class="k">in</span> <span class="nv">dogString</span>.<span class="nv">utf16</span> {
@@ -622,7 +622,7 @@
 <p>The fifth and sixth <code class="docutils literal notranslate"><span class="pre">codeUnit</span></code> values (<code class="docutils literal notranslate"><span class="pre">55357</span></code> and <code class="docutils literal notranslate"><span class="pre">56374</span></code>) are a UTF-16 surrogate pair representation of the <code class="docutils literal notranslate"><span class="pre">DOG</span> <span class="pre">FACE</span></code> character. These values are a high-surrogate value of <code class="docutils literal notranslate"><span class="pre">U+D83D</span></code> (decimal value <code class="docutils literal notranslate"><span class="pre">55357</span></code>) and a low-surrogate value of <code class="docutils literal notranslate"><span class="pre">U+DC36</span></code> (decimal value <code class="docutils literal notranslate"><span class="pre">56374</span></code>).</p>
 </div>
 <div class="section" id="ID304">
-<h3>Unicode Scalar Representation<a class="headerlink" href="StringsAndCharacters.html#ID304" title="Permalink to this headline">¶</a></h3>
+<h3>Unicode Scalar Representation<a class="headerlink" href="StringsAndCharacters.html#ID304" title="Permalink to this headline"> </a></h3>
 <p>You can access a Unicode scalar representation of a <code class="docutils literal notranslate"><span class="pre">String</span></code> value by iterating over its <code class="docutils literal notranslate"><span class="pre">unicodeScalars</span></code> property. This property is of type <code class="docutils literal notranslate"><span class="pre">UnicodeScalarView</span></code>, which is a collection of values of type <code class="docutils literal notranslate"><span class="pre">UnicodeScalar</span></code>.</p>
 <p>Each <code class="docutils literal notranslate"><span class="pre">UnicodeScalar</span></code> has a <code class="docutils literal notranslate"><span class="pre">value</span></code> property that returns the scalar’s 21-bit value, represented within a <code class="docutils literal notranslate"><span class="pre">UInt32</span></code> value:</p>
 <img alt="../_images/UnicodeScalar_2x.png" class="align-center" src="../_images/UnicodeScalar_2x.png" style="width: 477px;" />

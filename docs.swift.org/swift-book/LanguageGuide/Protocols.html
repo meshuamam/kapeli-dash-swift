@@ -136,11 +136,11 @@
 
         
   <div class="section" id="protocols">
-<h1>Protocols<a class="headerlink" href="Protocols.html#protocols" title="Permalink to this headline">¶</a></h1>
+<h1>Protocols<a class="headerlink" href="Protocols.html#protocols" title="Permalink to this headline"> </a></h1>
 <p>A <em>protocol</em> defines a blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality. The protocol can then be <em>adopted</em> by a class, structure, or enumeration to provide an actual implementation of those requirements. Any type that satisfies the requirements of a protocol is said to <em>conform</em> to that protocol.</p>
 <p>In addition to specifying requirements that conforming types must implement, you can extend a protocol to implement some of these requirements or to implement additional functionality that conforming types can take advantage of.</p>
 <div class="section" id="ID268">
-<h2>Protocol Syntax<a class="headerlink" href="Protocols.html#ID268" title="Permalink to this headline">¶</a></h2>
+<h2>Protocol Syntax<a class="headerlink" href="Protocols.html#ID268" title="Permalink to this headline"> </a></h2>
 <p>You define protocols in a very similar way to classes, structures, and enumerations:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">protocol</span> <span class="nv">SomeProtocol</span> {
 </li><li>    <span class="c">// protocol definition goes here</span>
@@ -158,7 +158,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID269">
-<h2>Property Requirements<a class="headerlink" href="Protocols.html#ID269" title="Permalink to this headline">¶</a></h2>
+<h2>Property Requirements<a class="headerlink" href="Protocols.html#ID269" title="Permalink to this headline"> </a></h2>
 <p>A protocol can require any conforming type to provide an instance property or type property with a particular name and type. The protocol doesn’t specify whether the property should be a stored property or a computed property—it only specifies the required property name and type. The protocol also specifies whether each property must be gettable or gettable <em>and</em> settable.</p>
 <p>If a protocol requires a property to be gettable and settable, that property requirement can’t be fulfilled by a constant stored property or a read-only computed property. If the protocol only requires a property to be gettable, the requirement can be satisfied by any kind of property, and it’s valid for the property to be also settable if this is useful for your own code.</p>
 <p>Property requirements are always declared as variable properties, prefixed with the <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword. Gettable and settable properties are indicated by writing <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">get</span> <span class="pre">set</span> <span class="pre">}</span></code> after their type declaration, and gettable properties are indicated by writing <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">get</span> <span class="pre">}</span></code>.</p>
@@ -205,7 +205,7 @@
 <p>This class implements the <code class="docutils literal notranslate"><span class="pre">fullName</span></code> property requirement as a computed read-only property for a starship. Each <code class="docutils literal notranslate"><span class="pre">Starship</span></code> class instance stores a mandatory <code class="docutils literal notranslate"><span class="pre">name</span></code> and an optional <code class="docutils literal notranslate"><span class="pre">prefix</span></code>. The <code class="docutils literal notranslate"><span class="pre">fullName</span></code> property uses the <code class="docutils literal notranslate"><span class="pre">prefix</span></code> value if it exists, and prepends it to the beginning of <code class="docutils literal notranslate"><span class="pre">name</span></code> to create a full name for the starship.</p>
 </div>
 <div class="section" id="ID270">
-<h2>Method Requirements<a class="headerlink" href="Protocols.html#ID270" title="Permalink to this headline">¶</a></h2>
+<h2>Method Requirements<a class="headerlink" href="Protocols.html#ID270" title="Permalink to this headline"> </a></h2>
 <p>Protocols can require specific instance methods and type methods to be implemented by conforming types. These methods are written as part of the protocol’s definition in exactly the same way as for normal instance and type methods, but without curly braces or a method body. Variadic parameters are allowed, subject to the same rules as for normal methods. Default values, however, can’t be specified for method parameters within a protocol’s definition.</p>
 <p>As with type property requirements, you always prefix type method requirements with the <code class="docutils literal notranslate"><span class="pre">static</span></code> keyword when they’re defined in a protocol. This is true even though type method requirements are prefixed with the <code class="docutils literal notranslate"><span class="pre">class</span></code> or <code class="docutils literal notranslate"><span class="pre">static</span></code> keyword when implemented by a class:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">protocol</span> <span class="nv">SomeProtocol</span> {
@@ -238,7 +238,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID271">
-<h2>Mutating Method Requirements<a class="headerlink" href="Protocols.html#ID271" title="Permalink to this headline">¶</a></h2>
+<h2>Mutating Method Requirements<a class="headerlink" href="Protocols.html#ID271" title="Permalink to this headline"> </a></h2>
 <p>It’s sometimes necessary for a method to modify (or <em>mutate</em>) the instance it belongs to. For instance methods on value types (that is, structures and enumerations) you place the <code class="docutils literal notranslate"><span class="pre">mutating</span></code> keyword before a method’s <code class="docutils literal notranslate"><span class="pre">func</span></code> keyword to indicate that the method is allowed to modify the instance it belongs to and any properties of that instance. This process is described in <a class="reference internal" href="Methods.html#ID239"><span class="std std-ref">Modifying Value Types from Within Instance Methods</span></a>.</p>
 <p>If you define a protocol instance method requirement that is intended to mutate instances of any type that adopts the protocol, mark the method with the <code class="docutils literal notranslate"><span class="pre">mutating</span></code> keyword as part of the protocol’s definition. This enables structures and enumerations to adopt the protocol and satisfy that method requirement.</p>
 <div class="admonition note">
@@ -270,14 +270,14 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID272">
-<h2>Initializer Requirements<a class="headerlink" href="Protocols.html#ID272" title="Permalink to this headline">¶</a></h2>
+<h2>Initializer Requirements<a class="headerlink" href="Protocols.html#ID272" title="Permalink to this headline"> </a></h2>
 <p>Protocols can require specific initializers to be implemented by conforming types. You write these initializers as part of the protocol’s definition in exactly the same way as for normal initializers, but without curly braces or an initializer body:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">protocol</span> <span class="nv">SomeProtocol</span> {
 </li><li>    <span class="k">init</span>(<span class="nv">someParameter</span>: <span class="nc">Int</span>)
 </li><li>}
 </li></ol></div></div></div>
 <div class="section" id="ID273">
-<h3>Class Implementations of Protocol Initializer Requirements<a class="headerlink" href="Protocols.html#ID273" title="Permalink to this headline">¶</a></h3>
+<h3>Class Implementations of Protocol Initializer Requirements<a class="headerlink" href="Protocols.html#ID273" title="Permalink to this headline"> </a></h3>
 <p>You can implement a protocol initializer requirement on a conforming class as either a designated initializer or a convenience initializer. In both cases, you must mark the initializer implementation with the <code class="docutils literal notranslate"><span class="pre">required</span></code> modifier:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">SomeClass</span>: <span class="nc">SomeProtocol</span> {
 </li><li>    <span class="k">required</span> <span class="k">init</span>(<span class="nv">someParameter</span>: <span class="nc">Int</span>) {
@@ -311,13 +311,13 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID274">
-<h3>Failable Initializer Requirements<a class="headerlink" href="Protocols.html#ID274" title="Permalink to this headline">¶</a></h3>
+<h3>Failable Initializer Requirements<a class="headerlink" href="Protocols.html#ID274" title="Permalink to this headline"> </a></h3>
 <p>Protocols can define failable initializer requirements for conforming types, as defined in <a class="reference internal" href="Initialization.html#ID224"><span class="std std-ref">Failable Initializers</span></a>.</p>
 <p>A failable initializer requirement can be satisfied by a failable or nonfailable initializer on a conforming type. A nonfailable initializer requirement can be satisfied by a nonfailable initializer or an implicitly unwrapped failable initializer.</p>
 </div>
 </div>
 <div class="section" id="ID275">
-<h2>Protocols as Types<a class="headerlink" href="Protocols.html#ID275" title="Permalink to this headline">¶</a></h2>
+<h2>Protocols as Types<a class="headerlink" href="Protocols.html#ID275" title="Permalink to this headline"> </a></h2>
 <p>Protocols don’t actually implement any functionality themselves. Nonetheless, any protocol you create will become a fully-fledged type for use in your code.</p>
 <p>Because it’s a type, you can use a protocol in many places where other types are allowed, including:</p>
 <ul class="simple">
@@ -359,7 +359,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID276">
-<h2>Delegation<a class="headerlink" href="Protocols.html#ID276" title="Permalink to this headline">¶</a></h2>
+<h2>Delegation<a class="headerlink" href="Protocols.html#ID276" title="Permalink to this headline"> </a></h2>
 <p><em>Delegation</em> is a design pattern that enables a class or structure to hand off (or <em>delegate</em>) some of its responsibilities to an instance of another type. This design pattern is implemented by defining a protocol that encapsulates the delegated responsibilities, such that a conforming type (known as a delegate) is guaranteed to provide the functionality that has been delegated. Delegation can be used to respond to a particular action, or to retrieve data from an external source without needing to know the underlying type of that source.</p>
 <p>The example below defines two protocols for use with dice-based board games:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">protocol</span> <span class="nv">DiceGame</span> {
@@ -449,7 +449,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID277">
-<h2>Adding Protocol Conformance with an Extension<a class="headerlink" href="Protocols.html#ID277" title="Permalink to this headline">¶</a></h2>
+<h2>Adding Protocol Conformance with an Extension<a class="headerlink" href="Protocols.html#ID277" title="Permalink to this headline"> </a></h2>
 <p>You can extend an existing type to adopt and conform to a new protocol, even if you don’t have access to the source code for the existing type. Extensions can add new properties, methods, and subscripts to an existing type, and are therefore able to add any requirements that a protocol may demand. For more about extensions, see <a class="reference internal" href="Extensions.html"><span class="doc">Extensions</span></a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -483,7 +483,7 @@
 </li><li><span class="c">// Prints &quot;A game of Snakes and Ladders with 25 squares&quot;</span>
 </li></ol></div></div></div>
 <div class="section" id="ID574">
-<h3>Conditionally Conforming to a Protocol<a class="headerlink" href="Protocols.html#ID574" title="Permalink to this headline">¶</a></h3>
+<h3>Conditionally Conforming to a Protocol<a class="headerlink" href="Protocols.html#ID574" title="Permalink to this headline"> </a></h3>
 <p>A generic type may be able to satisfy the requirements of a protocol only under certain conditions, such as when the type’s generic parameter conforms to the protocol. You can make a generic type conditionally conform to a protocol by listing constraints when extending the type. Write these constraints after the name of the protocol you’re adopting by writing a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause. For more about generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clauses, see <a class="reference internal" href="Generics.html#ID192"><span class="std std-ref">Generic Where Clauses</span></a>.</p>
 <p>The following extension makes <code class="docutils literal notranslate"><span class="pre">Array</span></code> instances conform to the <code class="docutils literal notranslate"><span class="pre">TextRepresentable</span></code> protocol whenever they store elements of a type that conforms to <code class="docutils literal notranslate"><span class="pre">TextRepresentable</span></code>.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">Array</span>: <span class="nc">TextRepresentable</span> <span class="k">where</span> <span class="nc">Element</span>: <span class="nc">TextRepresentable</span> {
@@ -498,7 +498,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID278">
-<h3>Declaring Protocol Adoption with an Extension<a class="headerlink" href="Protocols.html#ID278" title="Permalink to this headline">¶</a></h3>
+<h3>Declaring Protocol Adoption with an Extension<a class="headerlink" href="Protocols.html#ID278" title="Permalink to this headline"> </a></h3>
 <p>If a type already conforms to all of the requirements of a protocol, but has not yet stated that it adopts that protocol, you can make it adopt the protocol with an empty extension:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">Hamster</span> {
 </li><li>    <span class="k">var</span> <span class="nv">name</span>: <span class="nc">String</span>
@@ -521,7 +521,7 @@
 </div>
 </div>
 <div class="section" id="ID279">
-<h2>Collections of Protocol Types<a class="headerlink" href="Protocols.html#ID279" title="Permalink to this headline">¶</a></h2>
+<h2>Collections of Protocol Types<a class="headerlink" href="Protocols.html#ID279" title="Permalink to this headline"> </a></h2>
 <p>A protocol can be used as the type to be stored in a collection such as an array or a dictionary, as mentioned in <a class="reference internal" href="Protocols.html#ID275"><span class="std std-ref">Protocols as Types</span></a>. This example creates an array of <code class="docutils literal notranslate"><span class="pre">TextRepresentable</span></code> things:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">things</span>: [<span class="nc">TextRepresentable</span>] = [<span class="nv">game</span>, <span class="nv">d12</span>, <span class="nv">simonTheHamster</span>]
 </li></ol></div></div></div>
@@ -536,7 +536,7 @@
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">thing</span></code> constant is of type <code class="docutils literal notranslate"><span class="pre">TextRepresentable</span></code>. It’s not of type <code class="docutils literal notranslate"><span class="pre">Dice</span></code>, or <code class="docutils literal notranslate"><span class="pre">DiceGame</span></code>, or <code class="docutils literal notranslate"><span class="pre">Hamster</span></code>, even if the actual instance behind the scenes is of one of those types. Nonetheless, because it’s of type <code class="docutils literal notranslate"><span class="pre">TextRepresentable</span></code>, and anything that is <code class="docutils literal notranslate"><span class="pre">TextRepresentable</span></code> is known to have a <code class="docutils literal notranslate"><span class="pre">textualDescription</span></code> property, it’s safe to access <code class="docutils literal notranslate"><span class="pre">thing.textualDescription</span></code> each time through the loop.</p>
 </div>
 <div class="section" id="ID280">
-<h2>Protocol Inheritance<a class="headerlink" href="Protocols.html#ID280" title="Permalink to this headline">¶</a></h2>
+<h2>Protocol Inheritance<a class="headerlink" href="Protocols.html#ID280" title="Permalink to this headline"> </a></h2>
 <p>A protocol can <em>inherit</em> one or more other protocols and can add further requirements on top of the requirements it inherits. The syntax for protocol inheritance is similar to the syntax for class inheritance, but with the option to list multiple inherited protocols, separated by commas:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">protocol</span> <span class="nv">InheritingProtocol</span>: <span class="nc">SomeProtocol</span>, <span class="nc">AnotherProtocol</span> {
 </li><li>    <span class="c">// protocol definition goes here</span>
@@ -579,7 +579,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID281">
-<h2>Class-Only Protocols<a class="headerlink" href="Protocols.html#ID281" title="Permalink to this headline">¶</a></h2>
+<h2>Class-Only Protocols<a class="headerlink" href="Protocols.html#ID281" title="Permalink to this headline"> </a></h2>
 <p>You can limit protocol adoption to class types (and not structures or enumerations) by adding the <code class="docutils literal notranslate"><span class="pre">AnyObject</span></code> protocol to a protocol’s inheritance list.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">protocol</span> <span class="nv">SomeClassOnlyProtocol</span>: <span class="nc">AnyObject</span>, <span class="nc">SomeInheritedProtocol</span> {
 </li><li>    <span class="c">// class-only protocol definition goes here</span>
@@ -592,7 +592,7 @@
 </div>
 </div>
 <div class="section" id="ID282">
-<h2>Protocol Composition<a class="headerlink" href="Protocols.html#ID282" title="Permalink to this headline">¶</a></h2>
+<h2>Protocol Composition<a class="headerlink" href="Protocols.html#ID282" title="Permalink to this headline"> </a></h2>
 <p>It can be useful to require a type to conform to multiple protocols at the same time. You can combine multiple protocols into a single requirement with a <em>protocol composition</em>. Protocol compositions behave as if you defined a temporary local protocol that has the combined requirements of all protocols in the composition. Protocol compositions don’t define any new protocol types.</p>
 <p>Protocol compositions have the form <code class="docutils literal notranslate"><span class="pre">SomeProtocol</span> <span class="pre">&amp;</span> <span class="pre">AnotherProtocol</span></code>. You can list as many protocols as you need, separating them with ampersands (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>). In addition to its list of protocols, a protocol composition can also contain one class type, which you can use to specify a required superclass.</p>
 <p>Here’s an example that combines two protocols called <code class="docutils literal notranslate"><span class="pre">Named</span></code> and <code class="docutils literal notranslate"><span class="pre">Aged</span></code> into a single protocol composition requirement on a function parameter:</p>
@@ -644,7 +644,7 @@
 <p>Passing <code class="docutils literal notranslate"><span class="pre">birthdayPerson</span></code> to the <code class="docutils literal notranslate"><span class="pre">beginConcert(in:)</span></code> function is invalid because <code class="docutils literal notranslate"><span class="pre">Person</span></code> isn’t a subclass of <code class="docutils literal notranslate"><span class="pre">Location</span></code>. Likewise, if you made a subclass of <code class="docutils literal notranslate"><span class="pre">Location</span></code> that didn’t conform to the <code class="docutils literal notranslate"><span class="pre">Named</span></code> protocol, calling <code class="docutils literal notranslate"><span class="pre">beginConcert(in:)</span></code> with an instance of that type is also invalid.</p>
 </div>
 <div class="section" id="ID283">
-<h2>Checking for Protocol Conformance<a class="headerlink" href="Protocols.html#ID283" title="Permalink to this headline">¶</a></h2>
+<h2>Checking for Protocol Conformance<a class="headerlink" href="Protocols.html#ID283" title="Permalink to this headline"> </a></h2>
 <p>You can use the <code class="docutils literal notranslate"><span class="pre">is</span></code> and <code class="docutils literal notranslate"><span class="pre">as</span></code> operators described in <a class="reference internal" href="TypeCasting.html"><span class="doc">Type Casting</span></a> to check for protocol conformance, and to cast to a specific protocol. Checking for and casting to a protocol follows exactly the same syntax as checking for and casting to a type:</p>
 <ul class="simple">
 <li>The <code class="docutils literal notranslate"><span class="pre">is</span></code> operator returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if an instance conforms to a protocol and returns <code class="docutils literal notranslate"><span class="pre">false</span></code> if it doesn’t.</li>
@@ -699,7 +699,7 @@
 <p>Note that the underlying objects aren’t changed by the casting process. They continue to be a <code class="docutils literal notranslate"><span class="pre">Circle</span></code>, a <code class="docutils literal notranslate"><span class="pre">Country</span></code> and an <code class="docutils literal notranslate"><span class="pre">Animal</span></code>. However, at the point that they’re stored in the <code class="docutils literal notranslate"><span class="pre">objectWithArea</span></code> constant, they’re only known to be of type <code class="docutils literal notranslate"><span class="pre">HasArea</span></code>, and so only their <code class="docutils literal notranslate"><span class="pre">area</span></code> property can be accessed.</p>
 </div>
 <div class="section" id="ID284">
-<h2>Optional Protocol Requirements<a class="headerlink" href="Protocols.html#ID284" title="Permalink to this headline">¶</a></h2>
+<h2>Optional Protocol Requirements<a class="headerlink" href="Protocols.html#ID284" title="Permalink to this headline"> </a></h2>
 <p>You can define <em>optional requirements</em> for protocols, These requirements don’t have to be implemented by types that conform to the protocol. Optional requirements are prefixed by the <code class="docutils literal notranslate"><span class="pre">optional</span></code> modifier as part of the protocol’s definition. Optional requirements are available so that you can write code that interoperates with Objective-C. Both the protocol and the optional requirement must be marked with the <code class="docutils literal notranslate"><span class="pre">&#64;objc</span></code> attribute. Note that <code class="docutils literal notranslate"><span class="pre">&#64;objc</span></code> protocols can be adopted only by classes that inherit from Objective-C classes or other <code class="docutils literal notranslate"><span class="pre">&#64;objc</span></code> classes. They can’t be adopted by structures or enumerations.</p>
 <p>When you use a method or property in an optional requirement, its type automatically becomes an optional. For example, a method of type <code class="docutils literal notranslate"><span class="pre">(Int)</span> <span class="pre">-&gt;</span> <span class="pre">String</span></code> becomes <code class="docutils literal notranslate"><span class="pre">((Int)</span> <span class="pre">-&gt;</span> <span class="pre">String)?</span></code>. Note that the entire function type is wrapped in the optional, not the method’s return value.</p>
 <p>An optional protocol requirement can be called with optional chaining, to account for the possibility that the requirement was not implemented by a type that conforms to the protocol. You check for an implementation of an optional method by writing a question mark after the name of the method when it’s called, such as <code class="docutils literal notranslate"><span class="pre">someOptionalMethod?(someArgument)</span></code>. For information on optional chaining, see <a class="reference internal" href="OptionalChaining.html"><span class="doc">Optional Chaining</span></a>.</p>
@@ -780,7 +780,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID521">
-<h2>Protocol Extensions<a class="headerlink" href="Protocols.html#ID521" title="Permalink to this headline">¶</a></h2>
+<h2>Protocol Extensions<a class="headerlink" href="Protocols.html#ID521" title="Permalink to this headline"> </a></h2>
 <p>Protocols can be extended to provide method, initializer, subscript, and computed property implementations to conforming types. This allows you to define behavior on protocols themselves, rather than in each type’s individual conformance or in a global function.</p>
 <p>For example, the <code class="docutils literal notranslate"><span class="pre">RandomNumberGenerator</span></code> protocol can be extended to provide a <code class="docutils literal notranslate"><span class="pre">randomBool()</span></code> method, which uses the result of the required <code class="docutils literal notranslate"><span class="pre">random()</span></code> method to return a random <code class="docutils literal notranslate"><span class="pre">Bool</span></code> value:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">RandomNumberGenerator</span> {
@@ -798,7 +798,7 @@
 </li></ol></div></div></div>
 <p>Protocol extensions can add implementations to conforming types but can’t make a protocol extend or inherit from another protocol. Protocol inheritance is always specified in the protocol declaration itself.</p>
 <div class="section" id="ID529">
-<h3>Providing Default Implementations<a class="headerlink" href="Protocols.html#ID529" title="Permalink to this headline">¶</a></h3>
+<h3>Providing Default Implementations<a class="headerlink" href="Protocols.html#ID529" title="Permalink to this headline"> </a></h3>
 <p>You can use protocol extensions to provide a default implementation to any method or computed property requirement of that protocol. If a conforming type provides its own implementation of a required method or property, that implementation will be used instead of the one provided by the extension.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -813,7 +813,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID527">
-<h3>Adding Constraints to Protocol Extensions<a class="headerlink" href="Protocols.html#ID527" title="Permalink to this headline">¶</a></h3>
+<h3>Adding Constraints to Protocol Extensions<a class="headerlink" href="Protocols.html#ID527" title="Permalink to this headline"> </a></h3>
 <p>When you define a protocol extension, you can specify constraints that conforming types must satisfy before the methods and properties of the extension are available. You write these constraints after the name of the protocol you’re extending by writing a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause. For more about generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clauses, see <a class="reference internal" href="Generics.html#ID192"><span class="std std-ref">Generic Where Clauses</span></a>.</p>
 <p>For example, you can define an extension to the <code class="docutils literal notranslate"><span class="pre">Collection</span></code> protocol that applies to any collection whose elements conform to the <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> protocol. By constraining a collection’s elements to the <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> protocol, a part of the standard library, you can use the <code class="docutils literal notranslate"><span class="pre">==</span></code> and <code class="docutils literal notranslate"><span class="pre">!=</span></code> operators to check for equality and inequality between two elements.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">Collection</span> <span class="k">where</span> <span class="nc">Element</span>: <span class="nc">Equatable</span> {
