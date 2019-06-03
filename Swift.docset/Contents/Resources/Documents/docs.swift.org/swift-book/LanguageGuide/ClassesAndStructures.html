@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <a class="dashingAutolink" name="autolink-45"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Structures%20and%20Classes%20%E2%80%94%20The%20Swift%20Programming%20Language%20%28Swift%205%29"></a><title>Structures and Classes &mdash; The Swift Programming Language (Swift 5)</title>
+    <title>Structures and Classes &mdash; The Swift Programming Language (Swift 5)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <h1 id="logo">
+      <a class="dashingAutolink" name="autolink-51"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -116,7 +116,7 @@
 
         
   <div class="section" id="structures-and-classes">
-<h1>Structures and Classes<a class="headerlink" href="ClassesAndStructures.html#structures-and-classes" title="Permalink to this headline"> </a></h1>
+<a class="dashingAutolink" name="autolink-52"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Structures%20and%20Classes"></a><h1>Structures and Classes<a class="headerlink" href="ClassesAndStructures.html#structures-and-classes" title="Permalink to this headline"> </a></h1>
 <p><em>Structures</em> and <em>classes</em> are general-purpose, flexible constructs that become the building blocks of your program&rsquo;s code. You define properties and methods to add functionality to your structures and classes using the same syntax you use to define constants, variables, and functions.</p>
 <p>Unlike other programming languages, Swift doesn&rsquo;t require you to create separate interface and implementation files for custom structures and classes. In Swift, you define a structure or class in a single file, and the external interface to that class or structure is automatically made available for other code to use.</p>
 <div class="admonition note">
@@ -124,7 +124,7 @@
 <p class="last">An instance of a class is traditionally known as an <em>object</em>. However, Swift structures and classes are much closer in functionality than in other languages, and much of this chapter describes functionality that applies to instances of <em>either</em> a class or a structure type. Because of this, the more general term <em>instance</em> is used.</p>
 </div>
 <div class="section" id="ID83">
-<a class="dashingAutolink" name="autolink-46"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Comparing%20Structures%20and%20Classes"></a><h2>Comparing Structures and Classes<a class="headerlink" href="ClassesAndStructures.html#ID83" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-53"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Comparing%20Structures%20and%20Classes"></a><h2>Comparing Structures and Classes<a class="headerlink" href="ClassesAndStructures.html#ID83" title="Permalink to this headline"> </a></h2>
 <p>Structures and classes in Swift have many things in common. Both can:</p>
 <ul class="simple">
 <li>Define properties to store values</li>
@@ -208,7 +208,7 @@
 </div>
 </div>
 <div class="section" id="ID88">
-<a class="dashingAutolink" name="autolink-47"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Structures%20and%20Enumerations%20Are%20Value%20Types"></a><h2>Structures and Enumerations Are Value Types<a class="headerlink" href="ClassesAndStructures.html#ID88" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-54"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Structures%20and%20Enumerations%20Are%20Value%20Types"></a><h2>Structures and Enumerations Are Value Types<a class="headerlink" href="ClassesAndStructures.html#ID88" title="Permalink to this headline"> </a></h2>
 <p>A <em>value type</em> is a type whose value is <em>copied</em> when it&rsquo;s assigned to a variable or constant, or when it&rsquo;s passed to a function.</p>
 <p>You&rsquo;ve actually been using value types extensively throughout the previous chapters. In fact, all of the basic types in Swift&mdash;integers, floating-point numbers, Booleans, strings, arrays and dictionaries&mdash;are value types, and are implemented as structures behind the scenes.</p>
 <p>All structures and enumerations are value types in Swift. This means that any structure and enumeration instances you create&mdash;and any value types they have as properties&mdash;are always copied when they are passed around in your code.</p>
@@ -254,7 +254,7 @@
 <p>When <code class="docutils literal notranslate"><span class="pre">rememberedDirection</span></code> is assigned the value of <code class="docutils literal notranslate"><span class="pre">currentDirection</span></code>, it&rsquo;s actually set to a copy of that value. Changing the value of <code class="docutils literal notranslate"><span class="pre">currentDirection</span></code> thereafter doesn&rsquo;t affect the copy of the original value that was stored in <code class="docutils literal notranslate"><span class="pre">rememberedDirection</span></code>.</p>
 </div>
 <div class="section" id="ID89">
-<a class="dashingAutolink" name="autolink-48"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Classes%20Are%20Reference%20Types"></a><h2>Classes Are Reference Types<a class="headerlink" href="ClassesAndStructures.html#ID89" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-55"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Classes%20Are%20Reference%20Types"></a><h2>Classes Are Reference Types<a class="headerlink" href="ClassesAndStructures.html#ID89" title="Permalink to this headline"> </a></h2>
 <p>Unlike value types, <em>reference types</em> are <em>not</em> copied when they are assigned to a variable or constant, or when they are passed to a function. Rather than a copy, a reference to the same existing instance is used.</p>
 <p>Here&rsquo;s an example, using the <code class="docutils literal notranslate"><span class="pre">VideoMode</span></code> class defined above:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">tenEighty</span> = <span class="nv">VideoMode</span>()

@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <a class="dashingAutolink" name="autolink-69"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Deinitialization%20%E2%80%94%20The%20Swift%20Programming%20Language%20%28Swift%205%29"></a><title>Deinitialization &mdash; The Swift Programming Language (Swift 5)</title>
+    <title>Deinitialization &mdash; The Swift Programming Language (Swift 5)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <h1 id="logo">
+      <a class="dashingAutolink" name="autolink-79"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -105,10 +105,10 @@
 
         
   <div class="section" id="deinitialization">
-<h1>Deinitialization<a class="headerlink" href="Deinitialization.html#deinitialization" title="Permalink to this headline"> </a></h1>
+<a class="dashingAutolink" name="autolink-80"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Deinitialization"></a><h1>Deinitialization<a class="headerlink" href="Deinitialization.html#deinitialization" title="Permalink to this headline"> </a></h1>
 <p>A <em>deinitializer</em> is called immediately before a class instance is deallocated. You write deinitializers with the <code class="docutils literal notranslate"><span class="pre">deinit</span></code> keyword, similar to how initializers are written with the <code class="docutils literal notranslate"><span class="pre">init</span></code> keyword. Deinitializers are only available on class types.</p>
 <div class="section" id="ID143">
-<a class="dashingAutolink" name="autolink-70"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/How%20Deinitialization%20Works"></a><h2>How Deinitialization Works<a class="headerlink" href="Deinitialization.html#ID143" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-81"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/How%20Deinitialization%20Works"></a><h2>How Deinitialization Works<a class="headerlink" href="Deinitialization.html#ID143" title="Permalink to this headline"> </a></h2>
 <p>Swift automatically deallocates your instances when they are no longer needed, to free up resources. Swift handles the memory management of instances through <em>automatic reference counting</em> (<em>ARC</em>), as described in <a class="reference internal" href="AutomaticReferenceCounting.html"><span class="doc">Automatic Reference Counting</span></a>. Typically you don&rsquo;t need to perform manual cleanup when your instances are deallocated. However, when you are working with your own resources, you might need to perform some additional cleanup yourself. For example, if you create a custom class to open a file and write some data to it, you might need to close the file before the class instance is deallocated.</p>
 <p>Class definitions can have at most one deinitializer per class. The deinitializer does not take any parameters and is written without parentheses:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">deinit</span> {
@@ -119,7 +119,7 @@
 <p>Because an instance is not deallocated until after its deinitializer is called, a deinitializer can access all properties of the instance it is called on and can modify its behavior based on those properties (such as looking up the name of a file that needs to be closed).</p>
 </div>
 <div class="section" id="ID144">
-<a class="dashingAutolink" name="autolink-71"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Deinitializers%20in%20Action"></a><h2>Deinitializers in Action<a class="headerlink" href="Deinitialization.html#ID144" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-82"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Deinitializers%20in%20Action"></a><h2>Deinitializers in Action<a class="headerlink" href="Deinitialization.html#ID144" title="Permalink to this headline"> </a></h2>
 <p>Here&rsquo;s an example of a deinitializer in action. This example defines two new types, <code class="docutils literal notranslate"><span class="pre">Bank</span></code> and <code class="docutils literal notranslate"><span class="pre">Player</span></code>, for a simple game. The <code class="docutils literal notranslate"><span class="pre">Bank</span></code> class manages a made-up currency, which can never have more than 10,000 coins in circulation. There can only ever be one <code class="docutils literal notranslate"><span class="pre">Bank</span></code> in the game, and so the <code class="docutils literal notranslate"><span class="pre">Bank</span></code> is implemented as a class with type properties and methods to store and manage its current state:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">Bank</span> {
 </li><li>    <span class="k">static</span> <span class="k">var</span> <span class="nv">coinsInBank</span> = <span class="m">10_000</span>

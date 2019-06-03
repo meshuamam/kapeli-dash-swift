@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <a class="dashingAutolink" name="autolink-35"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Basic%20Operators%20%E2%80%94%20The%20Swift%20Programming%20Language%20%28Swift%205%29"></a><title>Basic Operators &mdash; The Swift Programming Language (Swift 5)</title>
+    <title>Basic Operators &mdash; The Swift Programming Language (Swift 5)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <h1 id="logo">
+      <a class="dashingAutolink" name="autolink-40"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -129,13 +129,13 @@
 
         
   <div class="section" id="basic-operators">
-<h1>Basic Operators<a class="headerlink" href="BasicOperators.html#basic-operators" title="Permalink to this headline"> </a></h1>
+<a class="dashingAutolink" name="autolink-41"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Basic%20Operators"></a><h1>Basic Operators<a class="headerlink" href="BasicOperators.html#basic-operators" title="Permalink to this headline"> </a></h1>
 <p>An <em>operator</em> is a special symbol or phrase that you use to check, change, or combine values. For example, the addition operator (<code class="docutils literal notranslate"><span class="pre">+</span></code>) adds two numbers, as in <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span></code>, and the logical AND operator (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>) combines two Boolean values, as in <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">enteredDoorCode</span> <span class="pre">&amp;&amp;</span> <span class="pre">passedRetinaScan</span></code>.</p>
 <p>Swift supports most standard C operators and improves several capabilities to eliminate common coding errors. The assignment operator (<code class="docutils literal notranslate"><span class="pre">=</span></code>) doesn&rsquo;t return a value, to prevent it from being mistakenly used when the equal to operator (<code class="docutils literal notranslate"><span class="pre">==</span></code>) is intended. Arithmetic operators (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code> and so forth) detect and disallow value overflow, to avoid unexpected results when working with numbers that become larger or smaller than the allowed value range of the type that stores them. You can opt in to value overflow behavior by using Swift&rsquo;s overflow operators, as described in <a class="reference internal" href="AdvancedOperators.html#ID37"><span class="std std-ref">Overflow Operators</span></a>.</p>
 <p>Swift also provides range operators that aren&rsquo;t found in C, such as <code class="docutils literal notranslate"><span class="pre">a..&lt;b</span></code> and <code class="docutils literal notranslate"><span class="pre">a...b</span></code>, as a shortcut for expressing a range of values.</p>
 <p>This chapter describes the common operators in Swift. <a class="reference internal" href="AdvancedOperators.html"><span class="doc">Advanced Operators</span></a> covers Swift&rsquo;s advanced operators, and describes how to define your own custom operators and implement the standard operators for your own custom types.</p>
 <div class="section" id="ID61">
-<a class="dashingAutolink" name="autolink-36"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Terminology"></a><h2>Terminology<a class="headerlink" href="BasicOperators.html#ID61" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-42"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Terminology"></a><h2>Terminology<a class="headerlink" href="BasicOperators.html#ID61" title="Permalink to this headline"> </a></h2>
 <p>Operators are unary, binary, or ternary:</p>
 <ul class="simple">
 <li><em>Unary</em> operators operate on a single target (such as <code class="docutils literal notranslate"><span class="pre">-a</span></code>). Unary <em>prefix</em> operators appear immediately before their target (such as <code class="docutils literal notranslate"><span class="pre">!b</span></code>), and unary <em>postfix</em> operators appear immediately after their target (such as <code class="docutils literal notranslate"><span class="pre">c!</span></code>).</li>
@@ -145,7 +145,7 @@
 <p>The values that operators affect are <em>operands</em>. In the expression <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span></code>, the <code class="docutils literal notranslate"><span class="pre">+</span></code> symbol is a binary operator and its two operands are the values <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
 </div>
 <div class="section" id="ID62">
-<a class="dashingAutolink" name="autolink-37"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Assignment%20Operator"></a><h2>Assignment Operator<a class="headerlink" href="BasicOperators.html#ID62" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-43"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Assignment%20Operator"></a><h2>Assignment Operator<a class="headerlink" href="BasicOperators.html#ID62" title="Permalink to this headline"> </a></h2>
 <p>The <em>assignment operator</em> (<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">b</span></code>) initializes or updates the value of <code class="docutils literal notranslate"><span class="pre">a</span></code> with the value of <code class="docutils literal notranslate"><span class="pre">b</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">b</span> = <span class="m">10</span>
 </li><li><span class="k">var</span> <span class="nv">a</span> = <span class="m">5</span>
@@ -164,7 +164,7 @@
 <p>This feature prevents the assignment operator (<code class="docutils literal notranslate"><span class="pre">=</span></code>) from being used by accident when the equal to operator (<code class="docutils literal notranslate"><span class="pre">==</span></code>) is actually intended. By making <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">y</span></code> invalid, Swift helps you to avoid these kinds of errors in your code.</p>
 </div>
 <div class="section" id="ID63">
-<a class="dashingAutolink" name="autolink-38"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Arithmetic%20Operators"></a><h2>Arithmetic Operators<a class="headerlink" href="BasicOperators.html#ID63" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-44"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Arithmetic%20Operators"></a><h2>Arithmetic Operators<a class="headerlink" href="BasicOperators.html#ID63" title="Permalink to this headline"> </a></h2>
 <p>Swift supports the four standard <em>arithmetic operators</em> for all number types:</p>
 <ul class="simple">
 <li>Addition (<code class="docutils literal notranslate"><span class="pre">+</span></code>)</li>
@@ -226,7 +226,7 @@
 </div>
 </div>
 <div class="section" id="ID69">
-<a class="dashingAutolink" name="autolink-39"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Compound%20Assignment%20Operators"></a><h2>Compound Assignment Operators<a class="headerlink" href="BasicOperators.html#ID69" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-45"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Compound%20Assignment%20Operators"></a><h2>Compound Assignment Operators<a class="headerlink" href="BasicOperators.html#ID69" title="Permalink to this headline"> </a></h2>
 <p>Like C, Swift provides <em>compound assignment operators</em> that combine assignment (<code class="docutils literal notranslate"><span class="pre">=</span></code>) with another operation. One example is the <em>addition assignment operator</em> (<code class="docutils literal notranslate"><span class="pre">+=</span></code>):</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">a</span> = <span class="m">1</span>
 </li><li><span class="nv">a</span> += <span class="m">2</span>
@@ -240,7 +240,7 @@
 <p>For information about the operators provided by the Swift standard library, see <a class="reference external" href="https://developer.apple.com/documentation/swift/operator_declarations">Operator Declarations</a>.</p>
 </div>
 <div class="section" id="ID70">
-<a class="dashingAutolink" name="autolink-40"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Comparison%20Operators"></a><h2>Comparison Operators<a class="headerlink" href="BasicOperators.html#ID70" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-46"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Comparison%20Operators"></a><h2>Comparison Operators<a class="headerlink" href="BasicOperators.html#ID70" title="Permalink to this headline"> </a></h2>
 <p>Swift supports all standard C <em>comparison operators</em>:</p>
 <ul class="simple">
 <li>Equal to (<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code>)</li>
@@ -288,7 +288,7 @@
 </div>
 </div>
 <div class="section" id="ID71">
-<a class="dashingAutolink" name="autolink-41"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Ternary%20Conditional%20Operator"></a><h2>Ternary Conditional Operator<a class="headerlink" href="BasicOperators.html#ID71" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-47"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Ternary%20Conditional%20Operator"></a><h2>Ternary Conditional Operator<a class="headerlink" href="BasicOperators.html#ID71" title="Permalink to this headline"> </a></h2>
 <p>The <em>ternary conditional operator</em> is a special operator with three parts, which takes the form <code class="docutils literal notranslate"><span class="pre">question</span> <span class="pre">?</span> <span class="pre">answer1</span> <span class="pre">:</span> <span class="pre">answer2</span></code>. It&rsquo;s a shortcut for evaluating one of two expressions based on whether <code class="docutils literal notranslate"><span class="pre">question</span></code> is true or false. If <code class="docutils literal notranslate"><span class="pre">question</span></code> is true, it evaluates <code class="docutils literal notranslate"><span class="pre">answer1</span></code> and returns its value; otherwise, it evaluates <code class="docutils literal notranslate"><span class="pre">answer2</span></code> and returns its value.</p>
 <p>The ternary conditional operator is shorthand for the code below:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">if</span> <span class="nv">question</span> {
@@ -318,7 +318,7 @@
 <p>The ternary conditional operator provides an efficient shorthand for deciding which of two expressions to consider. Use the ternary conditional operator with care, however. Its conciseness can lead to hard-to-read code if overused. Avoid combining multiple instances of the ternary conditional operator into one compound statement.</p>
 </div>
 <div class="section" id="ID72">
-<a class="dashingAutolink" name="autolink-42"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Nil-Coalescing%20Operator"></a><h2>Nil-Coalescing Operator<a class="headerlink" href="BasicOperators.html#ID72" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-48"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Nil-Coalescing%20Operator"></a><h2>Nil-Coalescing Operator<a class="headerlink" href="BasicOperators.html#ID72" title="Permalink to this headline"> </a></h2>
 <p>The <em>nil-coalescing operator</em> (<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">??</span> <span class="pre">b</span></code>) unwraps an optional <code class="docutils literal notranslate"><span class="pre">a</span></code> if it contains a value, or returns a default value <code class="docutils literal notranslate"><span class="pre">b</span></code> if <code class="docutils literal notranslate"><span class="pre">a</span></code> is <code class="docutils literal notranslate"><span class="pre">nil</span></code>. The expression <code class="docutils literal notranslate"><span class="pre">a</span></code> is always of an optional type. The expression <code class="docutils literal notranslate"><span class="pre">b</span></code> must match the type that is stored inside <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
 <p>The nil-coalescing operator is shorthand for the code below:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">a</span> != <span class="k">nil</span> ? <span class="nv">a</span>! : <span class="nv">b</span>
@@ -343,7 +343,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID73">
-<a class="dashingAutolink" name="autolink-43"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Range%20Operators"></a><h2>Range Operators<a class="headerlink" href="BasicOperators.html#ID73" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-49"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Range%20Operators"></a><h2>Range Operators<a class="headerlink" href="BasicOperators.html#ID73" title="Permalink to this headline"> </a></h2>
 <p>Swift includes several <em>range operators</em>, which are shortcuts for expressing a range of values.</p>
 <div class="section" id="ID74">
 <h3>Closed Range Operator<a class="headerlink" href="BasicOperators.html#ID74" title="Permalink to this headline"> </a></h3>
@@ -408,7 +408,7 @@
 </div>
 </div>
 <div class="section" id="ID76">
-<a class="dashingAutolink" name="autolink-44"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Logical%20Operators"></a><h2>Logical Operators<a class="headerlink" href="BasicOperators.html#ID76" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-50"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Logical%20Operators"></a><h2>Logical Operators<a class="headerlink" href="BasicOperators.html#ID76" title="Permalink to this headline"> </a></h2>
 <p><em>Logical operators</em> modify or combine the Boolean logic values <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code>. Swift supports the three standard logical operators found in C-based languages:</p>
 <ul class="simple">
 <li>Logical NOT (<code class="docutils literal notranslate"><span class="pre">!a</span></code>)</li>

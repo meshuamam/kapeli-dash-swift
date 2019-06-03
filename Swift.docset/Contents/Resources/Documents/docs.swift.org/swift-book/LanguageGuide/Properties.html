@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <a class="dashingAutolink" name="autolink-142"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Properties%20%E2%80%94%20The%20Swift%20Programming%20Language%20%28Swift%205%29"></a><title>Properties &mdash; The Swift Programming Language (Swift 5)</title>
+    <title>Properties &mdash; The Swift Programming Language (Swift 5)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <h1 id="logo">
+      <a class="dashingAutolink" name="autolink-164"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -121,12 +121,12 @@
 
         
   <div class="section" id="properties">
-<h1>Properties<a class="headerlink" href="Properties.html#properties" title="Permalink to this headline"> </a></h1>
+<a class="dashingAutolink" name="autolink-165"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Properties"></a><h1>Properties<a class="headerlink" href="Properties.html#properties" title="Permalink to this headline"> </a></h1>
 <p><em>Properties</em> associate values with a particular class, structure, or enumeration. Stored properties store constant and variable values as part of an instance, whereas computed properties calculate (rather than store) a value. Computed properties are provided by classes, structures, and enumerations. Stored properties are provided only by classes and structures.</p>
 <p>Stored and computed properties are usually associated with instances of a particular type. However, properties can also be associated with the type itself. Such properties are known as type properties.</p>
 <p>In addition, you can define property observers to monitor changes in a property&rsquo;s value, which you can respond to with custom actions. Property observers can be added to stored properties you define yourself, and also to properties that a subclass inherits from its superclass.</p>
 <div class="section" id="ID255">
-<a class="dashingAutolink" name="autolink-143"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Stored%20Properties"></a><h2>Stored Properties<a class="headerlink" href="Properties.html#ID255" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-166"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Stored%20Properties"></a><h2>Stored Properties<a class="headerlink" href="Properties.html#ID255" title="Permalink to this headline"> </a></h2>
 <p>In its simplest form, a stored property is a constant or variable that is stored as part of an instance of a particular class or structure. Stored properties can be either <em>variable stored properties</em> (introduced by the <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword) or <em>constant stored properties</em> (introduced by the <code class="docutils literal notranslate"><span class="pre">let</span></code> keyword).</p>
 <p>You can provide a default value for a stored property as part of its definition, as described in <a class="reference internal" href="Initialization.html#ID206"><span class="std std-ref">Default Property Values</span></a>. You can also set and modify the initial value for a stored property during initialization. This is true even for constant stored properties, as described in <a class="reference internal" href="Initialization.html#ID212"><span class="std std-ref">Assigning Constant Properties During Initialization</span></a>.</p>
 <p>The example below defines a structure called <code class="docutils literal notranslate"><span class="pre">FixedLengthRange</span></code>, which describes a range of integers whose range length cannot be changed after it is created:</p>
@@ -201,7 +201,7 @@
 </div>
 </div>
 <div class="section" id="ID259">
-<a class="dashingAutolink" name="autolink-144"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Computed%20Properties"></a><h2>Computed Properties<a class="headerlink" href="Properties.html#ID259" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-167"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Computed%20Properties"></a><h2>Computed Properties<a class="headerlink" href="Properties.html#ID259" title="Permalink to this headline"> </a></h2>
 <p>In addition to stored properties, classes, structures, and enumerations can define <em>computed properties</em>, which do not actually store a value. Instead, they provide a getter and an optional setter to retrieve and set other properties and values indirectly.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">Point</span> {
 </li><li>    <span class="k">var</span> <span class="nv">x</span> = <span class="m">0.0</span>, <span class="nv">y</span> = <span class="m">0.0</span>
@@ -284,7 +284,7 @@
 </div>
 </div>
 <div class="section" id="ID262">
-<a class="dashingAutolink" name="autolink-145"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Property%20Observers"></a><h2>Property Observers<a class="headerlink" href="Properties.html#ID262" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-168"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Property%20Observers"></a><h2>Property Observers<a class="headerlink" href="Properties.html#ID262" title="Permalink to this headline"> </a></h2>
 <p>Property observers observe and respond to changes in a property&rsquo;s value. Property observers are called every time a property&rsquo;s value is set, even if the new value is the same as the property&rsquo;s current value.</p>
 <p>You can add property observers to any stored properties you define, except for lazy stored properties. You can also add property observers to any inherited property (whether stored or computed) by overriding the property within a subclass. You don&rsquo;t need to define property observers for nonoverridden computed properties, because you can observe and respond to changes to their value in the computed property&rsquo;s setter. Property overriding is described in <a class="reference internal" href="Inheritance.html#ID196"><span class="std std-ref">Overriding</span></a>.</p>
 <p>You have the option to define either or both of these observers on a property:</p>
@@ -333,7 +333,7 @@
 </div>
 </div>
 <div class="section" id="ID263">
-<a class="dashingAutolink" name="autolink-146"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Global%20and%20Local%20Variables"></a><h2>Global and Local Variables<a class="headerlink" href="Properties.html#ID263" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-169"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Global%20and%20Local%20Variables"></a><h2>Global and Local Variables<a class="headerlink" href="Properties.html#ID263" title="Permalink to this headline"> </a></h2>
 <p>The capabilities described above for computing and observing properties are also available to <em>global variables</em> and <em>local variables</em>. Global variables are variables that are defined outside of any function, method, closure, or type context. Local variables are variables that are defined within a function, method, or closure context.</p>
 <p>The global and local variables you have encountered in previous chapters have all been <em>stored variables</em>. Stored variables, like stored properties, provide storage for a value of a certain type and allow that value to be set and retrieved.</p>
 <p>However, you can also define <em>computed variables</em> and define observers for stored variables, in either a global or local scope. Computed variables calculate their value, rather than storing it, and they are written in the same way as computed properties.</p>
@@ -344,7 +344,7 @@
 </div>
 </div>
 <div class="section" id="ID264">
-<a class="dashingAutolink" name="autolink-147"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Properties"></a><h2>Type Properties<a class="headerlink" href="Properties.html#ID264" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-170"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Properties"></a><h2>Type Properties<a class="headerlink" href="Properties.html#ID264" title="Permalink to this headline"> </a></h2>
 <p>Instance properties are properties that belong to an instance of a particular type. Every time you create a new instance of that type, it has its own set of property values, separate from any other instance.</p>
 <p>You can also define properties that belong to the type itself, not to any one instance of that type. There will only ever be one copy of these properties, no matter how many instances of that type you create. These kinds of properties are called <em>type properties</em>.</p>
 <p>Type properties are useful for defining values that are universal to <em>all</em> instances of a particular type, such as a constant property that all instances can use (like a static constant in C), or a variable property that stores a value that is global to all instances of that type (like a static variable in C).</p>

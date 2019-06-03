@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <a class="dashingAutolink" name="autolink-62"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Control%20Flow%20%E2%80%94%20The%20Swift%20Programming%20Language%20%28Swift%205%29"></a><title>Control Flow &mdash; The Swift Programming Language (Swift 5)</title>
+    <title>Control Flow &mdash; The Swift Programming Language (Swift 5)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <h1 id="logo">
+      <a class="dashingAutolink" name="autolink-71"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -135,12 +135,12 @@
 
         
   <div class="section" id="ID462">
-<h1>Control Flow<a class="headerlink" href="ControlFlow.html#ID462" title="Permalink to this headline"> </a></h1>
+<a class="dashingAutolink" name="autolink-72"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Control%20Flow"></a><h1>Control Flow<a class="headerlink" href="ControlFlow.html#ID462" title="Permalink to this headline"> </a></h1>
 <p>Swift provides a variety of control flow statements. These include <code class="docutils literal notranslate"><span class="pre">while</span></code> loops to perform a task multiple times; <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">guard</span></code>, and <code class="docutils literal notranslate"><span class="pre">switch</span></code> statements to execute different branches of code based on certain conditions; and statements such as <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> to transfer the flow of execution to another point in your code.</p>
 <p>Swift also provides a <code class="docutils literal notranslate"><span class="pre">for</span></code>-<code class="docutils literal notranslate"><span class="pre">in</span></code> loop that makes it easy to iterate over arrays, dictionaries, ranges, strings, and other sequences.</p>
 <p>Swift&rsquo;s <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement is considerably more powerful than its counterpart in many C-like languages. Cases can match many different patterns, including interval matches, tuples, and casts to a specific type. Matched values in a <code class="docutils literal notranslate"><span class="pre">switch</span></code> case can be bound to temporary constants or variables for use within the case&rsquo;s body, and complex matching conditions can be expressed with a <code class="docutils literal notranslate"><span class="pre">where</span></code> clause for each case.</p>
 <div class="section" id="ID121">
-<a class="dashingAutolink" name="autolink-63"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/For-In%20Loops"></a><h2>For-In Loops<a class="headerlink" href="ControlFlow.html#ID121" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-73"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/For-In%20Loops"></a><h2>For-In Loops<a class="headerlink" href="ControlFlow.html#ID121" title="Permalink to this headline"> </a></h2>
 <p>You use the <code class="docutils literal notranslate"><span class="pre">for</span></code>-<code class="docutils literal notranslate"><span class="pre">in</span></code> loop to iterate over a sequence, such as items in an array, ranges of numbers, or characters in a string.</p>
 <p>This example uses a <code class="docutils literal notranslate"><span class="pre">for</span></code>-<code class="docutils literal notranslate"><span class="pre">in</span></code> loop to iterate over the items in an array:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">names</span> = [<span class="s">&#34;Anna&#34;</span>, <span class="s">&#34;Alex&#34;</span>, <span class="s">&#34;Brian&#34;</span>, <span class="s">&#34;Jack&#34;</span>]
@@ -206,7 +206,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID124">
-<a class="dashingAutolink" name="autolink-64"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/While%20Loops"></a><h2>While Loops<a class="headerlink" href="ControlFlow.html#ID124" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-74"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/While%20Loops"></a><h2>While Loops<a class="headerlink" href="ControlFlow.html#ID124" title="Permalink to this headline"> </a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">while</span></code> loop performs a set of statements until a condition becomes <code class="docutils literal notranslate"><span class="pre">false</span></code>. These kinds of loops are best used when the number of iterations is not known before the first iteration begins. Swift provides two kinds of <code class="docutils literal notranslate"><span class="pre">while</span></code> loops:</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">while</span></code> evaluates its condition at the start of each pass through the loop.</li>
@@ -301,7 +301,7 @@
 </div>
 </div>
 <div class="section" id="ID127">
-<a class="dashingAutolink" name="autolink-65"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Conditional%20Statements"></a><h2>Conditional Statements<a class="headerlink" href="ControlFlow.html#ID127" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-75"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Conditional%20Statements"></a><h2>Conditional Statements<a class="headerlink" href="ControlFlow.html#ID127" title="Permalink to this headline"> </a></h2>
 <p>It is often useful to execute different pieces of code based on certain conditions. You might want to run an extra piece of code when an error occurs, or to display a message when a value becomes too high or too low. To do this, you make parts of your code <em>conditional</em>.</p>
 <p>Swift provides two ways to add conditional branches to your code: the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement and the <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement. Typically, you use the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to evaluate simple conditions with only a few possible outcomes. The <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement is better suited to more complex conditions with multiple possible permutations and is useful in situations where pattern matching can help select an appropriate code branch to execute.</p>
 <div class="section" id="ID128">
@@ -531,7 +531,7 @@
 </div>
 </div>
 <div class="section" id="ID135">
-<a class="dashingAutolink" name="autolink-66"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Control%20Transfer%20Statements"></a><h2>Control Transfer Statements<a class="headerlink" href="ControlFlow.html#ID135" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-76"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Control%20Transfer%20Statements"></a><h2>Control Transfer Statements<a class="headerlink" href="ControlFlow.html#ID135" title="Permalink to this headline"> </a></h2>
 <p><em>Control transfer statements</em> change the order in which your code is executed, by transferring control from one piece of code to another. Swift has five control transfer statements:</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">continue</span></code></li>
@@ -683,7 +683,7 @@
 </div>
 </div>
 <div class="section" id="ID525">
-<a class="dashingAutolink" name="autolink-67"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Early%20Exit"></a><h2>Early Exit<a class="headerlink" href="ControlFlow.html#ID525" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-77"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Early%20Exit"></a><h2>Early Exit<a class="headerlink" href="ControlFlow.html#ID525" title="Permalink to this headline"> </a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">guard</span></code> statement, like an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, executes statements depending on the Boolean value of an expression. You use a <code class="docutils literal notranslate"><span class="pre">guard</span></code> statement to require that a condition must be true in order for the code after the <code class="docutils literal notranslate"><span class="pre">guard</span></code> statement to be executed. Unlike an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, a <code class="docutils literal notranslate"><span class="pre">guard</span></code> statement always has an <code class="docutils literal notranslate"><span class="pre">else</span></code> clause&mdash;the code inside the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause is executed if the condition is not true.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">func</span> <span class="nv">greet</span>(<span class="nv">person</span>: [<span class="nc">String</span>: <span class="nc">String</span>]) {
 </li><li>    <span class="k">guard</span> <span class="k">let</span> <span class="nv">name</span> = <span class="nv">person</span>[<span class="s">&#34;name&#34;</span>] <span class="k">else</span> {
@@ -712,7 +712,7 @@
 <p>Using a <code class="docutils literal notranslate"><span class="pre">guard</span></code> statement for requirements improves the readability of your code, compared to doing the same check with an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. It lets you write the code that&rsquo;s typically executed without wrapping it in an <code class="docutils literal notranslate"><span class="pre">else</span></code> block, and it lets you keep the code that handles a violated requirement next to the requirement.</p>
 </div>
 <div class="section" id="ID523">
-<a class="dashingAutolink" name="autolink-68"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Checking%20API%20Availability"></a><h2>Checking API Availability<a class="headerlink" href="ControlFlow.html#ID523" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-78"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Checking%20API%20Availability"></a><h2>Checking API Availability<a class="headerlink" href="ControlFlow.html#ID523" title="Permalink to this headline"> </a></h2>
 <p>Swift has built-in support for checking API availability, which ensures that you don&rsquo;t accidentally use APIs that are unavailable on a given deployment target.</p>
 <p>The compiler uses availability information in the SDK to verify that all of the APIs used in your code are available on the deployment target specified by your project. Swift reports an error at compile time if you try to use an API that isn&rsquo;t available.</p>
 <p>You use an <em>availability condition</em> in an <code class="docutils literal notranslate"><span class="pre">if</span></code> or <code class="docutils literal notranslate"><span class="pre">guard</span></code> statement to conditionally execute a block of code, depending on whether the APIs you want to use are available at runtime. The compiler uses the information from the availability condition when it verifies that the APIs in that block of code are available.</p>

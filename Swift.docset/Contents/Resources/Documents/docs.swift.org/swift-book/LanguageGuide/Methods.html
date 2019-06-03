@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <a class="dashingAutolink" name="autolink-128"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Methods%20%E2%80%94%20The%20Swift%20Programming%20Language%20%28Swift%205%29"></a><title>Methods &mdash; The Swift Programming Language (Swift 5)</title>
+    <title>Methods &mdash; The Swift Programming Language (Swift 5)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <h1 id="logo">
+      <a class="dashingAutolink" name="autolink-147"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -110,11 +110,11 @@
 
         
   <div class="section" id="methods">
-<h1>Methods<a class="headerlink" href="Methods.html#methods" title="Permalink to this headline"> </a></h1>
+<a class="dashingAutolink" name="autolink-148"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Methods"></a><h1>Methods<a class="headerlink" href="Methods.html#methods" title="Permalink to this headline"> </a></h1>
 <p><em>Methods</em> are functions that are associated with a particular type. Classes, structures, and enumerations can all define instance methods, which encapsulate specific tasks and functionality for working with an instance of a given type. Classes, structures, and enumerations can also define type methods, which are associated with the type itself. Type methods are similar to class methods in Objective-C.</p>
 <p>The fact that structures and enumerations can define methods in Swift is a major difference from C and Objective-C. In Objective-C, classes are the only types that can define methods. In Swift, you can choose whether to define a class, structure, or enumeration, and still have the flexibility to define methods on the type you create.</p>
 <div class="section" id="ID235">
-<a class="dashingAutolink" name="autolink-129"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Instance%20Methods"></a><h2>Instance Methods<a class="headerlink" href="Methods.html#ID235" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-149"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Instance%20Methods"></a><h2>Instance Methods<a class="headerlink" href="Methods.html#ID235" title="Permalink to this headline"> </a></h2>
 <p><em>Instance methods</em> are functions that belong to instances of a particular class, structure, or enumeration. They support the functionality of those instances, either by providing ways to access and modify instance properties, or by providing functionality related to the instance&rsquo;s purpose. Instance methods have exactly the same syntax as functions, as described in <a class="reference internal" href="Functions.html"><span class="doc">Functions</span></a>.</p>
 <p>You write an instance method within the opening and closing braces of the type it belongs to. An instance method has implicit access to all other instance methods and properties of that type. An instance method can be called only on a specific instance of the type it belongs to. It cannot be called in isolation without an existing instance.</p>
 <p>Here&rsquo;s an example that defines a simple <code class="docutils literal notranslate"><span class="pre">Counter</span></code> class, which can be used to count the number of times an action occurs:</p>
@@ -233,7 +233,7 @@
 </div>
 </div>
 <div class="section" id="ID241">
-<a class="dashingAutolink" name="autolink-130"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Methods"></a><h2>Type Methods<a class="headerlink" href="Methods.html#ID241" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-150"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Methods"></a><h2>Type Methods<a class="headerlink" href="Methods.html#ID241" title="Permalink to this headline"> </a></h2>
 <p>Instance methods, as described above, are methods that are called on an instance of a particular type. You can also define methods that are called on the type itself. These kinds of methods are called <em>type methods</em>. You indicate type methods by writing the <code class="docutils literal notranslate"><span class="pre">static</span></code> keyword before the method&rsquo;s <code class="docutils literal notranslate"><span class="pre">func</span></code> keyword. Classes may also use the <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword to allow subclasses to override the superclass&rsquo;s implementation of that method.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>

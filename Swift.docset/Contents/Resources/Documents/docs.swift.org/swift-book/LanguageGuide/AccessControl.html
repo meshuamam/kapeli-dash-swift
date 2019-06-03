@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <a class="dashingAutolink" name="autolink-10"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Access%20Control%20%E2%80%94%20The%20Swift%20Programming%20Language%20%28Swift%205%29"></a><title>Access Control &mdash; The Swift Programming Language (Swift 5)</title>
+    <title>Access Control &mdash; The Swift Programming Language (Swift 5)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <h1 id="logo">
+      <a class="dashingAutolink" name="autolink-12"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -144,7 +144,7 @@
 
         
   <div class="section" id="access-control">
-<h1>Access Control<a class="headerlink" href="AccessControl.html#access-control" title="Permalink to this headline"> </a></h1>
+<a class="dashingAutolink" name="autolink-13"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Access%20Control"></a><h1>Access Control<a class="headerlink" href="AccessControl.html#access-control" title="Permalink to this headline"> </a></h1>
 <p><em>Access control</em> restricts access to parts of your code from code in other source files and modules. This feature enables you to hide the implementation details of your code, and to specify a preferred interface through which that code can be accessed and used.</p>
 <p>You can assign specific access levels to individual types (classes, structures, and enumerations), as well as to properties, methods, initializers, and subscripts belonging to those types. Protocols can be restricted to a certain context, as can global constants, variables, and functions.</p>
 <p>In addition to offering various levels of access control, Swift reduces the need to specify explicit access control levels by providing default access levels for typical scenarios. Indeed, if you are writing a single-target app, you may not need to specify explicit access control levels at all.</p>
@@ -153,14 +153,14 @@
 <p class="last">The various aspects of your code that can have access control applied to them (properties, types, functions, and so on) are referred to as &ldquo;entities&rdquo; in the sections below, for brevity.</p>
 </div>
 <div class="section" id="ID4">
-<a class="dashingAutolink" name="autolink-11"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Modules%20and%20Source%20Files"></a><h2>Modules and Source Files<a class="headerlink" href="AccessControl.html#ID4" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-14"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Modules%20and%20Source%20Files"></a><h2>Modules and Source Files<a class="headerlink" href="AccessControl.html#ID4" title="Permalink to this headline"> </a></h2>
 <p>Swift&rsquo;s access control model is based on the concept of modules and source files.</p>
 <p>A <em>module</em> is a single unit of code distribution&mdash;a framework or application that is built and shipped as a single unit and that can be imported by another module with Swift&rsquo;s <code class="docutils literal notranslate"><span class="pre">import</span></code> keyword.</p>
 <p>Each build target (such as an app bundle or framework) in Xcode is treated as a separate module in Swift. If you group together aspects of your app&rsquo;s code as a stand-alone framework&mdash;perhaps to encapsulate and reuse that code across multiple applications&mdash;then everything you define within that framework will be part of a separate module when it&rsquo;s imported and used within an app, or when it&rsquo;s used within another framework.</p>
 <p>A <em>source file</em> is a single Swift source code file within a module (in effect, a single file within an app or framework). Although it&rsquo;s common to define individual types in separate source files, a single source file can contain definitions for multiple types, functions, and so on.</p>
 </div>
 <div class="section" id="ID5">
-<a class="dashingAutolink" name="autolink-12"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Access%20Levels"></a><h2>Access Levels<a class="headerlink" href="AccessControl.html#ID5" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-15"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Access%20Levels"></a><h2>Access Levels<a class="headerlink" href="AccessControl.html#ID5" title="Permalink to this headline"> </a></h2>
 <p>Swift provides five different <em>access levels</em> for entities within your code. These access levels are relative to the source file in which an entity is defined, and also relative to the module that source file belongs to.</p>
 <ul class="simple">
 <li><em>Open access</em> and <em>public access</em> enable entities to be used within any source file from their defining module, and also in a source file from another module that imports the defining module. You typically use open or public access when specifying the public interface to a framework. The difference between open and public access is described below.</li>
@@ -209,7 +209,7 @@
 </div>
 </div>
 <div class="section" id="ID10">
-<a class="dashingAutolink" name="autolink-13"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Access%20Control%20Syntax"></a><h2>Access Control Syntax<a class="headerlink" href="AccessControl.html#ID10" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-16"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Access%20Control%20Syntax"></a><h2>Access Control Syntax<a class="headerlink" href="AccessControl.html#ID10" title="Permalink to this headline"> </a></h2>
 <p>Define the access level for an entity by placing one of the <code class="docutils literal notranslate"><span class="pre">open</span></code>, <code class="docutils literal notranslate"><span class="pre">public</span></code>, <code class="docutils literal notranslate"><span class="pre">internal</span></code>, <code class="docutils literal notranslate"><span class="pre">fileprivate</span></code>, or <code class="docutils literal notranslate"><span class="pre">private</span></code> modifiers before the entity&rsquo;s introducer:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">public</span> <span class="k">class</span> <span class="nv">SomePublicClass</span> {}
 </li><li><span class="k">internal</span> <span class="k">class</span> <span class="nv">SomeInternalClass</span> {}
@@ -227,7 +227,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID11">
-<a class="dashingAutolink" name="autolink-14"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Custom%20Types"></a><h2>Custom Types<a class="headerlink" href="AccessControl.html#ID11" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-17"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Custom%20Types"></a><h2>Custom Types<a class="headerlink" href="AccessControl.html#ID11" title="Permalink to this headline"> </a></h2>
 <p>If you want to specify an explicit access level for a custom type, do so at the point that you define the type. The new type can then be used wherever its access level permits. For example, if you define a file-private class, that class can only be used as the type of a property, or as a function parameter or return type, in the source file in which the file-private class is defined.</p>
 <p>The access control level of a type also affects the default access level of that type&rsquo;s <em>members</em> (its properties, methods, initializers, and subscripts). If you define a type&rsquo;s access level as private or file private, the default access level of its members will also be private or file private. If you define a type&rsquo;s access level as internal or public (or use the default access level of internal without specifying an access level explicitly), the default access level of the type&rsquo;s members will be internal.</p>
 <div class="admonition important">
@@ -302,7 +302,7 @@
 </div>
 </div>
 <div class="section" id="ID16">
-<a class="dashingAutolink" name="autolink-15"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Subclassing"></a><h2>Subclassing<a class="headerlink" href="AccessControl.html#ID16" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-18"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Subclassing"></a><h2>Subclassing<a class="headerlink" href="AccessControl.html#ID16" title="Permalink to this headline"> </a></h2>
 <p>You can subclass any class that can be accessed in the current access context. A subclass can&rsquo;t have a higher access level than its superclass&mdash;for example, you can&rsquo;t write a public subclass of an internal superclass.</p>
 <p>In addition, you can override any class member (method, property, initializer, or subscript) that is visible in a certain access context.</p>
 <p>An override can make an inherited class member more accessible than its superclass version. In the example below, class <code class="docutils literal notranslate"><span class="pre">A</span></code> is a public class with a file-private method called <code class="docutils literal notranslate"><span class="pre">someMethod()</span></code>. Class <code class="docutils literal notranslate"><span class="pre">B</span></code> is a subclass of <code class="docutils literal notranslate"><span class="pre">A</span></code>, with a reduced access level of &ldquo;internal&rdquo;. Nonetheless, class <code class="docutils literal notranslate"><span class="pre">B</span></code> provides an override of <code class="docutils literal notranslate"><span class="pre">someMethod()</span></code> with an access level of &ldquo;internal&rdquo;, which is <em>higher</em> than the original implementation of <code class="docutils literal notranslate"><span class="pre">someMethod()</span></code>:</p>
@@ -328,7 +328,7 @@
 <p>Because superclass <code class="docutils literal notranslate"><span class="pre">A</span></code> and subclass <code class="docutils literal notranslate"><span class="pre">B</span></code> are defined in the same source file, it&rsquo;s valid for the <code class="docutils literal notranslate"><span class="pre">B</span></code> implementation of <code class="docutils literal notranslate"><span class="pre">someMethod()</span></code> to call <code class="docutils literal notranslate"><span class="pre">super.someMethod()</span></code>.</p>
 </div>
 <div class="section" id="ID17">
-<a class="dashingAutolink" name="autolink-16"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Constants%2C%20Variables%2C%20Properties%2C%20and%20Subscripts"></a><h2>Constants, Variables, Properties, and Subscripts<a class="headerlink" href="AccessControl.html#ID17" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-19"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Constants%2C%20Variables%2C%20Properties%2C%20and%20Subscripts"></a><h2>Constants, Variables, Properties, and Subscripts<a class="headerlink" href="AccessControl.html#ID17" title="Permalink to this headline"> </a></h2>
 <p>A constant, variable, or property can&rsquo;t be more public than its type. It&rsquo;s not valid to write a public property with a private type, for example. Similarly, a subscript can&rsquo;t be more public than either its index type or return type.</p>
 <p>If a constant, variable, property, or subscript makes use of a private type, the constant, variable, property, or subscript must also be marked as <code class="docutils literal notranslate"><span class="pre">private</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">private</span> <span class="k">var</span> <span class="nv">privateInstance</span> = <span class="nv">SomePrivateClass</span>()
@@ -376,7 +376,7 @@
 </div>
 </div>
 <div class="section" id="ID19">
-<a class="dashingAutolink" name="autolink-17"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Initializers"></a><h2>Initializers<a class="headerlink" href="AccessControl.html#ID19" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-20"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Initializers"></a><h2>Initializers<a class="headerlink" href="AccessControl.html#ID19" title="Permalink to this headline"> </a></h2>
 <p>Custom initializers can be assigned an access level less than or equal to the type that they initialize. The only exception is for required initializers (as defined in <a class="reference internal" href="Initialization.html#ID231"><span class="std std-ref">Required Initializers</span></a>). A required initializer must have the same access level as the class it belongs to.</p>
 <p>As with function and method parameters, the types of an initializer&rsquo;s parameters can&rsquo;t be more private than the initializer&rsquo;s own access level.</p>
 <div class="section" id="ID20">
@@ -391,7 +391,7 @@
 </div>
 </div>
 <div class="section" id="ID22">
-<a class="dashingAutolink" name="autolink-18"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Protocols"></a><h2>Protocols<a class="headerlink" href="AccessControl.html#ID22" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-21"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Protocols"></a><h2>Protocols<a class="headerlink" href="AccessControl.html#ID22" title="Permalink to this headline"> </a></h2>
 <p>If you want to assign an explicit access level to a protocol type, do so at the point that you define the protocol. This enables you to create protocols that can only be adopted within a certain access context.</p>
 <p>The access level of each requirement within a protocol definition is automatically set to the same access level as the protocol. You can&rsquo;t set a protocol requirement to a different access level than the protocol it supports. This ensures that all of the protocol&rsquo;s requirements will be visible on any type that adopts the protocol.</p>
 <div class="admonition note">
@@ -414,7 +414,7 @@
 </div>
 </div>
 <div class="section" id="ID25">
-<a class="dashingAutolink" name="autolink-19"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Extensions"></a><h2>Extensions<a class="headerlink" href="AccessControl.html#ID25" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-22"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Extensions"></a><h2>Extensions<a class="headerlink" href="AccessControl.html#ID25" title="Permalink to this headline"> </a></h2>
 <p>You can extend a class, structure, or enumeration in any access context in which the class, structure, or enumeration is available. Any type members added in an extension have the same default access level as type members declared in the original type being extended. If you extend a public or internal type, any new type members you add have a default access level of internal. If you extend a file-private type, any new type members you add have a default access level of file private. If you extend a private type, any new type members you add have a default access level of private.</p>
 <p>Alternatively, you can mark an extension with an explicit access-level modifier (for example, <code class="docutils literal notranslate"><span class="pre">private</span> <span class="pre">extension</span></code>) to set a new default access level for all members defined within the extension. This new default can still be overridden within the extension for individual type members.</p>
 <p>You can&rsquo;t provide an explicit access-level modifier for an extension if you&rsquo;re using that extension to add protocol conformance. Instead, the protocol&rsquo;s own access level is used to provide the default access level for each protocol requirement implementation within the extension.</p>
@@ -445,11 +445,11 @@
 </div>
 </div>
 <div class="section" id="ID26">
-<a class="dashingAutolink" name="autolink-20"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Generics"></a><h2>Generics<a class="headerlink" href="AccessControl.html#ID26" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-23"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Generics"></a><h2>Generics<a class="headerlink" href="AccessControl.html#ID26" title="Permalink to this headline"> </a></h2>
 <p>The access level for a generic type or generic function is the minimum of the access level of the generic type or function itself and the access level of any type constraints on its type parameters.</p>
 </div>
 <div class="section" id="ID27">
-<a class="dashingAutolink" name="autolink-21"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Aliases"></a><h2>Type Aliases<a class="headerlink" href="AccessControl.html#ID27" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-24"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Aliases"></a><h2>Type Aliases<a class="headerlink" href="AccessControl.html#ID27" title="Permalink to this headline"> </a></h2>
 <p>Any type aliases you define are treated as distinct types for the purposes of access control. A type alias can have an access level less than or equal to the access level of the type it aliases. For example, a private type alias can alias a private, file-private, internal, public, or open type, but a public type alias can&rsquo;t alias an internal, file-private, or private type.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>

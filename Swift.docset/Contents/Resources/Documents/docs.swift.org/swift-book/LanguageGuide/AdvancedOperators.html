@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <a class="dashingAutolink" name="autolink-22"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Advanced%20Operators%20%E2%80%94%20The%20Swift%20Programming%20Language%20%28Swift%205%29"></a><title>Advanced Operators &mdash; The Swift Programming Language (Swift 5)</title>
+    <title>Advanced Operators &mdash; The Swift Programming Language (Swift 5)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <h1 id="logo">
+      <a class="dashingAutolink" name="autolink-25"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -130,13 +130,13 @@
 
         
   <div class="section" id="advanced-operators">
-<h1>Advanced Operators<a class="headerlink" href="AdvancedOperators.html#advanced-operators" title="Permalink to this headline"> </a></h1>
+<a class="dashingAutolink" name="autolink-26"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Advanced%20Operators"></a><h1>Advanced Operators<a class="headerlink" href="AdvancedOperators.html#advanced-operators" title="Permalink to this headline"> </a></h1>
 <p>In addition to the operators described in <a class="reference internal" href="BasicOperators.html"><span class="doc">Basic Operators</span></a>, Swift provides several advanced operators that perform more complex value manipulation. These include all of the bitwise and bit shifting operators you will be familiar with from C and Objective-C.</p>
 <p>Unlike arithmetic operators in C, arithmetic operators in Swift do not overflow by default. Overflow behavior is trapped and reported as an error. To opt in to overflow behavior, use Swift&rsquo;s second set of arithmetic operators that overflow by default, such as the overflow addition operator (<code class="docutils literal notranslate"><span class="pre">&amp;+</span></code>). All of these overflow operators begin with an ampersand (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>).</p>
 <p>When you define your own structures, classes, and enumerations, it can be useful to provide your own implementations of the standard Swift operators for these custom types. Swift makes it easy to provide tailored implementations of these operators and to determine exactly what their behavior should be for each type you create.</p>
 <p>You&rsquo;re not limited to the predefined operators. Swift gives you the freedom to define your own custom infix, prefix, postfix, and assignment operators, with custom precedence and associativity values. These operators can be used and adopted in your code like any of the predefined operators, and you can even extend existing types to support the custom operators you define.</p>
 <div class="section" id="ID29">
-<a class="dashingAutolink" name="autolink-23"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Bitwise%20Operators"></a><h2>Bitwise Operators<a class="headerlink" href="AdvancedOperators.html#ID29" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-27"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Bitwise%20Operators"></a><h2>Bitwise Operators<a class="headerlink" href="AdvancedOperators.html#ID29" title="Permalink to this headline"> </a></h2>
 <p><em>Bitwise operators</em> enable you to manipulate the individual raw data bits within a data structure. They are often used in low-level programming, such as graphics programming and device driver creation. Bitwise operators can also be useful when you work with raw data from external sources, such as encoding and decoding data for communication over a custom protocol.</p>
 <p>Swift supports all of the bitwise operators found in C, as described below.</p>
 <div class="section" id="ID30">
@@ -238,7 +238,7 @@
 </div>
 </div>
 <div class="section" id="ID37">
-<a class="dashingAutolink" name="autolink-24"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Overflow%20Operators"></a><h2>Overflow Operators<a class="headerlink" href="AdvancedOperators.html#ID37" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-28"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Overflow%20Operators"></a><h2>Overflow Operators<a class="headerlink" href="AdvancedOperators.html#ID37" title="Permalink to this headline"> </a></h2>
 <p>If you try to insert a number into an integer constant or variable that cannot hold that value, by default Swift reports an error rather than allowing an invalid value to be created. This behavior gives extra safety when you work with numbers that are too large or too small.</p>
 <p>For example, the <code class="docutils literal notranslate"><span class="pre">Int16</span></code> integer type can hold any signed integer between <code class="docutils literal notranslate"><span class="pre">-32768</span></code> and <code class="docutils literal notranslate"><span class="pre">32767</span></code>. Trying to set an <code class="docutils literal notranslate"><span class="pre">Int16</span></code> constant or variable to a number outside of this range causes an error:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">potentialOverflow</span> = <span class="nv">Int16</span>.<span class="nv">max</span>
@@ -284,7 +284,7 @@
 </div>
 </div>
 <div class="section" id="ID41">
-<a class="dashingAutolink" name="autolink-25"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Precedence%20and%20Associativity"></a><h2>Precedence and Associativity<a class="headerlink" href="AdvancedOperators.html#ID41" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-29"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Precedence%20and%20Associativity"></a><h2>Precedence and Associativity<a class="headerlink" href="AdvancedOperators.html#ID41" title="Permalink to this headline"> </a></h2>
 <p>Operator <em>precedence</em> gives some operators higher priority than others; these operators are applied first.</p>
 <p>Operator <em>associativity</em> defines how operators of the same precedence are grouped together&mdash;either grouped from the left, or grouped from the right. Think of it as meaning &ldquo;they associate with the expression to their left,&rdquo; or &ldquo;they associate with the expression to their right.&rdquo;</p>
 <p>It is important to consider each operator&rsquo;s precedence and associativity when working out the order in which a compound expression will be calculated. For example, operator precedence explains why the following expression equals <code class="docutils literal notranslate"><span class="pre">17</span></code>.</p>
@@ -315,7 +315,7 @@
 </div>
 </div>
 <div class="section" id="ID42">
-<a class="dashingAutolink" name="autolink-26"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Operator%20Methods"></a><h2>Operator Methods<a class="headerlink" href="AdvancedOperators.html#ID42" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-30"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Operator%20Methods"></a><h2>Operator Methods<a class="headerlink" href="AdvancedOperators.html#ID42" title="Permalink to this headline"> </a></h2>
 <p>Classes and structures can provide their own implementations of existing operators. This is known as <em>overloading</em> the existing operators.</p>
 <p>The example below shows how to implement the arithmetic addition operator (<code class="docutils literal notranslate"><span class="pre">+</span></code>) for a custom structure. The arithmetic addition operator is a <em>binary operator</em> because it operates on two targets and is said to be <em>infix</em> because it appears in between those two targets.</p>
 <p>The example defines a <code class="docutils literal notranslate"><span class="pre">Vector2D</span></code> structure for a two-dimensional position vector <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code>, followed by a definition of an <em>operator method</em> to add together instances of the <code class="docutils literal notranslate"><span class="pre">Vector2D</span></code> structure:</p>
@@ -420,7 +420,7 @@
 </div>
 </div>
 <div class="section" id="ID46">
-<a class="dashingAutolink" name="autolink-27"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Custom%20Operators"></a><h2>Custom Operators<a class="headerlink" href="AdvancedOperators.html#ID46" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-31"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Custom%20Operators"></a><h2>Custom Operators<a class="headerlink" href="AdvancedOperators.html#ID46" title="Permalink to this headline"> </a></h2>
 <p>You can declare and implement your own <em>custom operators</em> in addition to the standard operators provided by Swift. For a list of characters that can be used to define custom operators, see <a class="reference internal" href="../ReferenceManual/LexicalStructure.html#ID418"><span class="std std-ref">Operators</span></a>.</p>
 <p>New operators are declared at a global level using the <code class="docutils literal notranslate"><span class="pre">operator</span></code> keyword, and are marked with the <code class="docutils literal notranslate"><span class="pre">prefix</span></code>, <code class="docutils literal notranslate"><span class="pre">infix</span></code> or <code class="docutils literal notranslate"><span class="pre">postfix</span></code> modifiers:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">prefix</span> <span class="k">operator</span> +++

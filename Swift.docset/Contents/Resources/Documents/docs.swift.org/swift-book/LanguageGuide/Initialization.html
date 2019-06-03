@@ -3,7 +3,7 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <a class="dashingAutolink" name="autolink-114"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Initialization%20%E2%80%94%20The%20Swift%20Programming%20Language%20%28Swift%205%29"></a><title>Initialization &mdash; The Swift Programming Language (Swift 5)</title>
+    <title>Initialization &mdash; The Swift Programming Language (Swift 5)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <h1 id="logo">
+      <a class="dashingAutolink" name="autolink-131"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -141,12 +141,12 @@
 
         
   <div class="section" id="initialization">
-<h1>Initialization<a class="headerlink" href="Initialization.html#initialization" title="Permalink to this headline"> </a></h1>
+<a class="dashingAutolink" name="autolink-132"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Initialization"></a><h1>Initialization<a class="headerlink" href="Initialization.html#initialization" title="Permalink to this headline"> </a></h1>
 <p><em>Initialization</em> is the process of preparing an instance of a class, structure, or enumeration for use. This process involves setting an initial value for each stored property on that instance and performing any other setup or initialization that is required before the new instance is ready for use.</p>
 <p>You implement this initialization process by defining <em>initializers</em>, which are like special methods that can be called to create a new instance of a particular type. Unlike Objective-C initializers, Swift initializers do not return a value. Their primary role is to ensure that new instances of a type are correctly initialized before they are used for the first time.</p>
 <p>Instances of class types can also implement a <em>deinitializer</em>, which performs any custom cleanup just before an instance of that class is deallocated. For more information about deinitializers, see <a class="reference internal" href="Deinitialization.html"><span class="doc">Deinitialization</span></a>.</p>
 <div class="section" id="ID204">
-<a class="dashingAutolink" name="autolink-115"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Setting%20Initial%20Values%20for%20Stored%20Properties"></a><h2>Setting Initial Values for Stored Properties<a class="headerlink" href="Initialization.html#ID204" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-133"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Setting%20Initial%20Values%20for%20Stored%20Properties"></a><h2>Setting Initial Values for Stored Properties<a class="headerlink" href="Initialization.html#ID204" title="Permalink to this headline"> </a></h2>
 <p>Classes and structures <em>must</em> set all of their stored properties to an appropriate initial value by the time an instance of that class or structure is created. Stored properties cannot be left in an indeterminate state.</p>
 <p>You can set an initial value for a stored property within an initializer, or by assigning a default property value as part of the property&rsquo;s definition. These actions are described in the following sections.</p>
 <div class="admonition note">
@@ -188,7 +188,7 @@
 </div>
 </div>
 <div class="section" id="ID207">
-<a class="dashingAutolink" name="autolink-116"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Customizing%20Initialization"></a><h2>Customizing Initialization<a class="headerlink" href="Initialization.html#ID207" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-134"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Customizing%20Initialization"></a><h2>Customizing Initialization<a class="headerlink" href="Initialization.html#ID207" title="Permalink to this headline"> </a></h2>
 <p>You can customize the initialization process with input parameters and optional property types, or by assigning constant properties during initialization, as described in the following sections.</p>
 <div class="section" id="ID208">
 <h3>Initialization Parameters<a class="headerlink" href="Initialization.html#ID208" title="Permalink to this headline"> </a></h3>
@@ -307,7 +307,7 @@
 </div>
 </div>
 <div class="section" id="ID213">
-<a class="dashingAutolink" name="autolink-117"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Default%20Initializers"></a><h2>Default Initializers<a class="headerlink" href="Initialization.html#ID213" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-135"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Default%20Initializers"></a><h2>Default Initializers<a class="headerlink" href="Initialization.html#ID213" title="Permalink to this headline"> </a></h2>
 <p>Swift provides a <em>default initializer</em> for any structure or class that provides default values for all of its properties and does not provide at least one initializer itself. The default initializer simply creates a new instance with all of its properties set to their default values.</p>
 <p>This example defines a class called <code class="docutils literal notranslate"><span class="pre">ShoppingListItem</span></code>, which encapsulates the name, quantity, and purchase state of an item in a shopping list:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">ShoppingListItem</span> {
@@ -332,7 +332,7 @@
 </div>
 </div>
 <div class="section" id="ID215">
-<a class="dashingAutolink" name="autolink-118"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Initializer%20Delegation%20for%20Value%20Types"></a><h2>Initializer Delegation for Value Types<a class="headerlink" href="Initialization.html#ID215" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-136"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Initializer%20Delegation%20for%20Value%20Types"></a><h2>Initializer Delegation for Value Types<a class="headerlink" href="Initialization.html#ID215" title="Permalink to this headline"> </a></h2>
 <p>Initializers can call other initializers to perform part of an instance&rsquo;s initialization. This process, known as <em>initializer delegation</em>, avoids duplicating code across multiple initializers.</p>
 <p>The rules for how initializer delegation works, and for what forms of delegation are allowed, are different for value types and class types. Value types (structures and enumerations) do not support inheritance, and so their initializer delegation process is relatively simple, because they can only delegate to another initializer that they provide themselves. Classes, however, can inherit from other classes, as described in <a class="reference internal" href="Inheritance.html"><span class="doc">Inheritance</span></a>. This means that classes have additional responsibilities for ensuring that all stored properties they inherit are assigned a suitable value during initialization. These responsibilities are described in <a class="reference internal" href="Initialization.html#ID216"><span class="std std-ref">Class Inheritance and Initialization</span></a> below.</p>
 <p>For value types, you use <code class="docutils literal notranslate"><span class="pre">self.init</span></code> to refer to other initializers from the same value type when writing your own custom initializers. You can call <code class="docutils literal notranslate"><span class="pre">self.init</span></code> only from within an initializer.</p>
@@ -386,7 +386,7 @@
 </div>
 </div>
 <div class="section" id="ID216">
-<a class="dashingAutolink" name="autolink-119"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Class%20Inheritance%20and%20Initialization"></a><h2>Class Inheritance and Initialization<a class="headerlink" href="Initialization.html#ID216" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-137"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Class%20Inheritance%20and%20Initialization"></a><h2>Class Inheritance and Initialization<a class="headerlink" href="Initialization.html#ID216" title="Permalink to this headline"> </a></h2>
 <p>All of a class&rsquo;s stored properties&mdash;including any properties the class inherits from its superclass&mdash;<em>must</em> be assigned an initial value during initialization.</p>
 <p>Swift defines two kinds of initializers for class types to help ensure all stored properties receive an initial value. These are known as designated initializers and convenience initializers.</p>
 <div class="section" id="ID217">
@@ -655,7 +655,7 @@
 </div>
 </div>
 <div class="section" id="ID224">
-<a class="dashingAutolink" name="autolink-120"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Failable%20Initializers"></a><h2>Failable Initializers<a class="headerlink" href="Initialization.html#ID224" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-138"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Failable%20Initializers"></a><h2>Failable Initializers<a class="headerlink" href="Initialization.html#ID224" title="Permalink to this headline"> </a></h2>
 <p>It is sometimes useful to define a class, structure, or enumeration for which initialization can fail. This failure might be triggered by invalid initialization parameter values, the absence of a required external resource, or some other condition that prevents initialization from succeeding.</p>
 <p>To cope with initialization conditions that can fail, define one or more failable initializers as part of a class, structure, or enumeration definition. You write a failable initializer by placing a question mark after the <code class="docutils literal notranslate"><span class="pre">init</span></code> keyword (<code class="docutils literal notranslate"><span class="pre">init?</span></code>).</p>
 <div class="admonition note">
@@ -873,7 +873,7 @@
 </div>
 </div>
 <div class="section" id="ID231">
-<a class="dashingAutolink" name="autolink-121"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Required%20Initializers"></a><h2>Required Initializers<a class="headerlink" href="Initialization.html#ID231" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-139"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Required%20Initializers"></a><h2>Required Initializers<a class="headerlink" href="Initialization.html#ID231" title="Permalink to this headline"> </a></h2>
 <p>Write the <code class="docutils literal notranslate"><span class="pre">required</span></code> modifier before the definition of a class initializer to indicate that every subclass of the class must implement that initializer:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">SomeClass</span> {
 </li><li>    <span class="k">required</span> <span class="k">init</span>() {
@@ -894,7 +894,7 @@
 </div>
 </div>
 <div class="section" id="ID232">
-<a class="dashingAutolink" name="autolink-122"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Setting%20a%20Default%20Property%20Value%20with%20a%20Closure%20or%20Function"></a><h2>Setting a Default Property Value with a Closure or Function<a class="headerlink" href="Initialization.html#ID232" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-140"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Setting%20a%20Default%20Property%20Value%20with%20a%20Closure%20or%20Function"></a><h2>Setting a Default Property Value with a Closure or Function<a class="headerlink" href="Initialization.html#ID232" title="Permalink to this headline"> </a></h2>
 <p>If a stored property&rsquo;s default value requires some customization or setup, you can use a closure or global function to provide a customized default value for that property. Whenever a new instance of the type that the property belongs to is initialized, the closure or function is called, and its return value is assigned as the property&rsquo;s default value.</p>
 <p>These kinds of closures or functions typically create a temporary value of the same type as the property, tailor that value to represent the desired initial state, and then return that temporary value to be used as the property&rsquo;s default value.</p>
 <p>Here&rsquo;s a skeleton outline of how a closure can be used to provide a default property value:</p>

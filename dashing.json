@@ -3,8 +3,8 @@
     "package": "Swift",
     "index": "./docs.swift.org/swift-book/LanguageGuide/TheBasics.html",
     "selectors": {
-        "title": "Guide",
-		".section .section h2": "Section"
+        "h1": "Guide",
+        "article .section h2": "Section"
     },
     "ignore": [
         "ABOUT"
