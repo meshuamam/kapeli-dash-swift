@@ -3,12 +3,12 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>Error Handling &mdash; The Swift Programming Language (Swift 5)</title>
+    <title>Error Handling &mdash; The Swift Programming Language (Swift 5.1)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css"/>
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico"/>
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://docs.swift.org/favicon.ico"/>
     <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png"/>
     <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png"/>
     <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <a class="dashingAutolink" name="autolink-91"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
+      <a class="dashingAutolink" name="autolink-79"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -34,11 +34,11 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.1</div></h2>
 
     <ul>
     <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to Swift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/">Welcome to Swift</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="TheBasics.html">Language Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="TheBasics.html">The Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BasicOperators.html">Basic Operators</a></li>
@@ -47,7 +47,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ControlFlow.html">Control Flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Functions.html">Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Closures.html">Closures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Enumerations.html">Enumeration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Enumerations.html">Enumerations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ClassesAndStructures.html">Structures and Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Properties.html">Properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Methods.html">Methods</a></li>
@@ -62,14 +62,15 @@
 <li class="toctree-l2"><a class="reference internal" href="Extensions.html">Extensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Protocols.html">Protocols</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Generics.html">Generics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpaqueTypes.html">Opaque Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AutomaticReferenceCounting.html">Automatic Reference Counting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MemorySafety.html">Memory Safety</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AccessControl.html">Access Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AdvancedOperators.html">Advanced Operators</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../ReferenceManual/AboutTheLanguageReference.html">Language Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RevisionHistory/RevisionHistory.html">Revision History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/ReferenceManual/AboutTheLanguageReference.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html">Revision History</a></li>
 </ul>
 
     <li class="toctree-l1 return"><a class="reference internal" href="https://swift.org/">&larr; Return to Swift.org</a></li>
@@ -112,7 +113,7 @@
 
         
   <div class="section" id="error-handling">
-<a class="dashingAutolink" name="autolink-92"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Error%20Handling"></a><h1>Error Handling<a class="headerlink" href="ErrorHandling.html#error-handling" title="Permalink to this headline"> </a></h1>
+<a class="dashingAutolink" name="autolink-80"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Error%20Handling"></a><h1>Error Handling<a class="headerlink" href="ErrorHandling.html#error-handling" title="Permalink to this headline"></a></h1>
 <p><em>Error handling</em> is the process of responding to and recovering from error conditions in your program. Swift provides first-class support for throwing, catching, propagating, and manipulating recoverable errors at runtime.</p>
 <p>Some operations aren&rsquo;t guaranteed to always complete execution or produce a useful output. Optionals are used to represent the absence of a value, but when an operation fails, it&rsquo;s often useful to understand what caused the failure, so that your code can respond accordingly.</p>
 <p>As an example, consider the task of reading and processing data from a file on disk. There are a number of ways this task can fail, including the file not existing at the specified path, the file not having read permissions, or the file not being encoded in a compatible format. Distinguishing among these different situations allows a program to resolve some errors and to communicate to the user any errors it can&rsquo;t resolve.</p>
@@ -121,7 +122,7 @@
 <p class="last">Error handling in Swift interoperates with error handling patterns that use the <code class="docutils literal notranslate"><span class="pre">NSError</span></code> class in Cocoa and Objective-C. For more information about this class, see <a class="reference external" href="https://developer.apple.com/documentation/swift/cocoa_design_patterns/handling_cocoa_errors_in_swift">Handling Cocoa Errors in Swift</a>.</p>
 </div>
 <div class="section" id="ID509">
-<a class="dashingAutolink" name="autolink-93"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Representing%20and%20Throwing%20Errors"></a><h2>Representing and Throwing Errors<a class="headerlink" href="ErrorHandling.html#ID509" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-81"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Representing%20and%20Throwing%20Errors"></a><h2>Representing and Throwing Errors<a class="headerlink" href="ErrorHandling.html#ID509" title="Permalink to this headline"></a></h2>
 <p>In Swift, errors are represented by values of types that conform to the <code class="docutils literal notranslate"><span class="pre">Error</span></code> protocol. This empty protocol indicates that a type can be used for error handling.</p>
 <p>Swift enumerations are particularly well suited to modeling a group of related error conditions, with associated values allowing for additional information about the nature of an error to be communicated. For example, here&rsquo;s how you might represent the error conditions of operating a vending machine inside a game:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">enum</span> <span class="nv">VendingMachineError</span>: <span class="nc">Error</span> {
@@ -135,7 +136,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID512">
-<a class="dashingAutolink" name="autolink-94"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Handling%20Errors"></a><h2>Handling Errors<a class="headerlink" href="ErrorHandling.html#ID512" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-82"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Handling%20Errors"></a><h2>Handling Errors<a class="headerlink" href="ErrorHandling.html#ID512" title="Permalink to this headline"></a></h2>
 <p>When an error is thrown, some surrounding piece of code must be responsible for handling the error&mdash;for example, by correcting the problem, trying an alternative approach, or informing the user of the failure.</p>
 <p>There are four ways to handle errors in Swift. You can propagate the error from a function to the code that calls that function, handle the error using a <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">catch</span></code> statement, handle the error as an optional value, or assert that the error will not occur. Each approach is described in a section below.</p>
 <p>When a function throws an error, it changes the flow of your program, so it&rsquo;s important that you can quickly identify places in your code that can throw errors. To identify these places in your code, write the <code class="docutils literal notranslate"><span class="pre">try</span></code> keyword&mdash;or the <code class="docutils literal notranslate"><span class="pre">try?</span></code> or <code class="docutils literal notranslate"><span class="pre">try!</span></code> variation&mdash;before a piece of code that calls a function, method, or initializer that can throw an error. These keywords are described in the sections below.</p>
@@ -144,7 +145,7 @@
 <p class="last">Error handling in Swift resembles exception handling in other languages, with the use of the <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">catch</span></code> and <code class="docutils literal notranslate"><span class="pre">throw</span></code> keywords. Unlike exception handling in many languages&mdash;including Objective-C&mdash;error handling in Swift does not involve unwinding the call stack, a process that can be computationally expensive. As such, the performance characteristics of a <code class="docutils literal notranslate"><span class="pre">throw</span></code> statement are comparable to those of a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement.</p>
 </div>
 <div class="section" id="ID510">
-<h3>Propagating Errors Using Throwing Functions<a class="headerlink" href="ErrorHandling.html#ID510" title="Permalink to this headline"> </a></h3>
+<h3>Propagating Errors Using Throwing Functions<a class="headerlink" href="ErrorHandling.html#ID510" title="Permalink to this headline"></a></h3>
 <p>To indicate that a function, method, or initializer can throw an error, you write the <code class="docutils literal notranslate"><span class="pre">throws</span></code> keyword in the function&rsquo;s declaration after its parameters. A function marked with <code class="docutils literal notranslate"><span class="pre">throws</span></code> is called a <em>throwing function</em>. If the function specifies a return type, you write the <code class="docutils literal notranslate"><span class="pre">throws</span></code> keyword before the return arrow (<code class="docutils literal notranslate"><span class="pre">-&gt;</span></code>).</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">func</span> <span class="nv">canThrowErrors</span>() <span class="k">throws</span> -&gt; <span class="nc">String</span>
 </li><li>
@@ -216,7 +217,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID541">
-<h3>Handling Errors Using Do-Catch<a class="headerlink" href="ErrorHandling.html#ID541" title="Permalink to this headline"> </a></h3>
+<h3>Handling Errors Using Do-Catch<a class="headerlink" href="ErrorHandling.html#ID541" title="Permalink to this headline"></a></h3>
 <p>You use a <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">catch</span></code> statement to handle errors by running a block of code. If an error is thrown by the code in the <code class="docutils literal notranslate"><span class="pre">do</span></code> clause, it is matched against the <code class="docutils literal notranslate"><span class="pre">catch</span></code> clauses to determine which one of them can handle the error.</p>
 <p>Here is the general form of a <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">catch</span></code> statement:</p>
 <div class="syntax-outline highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">do</span> {
@@ -230,7 +231,7 @@
 </li><li>    <span class="gi">statements</span>
 </li><li>}
 </li></ol></div></div></div>
-<p>You write a pattern after <code class="docutils literal notranslate"><span class="pre">catch</span></code> to indicate what errors that clause can handle. If a <code class="docutils literal notranslate"><span class="pre">catch</span></code> clause doesn&rsquo;t have a pattern, the clause matches any error and binds the error to a local constant named <code class="docutils literal notranslate"><span class="pre">error</span></code>. For more information about pattern matching, see <a class="reference internal" href="../ReferenceManual/Patterns.html"><span class="doc">Patterns</span></a>.</p>
+<p>You write a pattern after <code class="docutils literal notranslate"><span class="pre">catch</span></code> to indicate what errors that clause can handle. If a <code class="docutils literal notranslate"><span class="pre">catch</span></code> clause doesn&rsquo;t have a pattern, the clause matches any error and binds the error to a local constant named <code class="docutils literal notranslate"><span class="pre">error</span></code>. For more information about pattern matching, see <a class="reference internal" href="https://docs.swift.org/swift-book/ReferenceManual/Patterns.html"><span class="doc">Patterns</span></a>.</p>
 <p>For example, the following code matches against all three cases of the <code class="docutils literal notranslate"><span class="pre">VendingMachineError</span></code> enumeration.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">vendingMachine</span> = <span class="nv">VendingMachine</span>()
 </li><li><span class="nv">vendingMachine</span>.<span class="nv">coinsDeposited</span> = <span class="m">8</span>
@@ -269,7 +270,7 @@
 <p>In the <code class="docutils literal notranslate"><span class="pre">nourish(with:)</span></code> function, if <code class="docutils literal notranslate"><span class="pre">vend(itemNamed:)</span></code> throws an error that&rsquo;s one of the cases of the <code class="docutils literal notranslate"><span class="pre">VendingMachineError</span></code> enumeration, <code class="docutils literal notranslate"><span class="pre">nourish(with:)</span></code> handles the error by printing a message. Otherwise, <code class="docutils literal notranslate"><span class="pre">nourish(with:)</span></code> propagates the error to its call site. The error is then caught by the general <code class="docutils literal notranslate"><span class="pre">catch</span></code> clause.</p>
 </div>
 <div class="section" id="ID542">
-<h3>Converting Errors to Optional Values<a class="headerlink" href="ErrorHandling.html#ID542" title="Permalink to this headline"> </a></h3>
+<h3>Converting Errors to Optional Values<a class="headerlink" href="ErrorHandling.html#ID542" title="Permalink to this headline"></a></h3>
 <p>You use <code class="docutils literal notranslate"><span class="pre">try?</span></code> to handle an error by converting it to an optional value. If an error is thrown while evaluating the <code class="docutils literal notranslate"><span class="pre">try?</span></code> expression, the value of the expression is <code class="docutils literal notranslate"><span class="pre">nil</span></code>. For example, in the following code <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> have the same value and behavior:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">func</span> <span class="nv">someThrowingFunction</span>() <span class="k">throws</span> -&gt; <span class="nc">Int</span> {
 </li><li>    <span class="c">// ...</span>
@@ -294,7 +295,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID513">
-<h3>Disabling Error Propagation<a class="headerlink" href="ErrorHandling.html#ID513" title="Permalink to this headline"> </a></h3>
+<h3>Disabling Error Propagation<a class="headerlink" href="ErrorHandling.html#ID513" title="Permalink to this headline"></a></h3>
 <p>Sometimes you know a throwing function or method won&rsquo;t, in fact, throw an error at runtime. On those occasions, you can write <code class="docutils literal notranslate"><span class="pre">try!</span></code> before the expression to disable error propagation and wrap the call in a runtime assertion that no error will be thrown. If an error actually is thrown, you&rsquo;ll get a runtime error.</p>
 <p>For example, the following code uses a <code class="docutils literal notranslate"><span class="pre">loadImage(atPath:)</span></code> function, which loads the image resource at a given path or throws an error if the image can&rsquo;t be loaded. In this case, because the image is shipped with the application, no error will be thrown at runtime, so it is appropriate to disable error propagation.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">photo</span> = <span class="k">try</span>! <span class="nv">loadImage</span>(<span class="nv">atPath</span>: <span class="s">&#34;./Resources/John Appleseed.jpg&#34;</span>)
@@ -302,7 +303,7 @@
 </div>
 </div>
 <div class="section" id="ID514">
-<a class="dashingAutolink" name="autolink-95"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Specifying%20Cleanup%20Actions"></a><h2>Specifying Cleanup Actions<a class="headerlink" href="ErrorHandling.html#ID514" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-83"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Specifying%20Cleanup%20Actions"></a><h2>Specifying Cleanup Actions<a class="headerlink" href="ErrorHandling.html#ID514" title="Permalink to this headline"></a></h2>
 <p>You use a <code class="docutils literal notranslate"><span class="pre">defer</span></code> statement to execute a set of statements just before code execution leaves the current block of code. This statement lets you do any necessary cleanup that should be performed regardless of <em>how</em> execution leaves the current block of code&mdash;whether it leaves because an error was thrown or because of a statement such as <code class="docutils literal notranslate"><span class="pre">return</span></code> or <code class="docutils literal notranslate"><span class="pre">break</span></code>. For example, you can use a <code class="docutils literal notranslate"><span class="pre">defer</span></code> statement to ensure that file descriptors are closed and manually allocated memory is freed.</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">defer</span></code> statement defers execution until the current scope is exited. This statement consists of the <code class="docutils literal notranslate"><span class="pre">defer</span></code> keyword and the statements to be executed later. The deferred statements may not contain any code that would transfer control out of the statements, such as a <code class="docutils literal notranslate"><span class="pre">break</span></code> or a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, or by throwing an error. Deferred actions are executed in the reverse of the order that they&rsquo;re written in your source code. That is, the code in the first <code class="docutils literal notranslate"><span class="pre">defer</span></code> statement executes last, the code in the second <code class="docutils literal notranslate"><span class="pre">defer</span></code> statement executes second to last, and so on. The last <code class="docutils literal notranslate"><span class="pre">defer</span></code> statement in source code order executes first.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">func</span> <span class="nv">processFile</span>(<span class="nv">filename</span>: <span class="nc">String</span>) <span class="k">throws</span> {

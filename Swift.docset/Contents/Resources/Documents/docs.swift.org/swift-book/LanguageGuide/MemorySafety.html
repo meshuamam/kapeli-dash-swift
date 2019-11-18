@@ -3,12 +3,12 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>Memory Safety &mdash; The Swift Programming Language (Swift 5)</title>
+    <title>Memory Safety &mdash; The Swift Programming Language (Swift 5.1)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css"/>
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico"/>
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://docs.swift.org/favicon.ico"/>
     <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png"/>
     <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png"/>
     <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <a class="dashingAutolink" name="autolink-141"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
+      <a class="dashingAutolink" name="autolink-129"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -34,11 +34,11 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.1</div></h2>
 
     <ul>
     <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to Swift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/">Welcome to Swift</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="TheBasics.html">Language Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="TheBasics.html">The Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BasicOperators.html">Basic Operators</a></li>
@@ -47,7 +47,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ControlFlow.html">Control Flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Functions.html">Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Closures.html">Closures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Enumerations.html">Enumeration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Enumerations.html">Enumerations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ClassesAndStructures.html">Structures and Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Properties.html">Properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Methods.html">Methods</a></li>
@@ -62,14 +62,15 @@
 <li class="toctree-l2"><a class="reference internal" href="Extensions.html">Extensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Protocols.html">Protocols</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Generics.html">Generics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpaqueTypes.html">Opaque Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AutomaticReferenceCounting.html">Automatic Reference Counting</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="MemorySafety.html#">Memory Safety</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AccessControl.html">Access Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AdvancedOperators.html">Advanced Operators</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../ReferenceManual/AboutTheLanguageReference.html">Language Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RevisionHistory/RevisionHistory.html">Revision History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/ReferenceManual/AboutTheLanguageReference.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html">Revision History</a></li>
 </ul>
 
     <li class="toctree-l1 return"><a class="reference internal" href="https://swift.org/">&larr; Return to Swift.org</a></li>
@@ -110,11 +111,11 @@
 
         
   <div class="section" id="memory-safety">
-<a class="dashingAutolink" name="autolink-142"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Memory%20Safety"></a><h1>Memory Safety<a class="headerlink" href="MemorySafety.html#memory-safety" title="Permalink to this headline"> </a></h1>
+<a class="dashingAutolink" name="autolink-130"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Memory%20Safety"></a><h1>Memory Safety<a class="headerlink" href="MemorySafety.html#memory-safety" title="Permalink to this headline"></a></h1>
 <p>By default, Swift prevents unsafe behavior from happening in your code. For example, Swift ensures that variables are initialized before they&rsquo;re used, memory isn&rsquo;t accessed after it&rsquo;s been deallocated, and array indices are checked for out-of-bounds errors.</p>
 <p>Swift also makes sure that multiple accesses to the same area of memory don&rsquo;t conflict, by requiring code that modifies a location in memory to have exclusive access to that memory. Because Swift manages memory automatically, most of the time you don&rsquo;t have to think about accessing memory at all. However, it&rsquo;s important to understand where potential conflicts can occur, so you can avoid writing code that has conflicting access to memory. If your code does contain conflicts, you&rsquo;ll get a compile-time or runtime error.</p>
 <div class="section" id="ID568">
-<a class="dashingAutolink" name="autolink-143"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Understanding%20Conflicting%20Access%20to%20Memory"></a><h2>Understanding Conflicting Access to Memory<a class="headerlink" href="MemorySafety.html#ID568" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-131"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Understanding%20Conflicting%20Access%20to%20Memory"></a><h2>Understanding Conflicting Access to Memory<a class="headerlink" href="MemorySafety.html#ID568" title="Permalink to this headline"></a></h2>
 <p>Access to memory happens in your code when you do things like set the value of a variable or pass an argument to a function. For example, the following code contains both a read access and a write access:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="c">// A write access to the memory where one is stored.</span>
 </li><li><span class="k">var</span> <span class="nv">one</span> = <span class="m">1</span>
@@ -133,7 +134,7 @@
 <p class="last">If you have conflicting access to memory from within a single thread, Swift guarantees that you&rsquo;ll get an error at either compile time or runtime. For multithreaded code, use <a class="reference external" href="https://developer.apple.com/documentation/code_diagnostics/thread_sanitizer">Thread Sanitizer</a> to help detect conflicting access across threads.</p>
 </div>
 <div class="section" id="ID573">
-<h3>Characteristics of Memory Access<a class="headerlink" href="MemorySafety.html#ID573" title="Permalink to this headline"> </a></h3>
+<h3>Characteristics of Memory Access<a class="headerlink" href="MemorySafety.html#ID573" title="Permalink to this headline"></a></h3>
 <p>There are three characteristics of memory access to consider in the context of conflicting access: whether the access is a read or a write, the duration of the access, and the location in memory being accessed. Specifically, a conflict occurs if you have two accesses that meet all of the following conditions:</p>
 <ul class="simple">
 <li>At least one is a write access.</li>
@@ -156,7 +157,7 @@
 </div>
 </div>
 <div class="section" id="ID569">
-<a class="dashingAutolink" name="autolink-144"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Conflicting%20Access%20to%20In-Out%20Parameters"></a><h2>Conflicting Access to In-Out Parameters<a class="headerlink" href="MemorySafety.html#ID569" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-132"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Conflicting%20Access%20to%20In-Out%20Parameters"></a><h2>Conflicting Access to In-Out Parameters<a class="headerlink" href="MemorySafety.html#ID569" title="Permalink to this headline"></a></h2>
 <p>A function has long-term write access to all of its in-out parameters. The write access for an in-out parameter starts after all of the non-in-out parameters have been evaluated and lasts for the entire duration of that function call. If there are multiple in-out parameters, the write accesses start in the same order as the parameters appear.</p>
 <p>One consequence of this long-term write access is that you can&rsquo;t access the original variable that was passed as in-out, even if scoping rules and access control would otherwise permit it&mdash;any access to the original creates a conflict. For example:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">stepSize</span> = <span class="m">1</span>
@@ -199,7 +200,7 @@
 </div>
 </div>
 <div class="section" id="ID570">
-<a class="dashingAutolink" name="autolink-145"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Conflicting%20Access%20to%20self%20in%20Methods"></a><h2>Conflicting Access to self in Methods<a class="headerlink" href="MemorySafety.html#ID570" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-133"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Conflicting%20Access%20to%20self%20in%20Methods"></a><h2>Conflicting Access to self in Methods<a class="headerlink" href="MemorySafety.html#ID570" title="Permalink to this headline"></a></h2>
 <p>A mutating method on a structure has write access to <code class="docutils literal notranslate"><span class="pre">self</span></code> for the duration of the method call. For example, consider a game where each player has a health amount, which decreases when taking damage, and an energy amount, which decreases when using special abilities.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">Player</span> {
 </li><li>    <span class="k">var</span> <span class="nv">name</span>: <span class="nc">String</span>
@@ -233,7 +234,7 @@
 <img alt="../_images/memory_share_health_oscar_2x.png" class="align-center" src="../_images/memory_share_health_oscar_2x.png" style="width: 506px;"/>
 </div>
 <div class="section" id="ID571">
-<a class="dashingAutolink" name="autolink-146"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Conflicting%20Access%20to%20Properties"></a><h2>Conflicting Access to Properties<a class="headerlink" href="MemorySafety.html#ID571" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-134"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Conflicting%20Access%20to%20Properties"></a><h2>Conflicting Access to Properties<a class="headerlink" href="MemorySafety.html#ID571" title="Permalink to this headline"></a></h2>
 <p>Types like structures, tuples, and enumerations are made up of individual constituent values, such as the properties of a structure or the elements of a tuple. Because these are value types, mutating any piece of the value mutates the whole value, meaning read or write access to one of the properties requires read or write access to the whole value. For example, overlapping write accesses to the elements of a tuple produces a conflict:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">playerInformation</span> = (<span class="nv">health</span>: <span class="m">10</span>, <span class="nv">energy</span>: <span class="m">20</span>)
 </li><li><span class="nv">balance</span>(&amp;<span class="nv">playerInformation</span>.<span class="nv">health</span>, &amp;<span class="nv">playerInformation</span>.<span class="nv">energy</span>)

@@ -9,12 +9,12 @@
     <meta name="author" content="Apple Inc." />
     <meta name="viewport" content="width=device-width initial-scale=1" />
     
-    <title>Closures &mdash; The Swift Programming Language (Swift 5)</title>
+    <title>Closures &mdash; The Swift Programming Language (Swift 5.1)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css" />
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico" />
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://docs.swift.org/favicon.ico" />
     <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png" />
@@ -40,11 +40,11 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.1</div></h2>
 
     <ul>
     <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to Swift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/">Welcome to Swift</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="TheBasics.html">Language Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="TheBasics.html">The Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BasicOperators.html">Basic Operators</a></li>
@@ -53,7 +53,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ControlFlow.html">Control Flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Functions.html">Functions</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="Closures.html#">Closures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Enumerations.html">Enumeration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Enumerations.html">Enumerations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ClassesAndStructures.html">Structures and Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Properties.html">Properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Methods.html">Methods</a></li>
@@ -68,14 +68,15 @@
 <li class="toctree-l2"><a class="reference internal" href="Extensions.html">Extensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Protocols.html">Protocols</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Generics.html">Generics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpaqueTypes.html">Opaque Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AutomaticReferenceCounting.html">Automatic Reference Counting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MemorySafety.html">Memory Safety</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AccessControl.html">Access Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AdvancedOperators.html">Advanced Operators</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../ReferenceManual/AboutTheLanguageReference.html">Language Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RevisionHistory/RevisionHistory.html">Revision History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/ReferenceManual/AboutTheLanguageReference.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html">Revision History</a></li>
 </ul>
 
     <li class="toctree-l1 return"><a class="reference internal" href="https://swift.org/">← Return to Swift.org</a></li>
@@ -123,7 +124,7 @@
 
         
   <div class="section" id="closures">
-<h1>Closures<a class="headerlink" href="Closures.html#closures" title="Permalink to this headline"> </a></h1>
+<h1>Closures<a class="headerlink" href="Closures.html#closures" title="Permalink to this headline"></a></h1>
 <p><em>Closures</em> are self-contained blocks of functionality that can be passed around and used in your code. Closures in Swift are similar to blocks in C and Objective-C and to lambdas in other programming languages.</p>
 <p>Closures can capture and store references to any constants and variables from the context in which they are defined. This is known as <em>closing over</em> those constants and variables. Swift handles all of the memory management of capturing for you.</p>
 <div class="admonition note">
@@ -144,11 +145,11 @@
 <li>Trailing closure syntax</li>
 </ul>
 <div class="section" id="ID95">
-<h2>Closure Expressions<a class="headerlink" href="Closures.html#ID95" title="Permalink to this headline"> </a></h2>
+<h2>Closure Expressions<a class="headerlink" href="Closures.html#ID95" title="Permalink to this headline"></a></h2>
 <p>Nested functions, as introduced in <a class="reference internal" href="Functions.html#ID178"><span class="std std-ref">Nested Functions</span></a>, are a convenient means of naming and defining self-contained blocks of code as part of a larger function. However, it is sometimes useful to write shorter versions of function-like constructs without a full declaration and name. This is particularly true when you work with functions or methods that take functions as one or more of their arguments.</p>
 <p><em>Closure expressions</em> are a way to write inline closures in a brief, focused syntax. Closure expressions provide several syntax optimizations for writing closures in a shortened form without loss of clarity or intent. The closure expression examples below illustrate these optimizations by refining a single example of the <code class="docutils literal notranslate"><span class="pre">sorted(by:)</span></code> method over several iterations, each of which expresses the same functionality in a more succinct way.</p>
 <div class="section" id="ID96">
-<h3>The Sorted Method<a class="headerlink" href="Closures.html#ID96" title="Permalink to this headline"> </a></h3>
+<h3>The Sorted Method<a class="headerlink" href="Closures.html#ID96" title="Permalink to this headline"></a></h3>
 <p>Swift’s standard library provides a method called <code class="docutils literal notranslate"><span class="pre">sorted(by:)</span></code>, which sorts an array of values of a known type, based on the output of a sorting closure that you provide. Once it completes the sorting process, the <code class="docutils literal notranslate"><span class="pre">sorted(by:)</span></code> method returns a new array of the same type and size as the old one, with its elements in the correct sorted order. The original array is not modified by the <code class="docutils literal notranslate"><span class="pre">sorted(by:)</span></code> method.</p>
 <p>The closure expression examples below use the <code class="docutils literal notranslate"><span class="pre">sorted(by:)</span></code> method to sort an array of <code class="docutils literal notranslate"><span class="pre">String</span></code> values in reverse alphabetical order. Here’s the initial array to be sorted:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">names</span> = [<span class="s">&quot;Chris&quot;</span>, <span class="s">&quot;Alex&quot;</span>, <span class="s">&quot;Ewa&quot;</span>, <span class="s">&quot;Barry&quot;</span>, <span class="s">&quot;Daniella&quot;</span>]
@@ -166,7 +167,7 @@
 <p>However, this is a rather long-winded way to write what is essentially a single-expression function (<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;</span> <span class="pre">b</span></code>). In this example, it would be preferable to write the sorting closure inline, using closure expression syntax.</p>
 </div>
 <div class="section" id="ID97">
-<h3>Closure Expression Syntax<a class="headerlink" href="Closures.html#ID97" title="Permalink to this headline"> </a></h3>
+<h3>Closure Expression Syntax<a class="headerlink" href="Closures.html#ID97" title="Permalink to this headline"></a></h3>
 <p>Closure expression syntax has the following general form:</p>
 <div class="syntax-outline highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li>{ (<span class="gi">parameters</span>) -&gt; <span class="gi">return type</span> <span class="k">in</span>
 </li><li>    <span class="gi">statements</span>
@@ -186,7 +187,7 @@
 <p>This illustrates that the overall call to the <code class="docutils literal notranslate"><span class="pre">sorted(by:)</span></code> method has remained the same. A pair of parentheses still wrap the entire argument for the method. However, that argument is now an inline closure.</p>
 </div>
 <div class="section" id="ID98">
-<h3>Inferring Type From Context<a class="headerlink" href="Closures.html#ID98" title="Permalink to this headline"> </a></h3>
+<h3>Inferring Type From Context<a class="headerlink" href="Closures.html#ID98" title="Permalink to this headline"></a></h3>
 <p>Because the sorting closure is passed as an argument to a method, Swift can infer the types of its parameters and the type of the value it returns. The <code class="docutils literal notranslate"><span class="pre">sorted(by:)</span></code> method is being called on an array of strings, so its argument must be a function of type <code class="docutils literal notranslate"><span class="pre">(String,</span> <span class="pre">String)</span> <span class="pre">-&gt;</span> <span class="pre">Bool</span></code>. This means that the <code class="docutils literal notranslate"><span class="pre">(String,</span> <span class="pre">String)</span></code> and <code class="docutils literal notranslate"><span class="pre">Bool</span></code> types do not need to be written as part of the closure expression’s definition. Because all of the types can be inferred, the return arrow (<code class="docutils literal notranslate"><span class="pre">-&gt;</span></code>) and the parentheses around the names of the parameters can also be omitted:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">reversedNames</span> = <span class="nv">names</span>.<span class="nv">sorted</span>(<span class="nv">by</span>: { <span class="nv">s1</span>, <span class="nv">s2</span> <span class="k">in</span> <span class="k">return</span> <span class="nv">s1</span> &gt; <span class="nv">s2</span> } )
 </li></ol></div></div></div>
@@ -194,14 +195,14 @@
 <p>Nonetheless, you can still make the types explicit if you wish, and doing so is encouraged if it avoids ambiguity for readers of your code. In the case of the <code class="docutils literal notranslate"><span class="pre">sorted(by:)</span></code> method, the purpose of the closure is clear from the fact that sorting is taking place, and it is safe for a reader to assume that the closure is likely to be working with <code class="docutils literal notranslate"><span class="pre">String</span></code> values, because it is assisting with the sorting of an array of strings.</p>
 </div>
 <div class="section" id="ID99">
-<h3>Implicit Returns from Single-Expression Closures<a class="headerlink" href="Closures.html#ID99" title="Permalink to this headline"> </a></h3>
+<h3>Implicit Returns from Single-Expression Closures<a class="headerlink" href="Closures.html#ID99" title="Permalink to this headline"></a></h3>
 <p>Single-expression closures can implicitly return the result of their single expression by omitting the <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword from their declaration, as in this version of the previous example:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">reversedNames</span> = <span class="nv">names</span>.<span class="nv">sorted</span>(<span class="nv">by</span>: { <span class="nv">s1</span>, <span class="nv">s2</span> <span class="k">in</span> <span class="nv">s1</span> &gt; <span class="nv">s2</span> } )
 </li></ol></div></div></div>
 <p>Here, the function type of the <code class="docutils literal notranslate"><span class="pre">sorted(by:)</span></code> method’s argument makes it clear that a <code class="docutils literal notranslate"><span class="pre">Bool</span></code> value must be returned by the closure. Because the closure’s body contains a single expression (<code class="docutils literal notranslate"><span class="pre">s1</span> <span class="pre">&gt;</span> <span class="pre">s2</span></code>) that returns a <code class="docutils literal notranslate"><span class="pre">Bool</span></code> value, there is no ambiguity, and the <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword can be omitted.</p>
 </div>
 <div class="section" id="ID100">
-<h3>Shorthand Argument Names<a class="headerlink" href="Closures.html#ID100" title="Permalink to this headline"> </a></h3>
+<h3>Shorthand Argument Names<a class="headerlink" href="Closures.html#ID100" title="Permalink to this headline"></a></h3>
 <p>Swift automatically provides shorthand argument names to inline closures, which can be used to refer to the values of the closure’s arguments by the names <code class="docutils literal notranslate"><span class="pre">$0</span></code>, <code class="docutils literal notranslate"><span class="pre">$1</span></code>, <code class="docutils literal notranslate"><span class="pre">$2</span></code>, and so on.</p>
 <p>If you use these shorthand argument names within your closure expression, you can omit the closure’s argument list from its definition, and the number and type of the shorthand argument names will be inferred from the expected function type. The <code class="docutils literal notranslate"><span class="pre">in</span></code> keyword can also be omitted, because the closure expression is made up entirely of its body:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">reversedNames</span> = <span class="nv">names</span>.<span class="nv">sorted</span>(<span class="nv">by</span>: { <span class="nv">$0</span> &gt; <span class="nv">$1</span> } )
@@ -209,7 +210,7 @@
 <p>Here, <code class="docutils literal notranslate"><span class="pre">$0</span></code> and <code class="docutils literal notranslate"><span class="pre">$1</span></code> refer to the closure’s first and second <code class="docutils literal notranslate"><span class="pre">String</span></code> arguments.</p>
 </div>
 <div class="section" id="ID101">
-<h3>Operator Methods<a class="headerlink" href="Closures.html#ID101" title="Permalink to this headline"> </a></h3>
+<h3>Operator Methods<a class="headerlink" href="Closures.html#ID101" title="Permalink to this headline"></a></h3>
 <p>There’s actually an even <em>shorter</em> way to write the closure expression above. Swift’s <code class="docutils literal notranslate"><span class="pre">String</span></code> type defines its string-specific implementation of the greater-than operator (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>) as a method that has two parameters of type <code class="docutils literal notranslate"><span class="pre">String</span></code>, and returns a value of type <code class="docutils literal notranslate"><span class="pre">Bool</span></code>. This exactly matches the method type needed by the <code class="docutils literal notranslate"><span class="pre">sorted(by:)</span></code> method. Therefore, you can simply pass in the greater-than operator, and Swift will infer that you want to use its string-specific implementation:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">reversedNames</span> = <span class="nv">names</span>.<span class="nv">sorted</span>(<span class="nv">by</span>: &gt;)
 </li></ol></div></div></div>
@@ -217,7 +218,7 @@
 </div>
 </div>
 <div class="section" id="ID102">
-<h2>Trailing Closures<a class="headerlink" href="Closures.html#ID102" title="Permalink to this headline"> </a></h2>
+<h2>Trailing Closures<a class="headerlink" href="Closures.html#ID102" title="Permalink to this headline"></a></h2>
 <p>If you need to pass a closure expression to a function as the function’s final argument and the closure expression is long, it can be useful to write it as a <em>trailing closure</em> instead. A trailing closure is written after the function call’s parentheses, even though it is still an argument to the function. When you use the trailing closure syntax, you don’t write the argument label for the closure as part of the function call.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">func</span> <span class="nv">someFunctionThatTakesAClosure</span>(<span class="nv">closure</span>: () -&gt; <span class="nc">Void</span>) {
 </li><li>    <span class="c">// function body goes here</span>
@@ -277,7 +278,7 @@
 <p>The use of trailing closure syntax in the example above neatly encapsulates the closure’s functionality immediately after the function that closure supports, without needing to wrap the entire closure within the <code class="docutils literal notranslate"><span class="pre">map(_:)</span></code> method’s outer parentheses.</p>
 </div>
 <div class="section" id="ID103">
-<h2>Capturing Values<a class="headerlink" href="Closures.html#ID103" title="Permalink to this headline"> </a></h2>
+<h2>Capturing Values<a class="headerlink" href="Closures.html#ID103" title="Permalink to this headline"></a></h2>
 <p>A closure can <em>capture</em> constants and variables from the surrounding context in which it is defined. The closure can then refer to and modify the values of those constants and variables from within its body, even if the original scope that defined the constants and variables no longer exists.</p>
 <p>In Swift, the simplest form of a closure that can capture values is a nested function, written within the body of another function. A nested function can capture any of its outer function’s arguments and can also capture any constants and variables defined within the outer function.</p>
 <p>Here’s an example of a function called <code class="docutils literal notranslate"><span class="pre">makeIncrementer</span></code>, which contains a nested function called <code class="docutils literal notranslate"><span class="pre">incrementer</span></code>. The nested <code class="docutils literal notranslate"><span class="pre">incrementer()</span></code> function captures two values, <code class="docutils literal notranslate"><span class="pre">runningTotal</span></code> and <code class="docutils literal notranslate"><span class="pre">amount</span></code>, from its surrounding context. After capturing these values, <code class="docutils literal notranslate"><span class="pre">incrementer</span></code> is returned by <code class="docutils literal notranslate"><span class="pre">makeIncrementer</span></code> as a closure that increments <code class="docutils literal notranslate"><span class="pre">runningTotal</span></code> by <code class="docutils literal notranslate"><span class="pre">amount</span></code> each time it is called.</p>
@@ -331,7 +332,7 @@
 </div>
 </div>
 <div class="section" id="ID104">
-<h2>Closures Are Reference Types<a class="headerlink" href="Closures.html#ID104" title="Permalink to this headline"> </a></h2>
+<h2>Closures Are Reference Types<a class="headerlink" href="Closures.html#ID104" title="Permalink to this headline"></a></h2>
 <p>In the example above, <code class="docutils literal notranslate"><span class="pre">incrementBySeven</span></code> and <code class="docutils literal notranslate"><span class="pre">incrementByTen</span></code> are constants, but the closures these constants refer to are still able to increment the <code class="docutils literal notranslate"><span class="pre">runningTotal</span></code> variables that they have captured. This is because functions and closures are <em>reference types</em>.</p>
 <p>Whenever you assign a function or a closure to a constant or a variable, you are actually setting that constant or variable to be a <em>reference</em> to the function or closure. In the example above, it is the choice of closure that <code class="docutils literal notranslate"><span class="pre">incrementByTen</span></code> <em>refers to</em> that is constant, and not the contents of the closure itself.</p>
 <p>This also means that if you assign a closure to two different constants or variables, both of those constants or variables refer to the same closure.</p>
@@ -345,7 +346,7 @@
 <p>The example above shows that calling <code class="docutils literal notranslate"><span class="pre">alsoIncrementByTen</span></code> is the same as calling <code class="docutils literal notranslate"><span class="pre">incrementByTen</span></code>. Because both of them refer to the same closure, they both increment and return the same running total.</p>
 </div>
 <div class="section" id="ID546">
-<h2>Escaping Closures<a class="headerlink" href="Closures.html#ID546" title="Permalink to this headline"> </a></h2>
+<h2>Escaping Closures<a class="headerlink" href="Closures.html#ID546" title="Permalink to this headline"></a></h2>
 <p>A closure is said to <em>escape</em> a function when the closure is passed as an argument to the function, but is called after the function returns. When you declare a function that takes a closure as one of its parameters, you can write <code class="docutils literal notranslate"><span class="pre">&#64;escaping</span></code> before the parameter’s type to indicate that the closure is allowed to escape.</p>
 <p>One way that a closure can escape is by being stored in a variable that is defined outside the function. As an example, many functions that start an asynchronous operation take a closure argument as a completion handler. The function returns after it starts the operation, but the closure isn’t called until the operation is completed—the closure needs to escape, to be called later. For example:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">completionHandlers</span>: [() -&gt; <span class="nc">Void</span>] = []
@@ -378,7 +379,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID543">
-<h2>Autoclosures<a class="headerlink" href="Closures.html#ID543" title="Permalink to this headline"> </a></h2>
+<h2>Autoclosures<a class="headerlink" href="Closures.html#ID543" title="Permalink to this headline"></a></h2>
 <p>An <em>autoclosure</em> is a closure that is automatically created to wrap an expression that’s being passed as an argument to a function. It doesn’t take any arguments, and when it’s called, it returns the value of the expression that’s wrapped inside of it. This syntactic convenience lets you omit braces around a function’s parameter by writing a normal expression instead of an explicit closure.</p>
 <p>It’s common to <em>call</em> functions that take autoclosures, but it’s not common to <em>implement</em> that kind of function. For example, the <code class="docutils literal notranslate"><span class="pre">assert(condition:message:file:line:)</span></code> function takes an autoclosure for its <code class="docutils literal notranslate"><span class="pre">condition</span></code> and <code class="docutils literal notranslate"><span class="pre">message</span></code> parameters; its <code class="docutils literal notranslate"><span class="pre">condition</span></code> parameter is evaluated only in debug builds and its <code class="docutils literal notranslate"><span class="pre">message</span></code> parameter is evaluated only if <code class="docutils literal notranslate"><span class="pre">condition</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 <p>An autoclosure lets you delay evaluation, because the code inside isn’t run until you call the closure. Delaying evaluation is useful for code that has side effects or is computationally expensive, because it lets you control when that code is evaluated. The code below shows how a closure delays evaluation.</p>
@@ -441,7 +442,7 @@
     </article>
     <div class="next_previous">
         <p class="previous"><a href="Functions.html">Functions</a></p>
-        <p class="next"><a href="Enumerations.html">Enumeration</a></p>
+        <p class="next"><a href="Enumerations.html">Enumerations</a></p>
     </div>
 </main>
 

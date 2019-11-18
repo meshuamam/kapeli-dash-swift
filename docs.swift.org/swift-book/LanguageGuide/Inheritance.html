@@ -9,12 +9,12 @@
     <meta name="author" content="Apple Inc." />
     <meta name="viewport" content="width=device-width initial-scale=1" />
     
-    <title>Inheritance &mdash; The Swift Programming Language (Swift 5)</title>
+    <title>Inheritance &mdash; The Swift Programming Language (Swift 5.1)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css" />
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico" />
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://docs.swift.org/favicon.ico" />
     <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png" />
@@ -40,11 +40,11 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.1</div></h2>
 
     <ul>
     <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to Swift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/">Welcome to Swift</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="TheBasics.html">Language Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="TheBasics.html">The Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BasicOperators.html">Basic Operators</a></li>
@@ -53,7 +53,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ControlFlow.html">Control Flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Functions.html">Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Closures.html">Closures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Enumerations.html">Enumeration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Enumerations.html">Enumerations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ClassesAndStructures.html">Structures and Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Properties.html">Properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Methods.html">Methods</a></li>
@@ -68,14 +68,15 @@
 <li class="toctree-l2"><a class="reference internal" href="Extensions.html">Extensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Protocols.html">Protocols</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Generics.html">Generics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpaqueTypes.html">Opaque Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AutomaticReferenceCounting.html">Automatic Reference Counting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MemorySafety.html">Memory Safety</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AccessControl.html">Access Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AdvancedOperators.html">Advanced Operators</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../ReferenceManual/AboutTheLanguageReference.html">Language Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RevisionHistory/RevisionHistory.html">Revision History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/ReferenceManual/AboutTheLanguageReference.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html">Revision History</a></li>
 </ul>
 
     <li class="toctree-l1 return"><a class="reference internal" href="https://swift.org/">← Return to Swift.org</a></li>
@@ -122,12 +123,12 @@
 
         
   <div class="section" id="inheritance">
-<h1>Inheritance<a class="headerlink" href="Inheritance.html#inheritance" title="Permalink to this headline"> </a></h1>
+<h1>Inheritance<a class="headerlink" href="Inheritance.html#inheritance" title="Permalink to this headline"></a></h1>
 <p>A class can <em>inherit</em> methods, properties, and other characteristics from another class. When one class inherits from another, the inheriting class is known as a <em>subclass</em>, and the class it inherits from is known as its <em>superclass</em>. Inheritance is a fundamental behavior that differentiates classes from other types in Swift.</p>
 <p>Classes in Swift can call and access methods, properties, and subscripts belonging to their superclass and can provide their own overriding versions of those methods, properties, and subscripts to refine or modify their behavior. Swift helps to ensure your overrides are correct by checking that the override definition has a matching superclass definition.</p>
 <p>Classes can also add property observers to inherited properties in order to be notified when the value of a property changes. Property observers can be added to any property, regardless of whether it was originally defined as a stored or computed property.</p>
 <div class="section" id="ID194">
-<h2>Defining a Base Class<a class="headerlink" href="Inheritance.html#ID194" title="Permalink to this headline"> </a></h2>
+<h2>Defining a Base Class<a class="headerlink" href="Inheritance.html#ID194" title="Permalink to this headline"></a></h2>
 <p>Any class that does not inherit from another class is known as a <em>base class</em>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -155,7 +156,7 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code> class defines common characteristics for an arbitrary vehicle, but is not much use in itself. To make it more useful, you need to refine it to describe more specific kinds of vehicles.</p>
 </div>
 <div class="section" id="ID195">
-<h2>Subclassing<a class="headerlink" href="Inheritance.html#ID195" title="Permalink to this headline"> </a></h2>
+<h2>Subclassing<a class="headerlink" href="Inheritance.html#ID195" title="Permalink to this headline"></a></h2>
 <p><em>Subclassing</em> is the act of basing a new class on an existing class. The subclass inherits characteristics from the existing class, which you can then refine. You can also add new characteristics to the subclass.</p>
 <p>To indicate that a subclass has a superclass, write the subclass name before the superclass name, separated by a colon:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">SomeSubclass</span>: <span class="nc">SomeSuperclass</span> {
@@ -194,12 +195,12 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID196">
-<h2>Overriding<a class="headerlink" href="Inheritance.html#ID196" title="Permalink to this headline"> </a></h2>
+<h2>Overriding<a class="headerlink" href="Inheritance.html#ID196" title="Permalink to this headline"></a></h2>
 <p>A subclass can provide its own custom implementation of an instance method, type method, instance property, type property, or subscript that it would otherwise inherit from a superclass. This is known as <em>overriding</em>.</p>
 <p>To override a characteristic that would otherwise be inherited, you prefix your overriding definition with the <code class="docutils literal notranslate"><span class="pre">override</span></code> keyword. Doing so clarifies that you intend to provide an override and have not provided a matching definition by mistake. Overriding by accident can cause unexpected behavior, and any overrides without the <code class="docutils literal notranslate"><span class="pre">override</span></code> keyword are diagnosed as an error when your code is compiled.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">override</span></code> keyword also prompts the Swift compiler to check that your overriding class’s superclass (or one of its parents) has a declaration that matches the one you provided for the override. This check ensures that your overriding definition is correct.</p>
 <div class="section" id="ID197">
-<h3>Accessing Superclass Methods, Properties, and Subscripts<a class="headerlink" href="Inheritance.html#ID197" title="Permalink to this headline"> </a></h3>
+<h3>Accessing Superclass Methods, Properties, and Subscripts<a class="headerlink" href="Inheritance.html#ID197" title="Permalink to this headline"></a></h3>
 <p>When you provide a method, property, or subscript override for a subclass, it is sometimes useful to use the existing superclass implementation as part of your override. For example, you can refine the behavior of that existing implementation, or store a modified value in an existing inherited variable.</p>
 <p>Where this is appropriate, you access the superclass version of a method, property, or subscript by using the <code class="docutils literal notranslate"><span class="pre">super</span></code> prefix:</p>
 <ul class="simple">
@@ -209,7 +210,7 @@
 </ul>
 </div>
 <div class="section" id="ID198">
-<h3>Overriding Methods<a class="headerlink" href="Inheritance.html#ID198" title="Permalink to this headline"> </a></h3>
+<h3>Overriding Methods<a class="headerlink" href="Inheritance.html#ID198" title="Permalink to this headline"></a></h3>
 <p>You can override an inherited instance or type method to provide a tailored or alternative implementation of the method within your subclass.</p>
 <p>The following example defines a new subclass of <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code> called <code class="docutils literal notranslate"><span class="pre">Train</span></code>, which overrides the <code class="docutils literal notranslate"><span class="pre">makeNoise()</span></code> method that <code class="docutils literal notranslate"><span class="pre">Train</span></code> inherits from <code class="docutils literal notranslate"><span class="pre">Vehicle</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">Train</span>: <span class="nc">Vehicle</span> {
@@ -225,10 +226,10 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID199">
-<h3>Overriding Properties<a class="headerlink" href="Inheritance.html#ID199" title="Permalink to this headline"> </a></h3>
+<h3>Overriding Properties<a class="headerlink" href="Inheritance.html#ID199" title="Permalink to this headline"></a></h3>
 <p>You can override an inherited instance or type property to provide your own custom getter and setter for that property, or to add property observers to enable the overriding property to observe when the underlying property value changes.</p>
 <div class="section" id="ID200">
-<h4>Overriding Property Getters and Setters<a class="headerlink" href="Inheritance.html#ID200" title="Permalink to this headline"> </a></h4>
+<h4>Overriding Property Getters and Setters<a class="headerlink" href="Inheritance.html#ID200" title="Permalink to this headline"></a></h4>
 <p>You can provide a custom getter (and setter, if appropriate) to override <em>any</em> inherited property, regardless of whether the inherited property is implemented as a stored or computed property at source. The stored or computed nature of an inherited property is not known by a subclass—it only knows that the inherited property has a certain name and type. You must always state both the name and the type of the property you are overriding, to enable the compiler to check that your override matches a superclass property with the same name and type.</p>
 <p>You can present an inherited read-only property as a read-write property by providing both a getter and a setter in your subclass property override. You cannot, however, present an inherited read-write property as a read-only property.</p>
 <div class="admonition note">
@@ -253,7 +254,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID201">
-<h4>Overriding Property Observers<a class="headerlink" href="Inheritance.html#ID201" title="Permalink to this headline"> </a></h4>
+<h4>Overriding Property Observers<a class="headerlink" href="Inheritance.html#ID201" title="Permalink to this headline"></a></h4>
 <p>You can use property overriding to add property observers to an inherited property. This enables you to be notified when the value of an inherited property changes, regardless of how that property was originally implemented. For more information on property observers, see <a class="reference internal" href="Properties.html#ID262"><span class="std std-ref">Property Observers</span></a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -279,7 +280,7 @@
 </div>
 </div>
 <div class="section" id="ID202">
-<h2>Preventing Overrides<a class="headerlink" href="Inheritance.html#ID202" title="Permalink to this headline"> </a></h2>
+<h2>Preventing Overrides<a class="headerlink" href="Inheritance.html#ID202" title="Permalink to this headline"></a></h2>
 <p>You can prevent a method, property, or subscript from being overridden by marking it as <em>final</em>. Do this by writing the <code class="docutils literal notranslate"><span class="pre">final</span></code> modifier before the method, property, or subscript’s introducer keyword (such as <code class="docutils literal notranslate"><span class="pre">final</span> <span class="pre">var</span></code>, <code class="docutils literal notranslate"><span class="pre">final</span> <span class="pre">func</span></code>, <code class="docutils literal notranslate"><span class="pre">final</span> <span class="pre">class</span> <span class="pre">func</span></code>, and <code class="docutils literal notranslate"><span class="pre">final</span> <span class="pre">subscript</span></code>).</p>
 <p>Any attempt to override a final method, property, or subscript in a subclass is reported as a compile-time error. Methods, properties, or subscripts that you add to a class in an extension can also be marked as final within the extension’s definition.</p>
 <p>You can mark an entire class as final by writing the <code class="docutils literal notranslate"><span class="pre">final</span></code> modifier before the <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword in its class definition (<code class="docutils literal notranslate"><span class="pre">final</span> <span class="pre">class</span></code>). Any attempt to subclass a final class is reported as a compile-time error.</p>

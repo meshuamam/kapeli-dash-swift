@@ -9,12 +9,12 @@
     <meta name="author" content="Apple Inc." />
     <meta name="viewport" content="width=device-width initial-scale=1" />
     
-    <title>Enumeration &mdash; The Swift Programming Language (Swift 5)</title>
+    <title>Enumerations &mdash; The Swift Programming Language (Swift 5.1)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css" />
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico" />
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://docs.swift.org/favicon.ico" />
     <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png" />
@@ -40,11 +40,11 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.1</div></h2>
 
     <ul>
     <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to Swift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/">Welcome to Swift</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="TheBasics.html">Language Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="TheBasics.html">The Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BasicOperators.html">Basic Operators</a></li>
@@ -53,7 +53,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ControlFlow.html">Control Flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Functions.html">Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Closures.html">Closures</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="Enumerations.html#">Enumeration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="Enumerations.html#">Enumerations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ClassesAndStructures.html">Structures and Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Properties.html">Properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Methods.html">Methods</a></li>
@@ -68,14 +68,15 @@
 <li class="toctree-l2"><a class="reference internal" href="Extensions.html">Extensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Protocols.html">Protocols</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Generics.html">Generics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpaqueTypes.html">Opaque Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AutomaticReferenceCounting.html">Automatic Reference Counting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MemorySafety.html">Memory Safety</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AccessControl.html">Access Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AdvancedOperators.html">Advanced Operators</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../ReferenceManual/AboutTheLanguageReference.html">Language Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RevisionHistory/RevisionHistory.html">Revision History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/ReferenceManual/AboutTheLanguageReference.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html">Revision History</a></li>
 </ul>
 
     <li class="toctree-l1 return"><a class="reference internal" href="https://swift.org/">← Return to Swift.org</a></li>
@@ -97,7 +98,7 @@
             </div>
             <menu type="list" class="details">
                 <ul>
-<li><a class="reference internal" href="Enumerations.html#">Enumeration</a><ul>
+<li><a class="reference internal" href="Enumerations.html#">Enumerations</a><ul>
 <li><a class="reference internal" href="Enumerations.html#ID146">Enumeration Syntax</a></li>
 <li><a class="reference internal" href="Enumerations.html#ID147">Matching Enumeration Values with a Switch Statement</a></li>
 <li><a class="reference internal" href="Enumerations.html#ID581">Iterating over Enumeration Cases</a></li>
@@ -118,15 +119,15 @@
         </menu>
 
         
-  <div class="section" id="enumeration">
-<h1>Enumeration<a class="headerlink" href="Enumerations.html#enumeration" title="Permalink to this headline"> </a></h1>
+  <div class="section" id="enumerations">
+<h1>Enumerations<a class="headerlink" href="Enumerations.html#enumerations" title="Permalink to this headline"></a></h1>
 <p>An <em>enumeration</em> defines a common type for a group of related values and enables you to work with those values in a type-safe way within your code.</p>
 <p>If you are familiar with C, you will know that C enumerations assign related names to a set of integer values. Enumerations in Swift are much more flexible, and don’t have to provide a value for each case of the enumeration. If a value (known as a <em>raw</em> value) is provided for each enumeration case, the value can be a string, a character, or a value of any integer or floating-point type.</p>
 <p>Alternatively, enumeration cases can specify associated values of <em>any</em> type to be stored along with each different case value, much as unions or variants do in other languages. You can define a common set of related cases as part of one enumeration, each of which has a different set of values of appropriate types associated with it.</p>
 <p>Enumerations in Swift are first-class types in their own right. They adopt many features traditionally supported only by classes, such as computed properties to provide additional information about the enumeration’s current value, and instance methods to provide functionality related to the values the enumeration represents. Enumerations can also define initializers to provide an initial case value; can be extended to expand their functionality beyond their original implementation; and can conform to protocols to provide standard functionality.</p>
 <p>For more about these capabilities, see <a class="reference internal" href="Properties.html"><span class="doc">Properties</span></a>, <a class="reference internal" href="Methods.html"><span class="doc">Methods</span></a>, <a class="reference internal" href="Initialization.html"><span class="doc">Initialization</span></a>, <a class="reference internal" href="Extensions.html"><span class="doc">Extensions</span></a>, and <a class="reference internal" href="Protocols.html"><span class="doc">Protocols</span></a>.</p>
 <div class="section" id="ID146">
-<h2>Enumeration Syntax<a class="headerlink" href="Enumerations.html#ID146" title="Permalink to this headline"> </a></h2>
+<h2>Enumeration Syntax<a class="headerlink" href="Enumerations.html#ID146" title="Permalink to this headline"></a></h2>
 <p>You introduce enumerations with the <code class="docutils literal notranslate"><span class="pre">enum</span></code> keyword and place their entire definition within a pair of braces:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">enum</span> <span class="nv">SomeEnumeration</span> {
 </li><li>    <span class="c">// enumeration definition goes here</span>
@@ -159,7 +160,7 @@
 <p>The type of <code class="docutils literal notranslate"><span class="pre">directionToHead</span></code> is already known, and so you can drop the type when setting its value. This makes for highly readable code when working with explicitly typed enumeration values.</p>
 </div>
 <div class="section" id="ID147">
-<h2>Matching Enumeration Values with a Switch Statement<a class="headerlink" href="Enumerations.html#ID147" title="Permalink to this headline"> </a></h2>
+<h2>Matching Enumeration Values with a Switch Statement<a class="headerlink" href="Enumerations.html#ID147" title="Permalink to this headline"></a></h2>
 <p>You can match individual enumeration values with a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">directionToHead</span> = .<span class="nv">south</span>
 </li><li><span class="k">switch</span> <span class="nv">directionToHead</span> {
@@ -190,7 +191,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID581">
-<h2>Iterating over Enumeration Cases<a class="headerlink" href="Enumerations.html#ID581" title="Permalink to this headline"> </a></h2>
+<h2>Iterating over Enumeration Cases<a class="headerlink" href="Enumerations.html#ID581" title="Permalink to this headline"></a></h2>
 <p>For some enumerations, it’s useful to have a collection of all of that enumeration’s cases. You enable this by writing <code class="docutils literal notranslate"><span class="pre">:</span> <span class="pre">CaseIterable</span></code> after the enumeration’s name. Swift exposes a collection of all the cases as an <code class="docutils literal notranslate"><span class="pre">allCases</span></code> property of the enumeration type. Here’s an example:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">enum</span> <span class="nv">Beverage</span>: <span class="nc">CaseIterable</span> {
 </li><li>    <span class="k">case</span> <span class="nv">coffee</span>, <span class="nv">tea</span>, <span class="nv">juice</span>
@@ -210,7 +211,7 @@
 <p>The syntax used in the examples above marks the enumeration as conforming to the <a class="reference external" href="https://developer.apple.com/documentation/swift/caseiterable"><code class="docutils literal notranslate"><span class="pre">CaseIterable</span></code></a> protocol. For information about protocols, see <a class="reference internal" href="Protocols.html"><span class="doc">Protocols</span></a>.</p>
 </div>
 <div class="section" id="ID148">
-<h2>Associated Values<a class="headerlink" href="Enumerations.html#ID148" title="Permalink to this headline"> </a></h2>
+<h2>Associated Values<a class="headerlink" href="Enumerations.html#ID148" title="Permalink to this headline"></a></h2>
 <p>The examples in the previous section show how the cases of an enumeration are a defined (and typed) value in their own right. You can set a constant or variable to <code class="docutils literal notranslate"><span class="pre">Planet.earth</span></code>, and check for this value later. However, it’s sometimes useful to be able to store values of other types alongside these case values. This additional information is called an <em>associated value</em>, and it varies each time you use that case as a value in your code.</p>
 <p>You can define Swift enumerations to store associated values of any given type, and the value types can be different for each case of the enumeration if needed. Enumerations similar to these are known as <em>discriminated unions</em>, <em>tagged unions</em>, or <em>variants</em> in other programming languages.</p>
 <p>For example, suppose an inventory tracking system needs to track products by two different types of barcode. Some products are labeled with 1D barcodes in UPC format, which uses the numbers <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">9</span></code>. Each barcode has a number system digit, followed by five manufacturer code digits and five product code digits. These are followed by a check digit to verify that the code has been scanned correctly:</p>
@@ -255,7 +256,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID149">
-<h2>Raw Values<a class="headerlink" href="Enumerations.html#ID149" title="Permalink to this headline"> </a></h2>
+<h2>Raw Values<a class="headerlink" href="Enumerations.html#ID149" title="Permalink to this headline"></a></h2>
 <p>The barcode example in <a class="reference internal" href="Enumerations.html#ID148"><span class="std std-ref">Associated Values</span></a> shows how cases of an enumeration can declare that they store associated values of different types. As an alternative to associated values, enumeration cases can come prepopulated with default values (called <em>raw values</em>), which are all of the same type.</p>
 <p>Here’s an example that stores raw ASCII values alongside named enumeration cases:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">enum</span> <span class="nv">ASCIIControlCharacter</span>: <span class="nc">Character</span> {
@@ -271,7 +272,7 @@
 <p class="last">Raw values are <em>not</em> the same as associated values. Raw values are set to prepopulated values when you first define the enumeration in your code, like the three ASCII codes above. The raw value for a particular enumeration case is always the same. Associated values are set when you create a new constant or variable based on one of the enumeration’s cases, and can be different each time you do so.</p>
 </div>
 <div class="section" id="ID535">
-<h3>Implicitly Assigned Raw Values<a class="headerlink" href="Enumerations.html#ID535" title="Permalink to this headline"> </a></h3>
+<h3>Implicitly Assigned Raw Values<a class="headerlink" href="Enumerations.html#ID535" title="Permalink to this headline"></a></h3>
 <p>When you’re working with enumerations that store integer or string raw values, you don’t have to explicitly assign a raw value for each case. When you don’t, Swift automatically assigns the values for you.</p>
 <p>For example, when integers are used for raw values, the implicit value for each case is one more than the previous case. If the first case doesn’t have a value set, its value is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 <p>The enumeration below is a refinement of the earlier <code class="docutils literal notranslate"><span class="pre">Planet</span></code> enumeration, with integer raw values to represent each planet’s order from the sun:</p>
@@ -296,7 +297,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID150">
-<h3>Initializing from a Raw Value<a class="headerlink" href="Enumerations.html#ID150" title="Permalink to this headline"> </a></h3>
+<h3>Initializing from a Raw Value<a class="headerlink" href="Enumerations.html#ID150" title="Permalink to this headline"></a></h3>
 <p>If you define an enumeration with a raw-value type, the enumeration automatically receives an initializer that takes a value of the raw value’s type (as a parameter called <code class="docutils literal notranslate"><span class="pre">rawValue</span></code>) and returns either an enumeration case or <code class="docutils literal notranslate"><span class="pre">nil</span></code>. You can use this initializer to try to create a new instance of the enumeration.</p>
 <p>This example identifies Uranus from its raw value of <code class="docutils literal notranslate"><span class="pre">7</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">possiblePlanet</span> = <span class="nv">Planet</span>(<span class="nv">rawValue</span>: <span class="m">7</span>)
@@ -305,7 +306,7 @@
 <p>Not all possible <code class="docutils literal notranslate"><span class="pre">Int</span></code> values will find a matching planet, however. Because of this, the raw value initializer always returns an <em>optional</em> enumeration case. In the example above, <code class="docutils literal notranslate"><span class="pre">possiblePlanet</span></code> is of type <code class="docutils literal notranslate"><span class="pre">Planet?</span></code>, or “optional <code class="docutils literal notranslate"><span class="pre">Planet</span></code>.”</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The raw value initializer is a failable initializer, because not every raw value will return an enumeration case. For more information, see <a class="reference internal" href="../ReferenceManual/Declarations.html#ID376"><span class="std std-ref">Failable Initializers</span></a>.</p>
+<p class="last">The raw value initializer is a failable initializer, because not every raw value will return an enumeration case. For more information, see <a class="reference internal" href="https://docs.swift.org/swift-book/ReferenceManual/Declarations.html#ID376"><span class="std std-ref">Failable Initializers</span></a>.</p>
 </div>
 <p>If you try to find a planet with a position of <code class="docutils literal notranslate"><span class="pre">11</span></code>, the optional <code class="docutils literal notranslate"><span class="pre">Planet</span></code> value returned by the raw value initializer will be <code class="docutils literal notranslate"><span class="pre">nil</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">positionToFind</span> = <span class="m">11</span>
@@ -325,7 +326,7 @@
 </div>
 </div>
 <div class="section" id="ID536">
-<h2>Recursive Enumerations<a class="headerlink" href="Enumerations.html#ID536" title="Permalink to this headline"> </a></h2>
+<h2>Recursive Enumerations<a class="headerlink" href="Enumerations.html#ID536" title="Permalink to this headline"></a></h2>
 <p>A <em>recursive enumeration</em> is an enumeration that has another instance of the enumeration as the associated value for one or more of the enumeration cases. You indicate that an enumeration case is recursive by writing <code class="docutils literal notranslate"><span class="pre">indirect</span></code> before it, which tells the compiler to insert the necessary layer of indirection.</p>
 <p>For example, here is an enumeration that stores simple arithmetic expressions:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">enum</span> <span class="nv">ArithmeticExpression</span> {

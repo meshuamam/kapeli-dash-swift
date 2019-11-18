@@ -3,12 +3,12 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>Extensions &mdash; The Swift Programming Language (Swift 5)</title>
+    <title>Extensions &mdash; The Swift Programming Language (Swift 5.1)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css"/>
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico"/>
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://docs.swift.org/favicon.ico"/>
     <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png"/>
     <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png"/>
     <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <a class="dashingAutolink" name="autolink-96"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
+      <a class="dashingAutolink" name="autolink-84"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -34,11 +34,11 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.1</div></h2>
 
     <ul>
     <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to Swift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/">Welcome to Swift</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="TheBasics.html">Language Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="TheBasics.html">The Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BasicOperators.html">Basic Operators</a></li>
@@ -47,7 +47,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ControlFlow.html">Control Flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Functions.html">Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Closures.html">Closures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Enumerations.html">Enumeration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Enumerations.html">Enumerations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ClassesAndStructures.html">Structures and Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Properties.html">Properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Methods.html">Methods</a></li>
@@ -62,14 +62,15 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="Extensions.html#">Extensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Protocols.html">Protocols</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Generics.html">Generics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpaqueTypes.html">Opaque Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AutomaticReferenceCounting.html">Automatic Reference Counting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MemorySafety.html">Memory Safety</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AccessControl.html">Access Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AdvancedOperators.html">Advanced Operators</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../ReferenceManual/AboutTheLanguageReference.html">Language Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RevisionHistory/RevisionHistory.html">Revision History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/ReferenceManual/AboutTheLanguageReference.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html">Revision History</a></li>
 </ul>
 
     <li class="toctree-l1 return"><a class="reference internal" href="https://swift.org/">&larr; Return to Swift.org</a></li>
@@ -112,7 +113,7 @@
 
         
   <div class="section" id="extensions">
-<a class="dashingAutolink" name="autolink-97"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Extensions"></a><h1>Extensions<a class="headerlink" href="Extensions.html#extensions" title="Permalink to this headline"> </a></h1>
+<a class="dashingAutolink" name="autolink-85"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Extensions"></a><h1>Extensions<a class="headerlink" href="Extensions.html#extensions" title="Permalink to this headline"></a></h1>
 <p><em>Extensions</em> add new functionality to an existing class, structure, enumeration, or protocol type. This includes the ability to extend types for which you do not have access to the original source code (known as <em>retroactive modeling</em>). Extensions are similar to categories in Objective-C. (Unlike Objective-C categories, Swift extensions do not have names.)</p>
 <p>Extensions in Swift can:</p>
 <ul class="simple">
@@ -129,7 +130,7 @@
 <p class="last">Extensions can add new functionality to a type, but they cannot override existing functionality.</p>
 </div>
 <div class="section" id="ID470">
-<a class="dashingAutolink" name="autolink-98"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Extension%20Syntax"></a><h2>Extension Syntax<a class="headerlink" href="Extensions.html#ID470" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-86"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Extension%20Syntax"></a><h2>Extension Syntax<a class="headerlink" href="Extensions.html#ID470" title="Permalink to this headline"></a></h2>
 <p>Declare extensions with the <code class="docutils literal notranslate"><span class="pre">extension</span></code> keyword:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">SomeType</span> {
 </li><li>    <span class="c">// new functionality to add to SomeType goes here</span>
@@ -148,7 +149,7 @@
 </div>
 </div>
 <div class="section" id="ID152">
-<a class="dashingAutolink" name="autolink-99"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Computed%20Properties"></a><h2>Computed Properties<a class="headerlink" href="Extensions.html#ID152" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-87"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Computed%20Properties"></a><h2>Computed Properties<a class="headerlink" href="Extensions.html#ID152" title="Permalink to this headline"></a></h2>
 <p>Extensions can add computed instance properties and computed type properties to existing types. This example adds five computed instance properties to Swift&rsquo;s built-in <code class="docutils literal notranslate"><span class="pre">Double</span></code> type, to provide basic support for working with distance units:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">Double</span> {
 </li><li>    <span class="k">var</span> <span class="nv">km</span>: <span class="nc">Double</span> { <span class="k">return</span> <span class="k">self</span> * <span class="m">1_000.0</span> }
@@ -178,7 +179,7 @@
 </div>
 </div>
 <div class="section" id="ID153">
-<a class="dashingAutolink" name="autolink-100"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Initializers"></a><h2>Initializers<a class="headerlink" href="Extensions.html#ID153" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-88"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Initializers"></a><h2>Initializers<a class="headerlink" href="Extensions.html#ID153" title="Permalink to this headline"></a></h2>
 <p>Extensions can add new initializers to existing types. This enables you to extend other types to accept your own custom types as initializer parameters, or to provide additional initialization options that were not included as part of the type&rsquo;s original implementation.</p>
 <p>Extensions can add new convenience initializers to a class, but they cannot add new designated initializers or deinitializers to a class. Designated initializers and deinitializers must always be provided by the original class implementation.</p>
 <p>If you use an extension to add an initializer to a value type that provides default values for all of its stored properties and does not define any custom initializers, you can call the default initializer and memberwise initializer for that value type from within your extension&rsquo;s initializer. This wouldn&rsquo;t be the case if you had written the initializer as part of the value type&rsquo;s original implementation, as described in <a class="reference internal" href="Initialization.html#ID215"><span class="std std-ref">Initializer Delegation for Value Types</span></a>.</p>
@@ -220,7 +221,7 @@
 </div>
 </div>
 <div class="section" id="ID154">
-<a class="dashingAutolink" name="autolink-101"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Methods"></a><h2>Methods<a class="headerlink" href="Extensions.html#ID154" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-89"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Methods"></a><h2>Methods<a class="headerlink" href="Extensions.html#ID154" title="Permalink to this headline"></a></h2>
 <p>Extensions can add new instance methods and type methods to existing types. The following example adds a new instance method called <code class="docutils literal notranslate"><span class="pre">repetitions</span></code> to the <code class="docutils literal notranslate"><span class="pre">Int</span></code> type:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">Int</span> {
 </li><li>    <span class="k">func</span> <span class="nv">repetitions</span>(<span class="nv">task</span>: () -&gt; <span class="nc">Void</span>) {
@@ -240,7 +241,7 @@
 </li><li><span class="c">// Hello!</span>
 </li></ol></div></div></div>
 <div class="section" id="ID155">
-<h3>Mutating Instance Methods<a class="headerlink" href="Extensions.html#ID155" title="Permalink to this headline"> </a></h3>
+<h3>Mutating Instance Methods<a class="headerlink" href="Extensions.html#ID155" title="Permalink to this headline"></a></h3>
 <p>Instance methods added with an extension can also modify (or <em>mutate</em>) the instance itself. Structure and enumeration methods that modify <code class="docutils literal notranslate"><span class="pre">self</span></code> or its properties must mark the instance method as <code class="docutils literal notranslate"><span class="pre">mutating</span></code>, just like mutating methods from an original implementation.</p>
 <p>The example below adds a new mutating method called <code class="docutils literal notranslate"><span class="pre">square</span></code> to Swift&rsquo;s <code class="docutils literal notranslate"><span class="pre">Int</span></code> type, which squares the original value:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">Int</span> {
@@ -255,7 +256,7 @@
 </div>
 </div>
 <div class="section" id="ID156">
-<a class="dashingAutolink" name="autolink-102"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Subscripts"></a><h2>Subscripts<a class="headerlink" href="Extensions.html#ID156" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-90"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Subscripts"></a><h2>Subscripts<a class="headerlink" href="Extensions.html#ID156" title="Permalink to this headline"></a></h2>
 <p>Extensions can add new subscripts to an existing type. This example adds an integer subscript to Swift&rsquo;s built-in <code class="docutils literal notranslate"><span class="pre">Int</span></code> type. This subscript <code class="docutils literal notranslate"><span class="pre">[n]</span></code> returns the decimal digit <code class="docutils literal notranslate"><span class="pre">n</span></code> places in from the right of the number:</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">123456789[0]</span></code> returns <code class="docutils literal notranslate"><span class="pre">9</span></code></li>
@@ -287,7 +288,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID157">
-<a class="dashingAutolink" name="autolink-103"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Nested%20Types"></a><h2>Nested Types<a class="headerlink" href="Extensions.html#ID157" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-91"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Nested%20Types"></a><h2>Nested Types<a class="headerlink" href="Extensions.html#ID157" title="Permalink to this headline"></a></h2>
 <p>Extensions can add new nested types to existing classes, structures, and enumerations:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">Int</span> {
 </li><li>    <span class="k">enum</span> <span class="nv">Kind</span> {

@@ -3,12 +3,12 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>Optional Chaining &mdash; The Swift Programming Language (Swift 5)</title>
+    <title>Optional Chaining &mdash; The Swift Programming Language (Swift 5.1)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css"/>
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico"/>
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://docs.swift.org/favicon.ico"/>
     <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png"/>
     <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png"/>
     <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <a class="dashingAutolink" name="autolink-155"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
+      <a class="dashingAutolink" name="autolink-148"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -34,11 +34,11 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.1</div></h2>
 
     <ul>
     <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to Swift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/">Welcome to Swift</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="TheBasics.html">Language Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="TheBasics.html">The Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BasicOperators.html">Basic Operators</a></li>
@@ -47,7 +47,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ControlFlow.html">Control Flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Functions.html">Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Closures.html">Closures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Enumerations.html">Enumeration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Enumerations.html">Enumerations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ClassesAndStructures.html">Structures and Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Properties.html">Properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Methods.html">Methods</a></li>
@@ -62,14 +62,15 @@
 <li class="toctree-l2"><a class="reference internal" href="Extensions.html">Extensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Protocols.html">Protocols</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Generics.html">Generics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpaqueTypes.html">Opaque Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AutomaticReferenceCounting.html">Automatic Reference Counting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MemorySafety.html">Memory Safety</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AccessControl.html">Access Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AdvancedOperators.html">Advanced Operators</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../ReferenceManual/AboutTheLanguageReference.html">Language Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RevisionHistory/RevisionHistory.html">Revision History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/ReferenceManual/AboutTheLanguageReference.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html">Revision History</a></li>
 </ul>
 
     <li class="toctree-l1 return"><a class="reference internal" href="https://swift.org/">&larr; Return to Swift.org</a></li>
@@ -113,14 +114,14 @@
 
         
   <div class="section" id="optional-chaining">
-<a class="dashingAutolink" name="autolink-156"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Optional%20Chaining"></a><h1>Optional Chaining<a class="headerlink" href="OptionalChaining.html#optional-chaining" title="Permalink to this headline"> </a></h1>
+<a class="dashingAutolink" name="autolink-149"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Optional%20Chaining"></a><h1>Optional Chaining<a class="headerlink" href="OptionalChaining.html#optional-chaining" title="Permalink to this headline"></a></h1>
 <p><em>Optional chaining</em> is a process for querying and calling properties, methods, and subscripts on an optional that might currently be <code class="docutils literal notranslate"><span class="pre">nil</span></code>. If the optional contains a value, the property, method, or subscript call succeeds; if the optional is <code class="docutils literal notranslate"><span class="pre">nil</span></code>, the property, method, or subscript call returns <code class="docutils literal notranslate"><span class="pre">nil</span></code>. Multiple queries can be chained together, and the entire chain fails gracefully if any link in the chain is <code class="docutils literal notranslate"><span class="pre">nil</span></code>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Optional chaining in Swift is similar to messaging <code class="docutils literal notranslate"><span class="pre">nil</span></code> in Objective-C, but in a way that works for any type, and that can be checked for success or failure.</p>
 </div>
 <div class="section" id="ID246">
-<a class="dashingAutolink" name="autolink-157"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Optional%20Chaining%20as%20an%20Alternative%20to%20Forced%20Unwrapping"></a><h2>Optional Chaining as an Alternative to Forced Unwrapping<a class="headerlink" href="OptionalChaining.html#ID246" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-150"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Optional%20Chaining%20as%20an%20Alternative%20to%20Forced%20Unwrapping"></a><h2>Optional Chaining as an Alternative to Forced Unwrapping<a class="headerlink" href="OptionalChaining.html#ID246" title="Permalink to this headline"></a></h2>
 <p>You specify optional chaining by placing a question mark (<code class="docutils literal notranslate"><span class="pre">?</span></code>) after the optional value on which you wish to call a property, method or subscript if the optional is non-<code class="docutils literal notranslate"><span class="pre">nil</span></code>. This is very similar to placing an exclamation mark (<code class="docutils literal notranslate"><span class="pre">!</span></code>) after an optional value to force the unwrapping of its value. The main difference is that optional chaining fails gracefully when the optional is <code class="docutils literal notranslate"><span class="pre">nil</span></code>, whereas forced unwrapping triggers a runtime error when the optional is <code class="docutils literal notranslate"><span class="pre">nil</span></code>.</p>
 <p>To reflect the fact that optional chaining can be called on a <code class="docutils literal notranslate"><span class="pre">nil</span></code> value, the result of an optional chaining call is always an optional value, even if the property, method, or subscript you are querying returns a non-optional value. You can use this optional return value to check whether the optional chaining call was successful (the returned optional contains a value), or did not succeed due to a <code class="docutils literal notranslate"><span class="pre">nil</span></code> value in the chain (the returned optional value is <code class="docutils literal notranslate"><span class="pre">nil</span></code>).</p>
 <p>Specifically, the result of an optional chaining call is of the same type as the expected return value, but wrapped in an optional. A property that normally returns an <code class="docutils literal notranslate"><span class="pre">Int</span></code> will return an <code class="docutils literal notranslate"><span class="pre">Int?</span></code> when accessed through optional chaining.</p>
@@ -167,7 +168,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID247">
-<a class="dashingAutolink" name="autolink-158"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Defining%20Model%20Classes%20for%20Optional%20Chaining"></a><h2>Defining Model Classes for Optional Chaining<a class="headerlink" href="OptionalChaining.html#ID247" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-151"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Defining%20Model%20Classes%20for%20Optional%20Chaining"></a><h2>Defining Model Classes for Optional Chaining<a class="headerlink" href="OptionalChaining.html#ID247" title="Permalink to this headline"></a></h2>
 <p>You can use optional chaining with calls to properties, methods, and subscripts that are more than one level deep. This enables you to drill down into subproperties within complex models of interrelated types, and to check whether it is possible to access properties, methods, and subscripts on those subproperties.</p>
 <p>The code snippets below define four model classes for use in several subsequent examples, including examples of multilevel optional chaining. These classes expand upon the <code class="docutils literal notranslate"><span class="pre">Person</span></code> and <code class="docutils literal notranslate"><span class="pre">Residence</span></code> model from above by adding a <code class="docutils literal notranslate"><span class="pre">Room</span></code> and <code class="docutils literal notranslate"><span class="pre">Address</span></code> class, with associated properties, methods, and subscripts.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Person</span></code> class is defined in the same way as before:</p>
@@ -224,7 +225,7 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">Address</span></code> class also provides a method called <code class="docutils literal notranslate"><span class="pre">buildingIdentifier()</span></code>, which has a return type of <code class="docutils literal notranslate"><span class="pre">String?</span></code>. This method checks the properties of the address and returns <code class="docutils literal notranslate"><span class="pre">buildingName</span></code> if it has a value, or <code class="docutils literal notranslate"><span class="pre">buildingNumber</span></code> concatenated with <code class="docutils literal notranslate"><span class="pre">street</span></code> if both have values, or <code class="docutils literal notranslate"><span class="pre">nil</span></code> otherwise.</p>
 </div>
 <div class="section" id="ID248">
-<a class="dashingAutolink" name="autolink-159"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Accessing%20Properties%20Through%20Optional%20Chaining"></a><h2>Accessing Properties Through Optional Chaining<a class="headerlink" href="OptionalChaining.html#ID248" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-152"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Accessing%20Properties%20Through%20Optional%20Chaining"></a><h2>Accessing Properties Through Optional Chaining<a class="headerlink" href="OptionalChaining.html#ID248" title="Permalink to this headline"></a></h2>
 <p>As demonstrated in <a class="reference internal" href="OptionalChaining.html#ID246"><span class="std std-ref">Optional Chaining as an Alternative to Forced Unwrapping</span></a>, you can use optional chaining to access a property on an optional value, and to check if that property access is successful.</p>
 <p>Use the classes defined above to create a new <code class="docutils literal notranslate"><span class="pre">Person</span></code> instance, and try to access its <code class="docutils literal notranslate"><span class="pre">numberOfRooms</span></code> property as before:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">john</span> = <span class="nv">Person</span>()
@@ -258,7 +259,7 @@
 <p>You can tell that the <code class="docutils literal notranslate"><span class="pre">createAddress()</span></code> function isn&rsquo;t called, because nothing is printed.</p>
 </div>
 <div class="section" id="ID249">
-<a class="dashingAutolink" name="autolink-160"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Calling%20Methods%20Through%20Optional%20Chaining"></a><h2>Calling Methods Through Optional Chaining<a class="headerlink" href="OptionalChaining.html#ID249" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-153"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Calling%20Methods%20Through%20Optional%20Chaining"></a><h2>Calling Methods Through Optional Chaining<a class="headerlink" href="OptionalChaining.html#ID249" title="Permalink to this headline"></a></h2>
 <p>You can use optional chaining to call a method on an optional value, and to check whether that method call is successful. You can do this even if that method does not define a return value.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">printNumberOfRooms()</span></code> method on the <code class="docutils literal notranslate"><span class="pre">Residence</span></code> class prints the current value of <code class="docutils literal notranslate"><span class="pre">numberOfRooms</span></code>. Here&rsquo;s how the method looks:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">func</span> <span class="nv">printNumberOfRooms</span>() {
@@ -284,7 +285,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID250">
-<a class="dashingAutolink" name="autolink-161"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Accessing%20Subscripts%20Through%20Optional%20Chaining"></a><h2>Accessing Subscripts Through Optional Chaining<a class="headerlink" href="OptionalChaining.html#ID250" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-154"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Accessing%20Subscripts%20Through%20Optional%20Chaining"></a><h2>Accessing Subscripts Through Optional Chaining<a class="headerlink" href="OptionalChaining.html#ID250" title="Permalink to this headline"></a></h2>
 <p>You can use optional chaining to try to retrieve and set a value from a subscript on an optional value, and to check whether that subscript call is successful.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -317,7 +318,7 @@
 </li><li><span class="c">// Prints &#34;The first room name is Living Room.&#34;</span>
 </li></ol></div></div></div>
 <div class="section" id="ID251">
-<h3>Accessing Subscripts of Optional Type<a class="headerlink" href="OptionalChaining.html#ID251" title="Permalink to this headline"> </a></h3>
+<h3>Accessing Subscripts of Optional Type<a class="headerlink" href="OptionalChaining.html#ID251" title="Permalink to this headline"></a></h3>
 <p>If a subscript returns a value of optional type&mdash;such as the key subscript of Swift&rsquo;s <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> type&mdash;place a question mark <em>after</em> the subscript&rsquo;s closing bracket to chain on its optional return value:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">testScores</span> = [<span class="s">&#34;Dave&#34;</span>: [<span class="m">86</span>, <span class="m">82</span>, <span class="m">84</span>], <span class="s">&#34;Bev&#34;</span>: [<span class="m">79</span>, <span class="m">94</span>, <span class="m">81</span>]]
 </li><li><span class="nv">testScores</span>[<span class="s">&#34;Dave&#34;</span>]?[<span class="m">0</span>] = <span class="m">91</span>
@@ -329,7 +330,7 @@
 </div>
 </div>
 <div class="section" id="ID252">
-<a class="dashingAutolink" name="autolink-162"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Linking%20Multiple%20Levels%20of%20Chaining"></a><h2>Linking Multiple Levels of Chaining<a class="headerlink" href="OptionalChaining.html#ID252" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-155"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Linking%20Multiple%20Levels%20of%20Chaining"></a><h2>Linking Multiple Levels of Chaining<a class="headerlink" href="OptionalChaining.html#ID252" title="Permalink to this headline"></a></h2>
 <p>You can link together multiple levels of optional chaining to drill down to properties, methods, and subscripts deeper within a model. However, multiple levels of optional chaining do not add more levels of optionality to the returned value.</p>
 <p>To put it another way:</p>
 <ul class="simple">
@@ -367,7 +368,7 @@
 <p>In this example, the attempt to set the <code class="docutils literal notranslate"><span class="pre">address</span></code> property of <code class="docutils literal notranslate"><span class="pre">john.residence</span></code> will succeed, because the value of <code class="docutils literal notranslate"><span class="pre">john.residence</span></code> currently contains a valid <code class="docutils literal notranslate"><span class="pre">Residence</span></code> instance.</p>
 </div>
 <div class="section" id="ID253">
-<a class="dashingAutolink" name="autolink-163"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Chaining%20on%20Methods%20with%20Optional%20Return%20Values"></a><h2>Chaining on Methods with Optional Return Values<a class="headerlink" href="OptionalChaining.html#ID253" title="Permalink to this headline"> </a></h2>
+<a class="dashingAutolink" name="autolink-156"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Chaining%20on%20Methods%20with%20Optional%20Return%20Values"></a><h2>Chaining on Methods with Optional Return Values<a class="headerlink" href="OptionalChaining.html#ID253" title="Permalink to this headline"></a></h2>
 <p>The previous example shows how to retrieve the value of a property of optional type through optional chaining. You can also use optional chaining to call a method that returns a value of optional type, and to chain on that method&rsquo;s return value if needed.</p>
 <p>The example below calls the <code class="docutils literal notranslate"><span class="pre">Address</span></code> class&rsquo;s <code class="docutils literal notranslate"><span class="pre">buildingIdentifier()</span></code> method through optional chaining. This method returns a value of type <code class="docutils literal notranslate"><span class="pre">String?</span></code>. As described above, the ultimate return type of this method call after optional chaining is also <code class="docutils literal notranslate"><span class="pre">String?</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">if</span> <span class="k">let</span> <span class="nv">buildingIdentifier</span> = <span class="nv">john</span>.<span class="nv">residence</span>?.<span class="nv">address</span>?.<span class="nv">buildingIdentifier</span>() {
