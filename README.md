@@ -1,6 +1,6 @@
 # Introduction
 
-This repo generates a docset in the [Kapeli Dash Mac App](https://kapeli.com/dash) for the Swift Programming Language.
+This repo generates a docset in the [Kapeli Dash Mac App](https://kapeli.com/dash) for the Swift Programming Language v5.1
 
 # Getting Started
 
