@@ -2,6 +2,8 @@
 
 This repo generates a docset in the [Kapeli Dash Mac App](https://kapeli.com/dash) for the Swift Programming Language v5.1
 
+![](swift.gif)
+
 # Getting Started
 
 You can simply clone the repo and double click the Swift.docset file to start using in Kapeli Dash.  
