@@ -3,12 +3,12 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>Functions &mdash; The Swift Programming Language (Swift 5.1)</title>
+    <title>Functions &mdash; The Swift Programming Language (Swift 5.3)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css"/>
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://docs.swift.org/favicon.ico"/>
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico"/>
     <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png"/>
     <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png"/>
     <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <a class="dashingAutolink" name="autolink-97"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
+      <a class="dashingAutolink" name="autolink-92"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -34,7 +34,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.1</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
 
     <ul>
     <ul class="current">
@@ -131,12 +131,12 @@
 
         
   <div class="section" id="functions">
-<a class="dashingAutolink" name="autolink-98"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Functions"></a><h1>Functions<a class="headerlink" href="Functions.html#functions" title="Permalink to this headline"></a></h1>
+<a class="dashingAutolink" name="autolink-93"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Functions"></a><h1>Functions<a class="headerlink" href="Functions.html#functions" title="Permalink to this headline"></a></h1>
 <p><em>Functions</em> are self-contained chunks of code that perform a specific task. You give a function a name that identifies what it does, and this name is used to &ldquo;call&rdquo; the function to perform its task when needed.</p>
 <p>Swift&rsquo;s unified function syntax is flexible enough to express anything from a simple C-style function with no parameter names to a complex Objective-C-style method with names and argument labels for each parameter. Parameters can provide default values to simplify function calls and can be passed as in-out parameters, which modify a passed variable once the function has completed its execution.</p>
 <p>Every function in Swift has a type, consisting of the function&rsquo;s parameter types and return type. You can use this type like any other type in Swift, which makes it easy to pass functions as parameters to other functions, and to return functions from functions. Functions can also be written within other functions to encapsulate useful functionality within a nested function scope.</p>
 <div class="section" id="ID159">
-<a class="dashingAutolink" name="autolink-92"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Defining%20and%20Calling%20Functions"></a><h2>Defining and Calling Functions<a class="headerlink" href="Functions.html#ID159" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-94"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Defining%20and%20Calling%20Functions"></a><h2>Defining and Calling Functions<a class="headerlink" href="Functions.html#ID159" title="Permalink to this headline"></a></h2>
 <p>When you define a function, you can optionally define one or more named, typed values that the function takes as input, known as <em>parameters</em>. You can also optionally define a type of value that the function will pass back as output when it is done, known as its <em>return type</em>.</p>
 <p>Every function has a <em>function name</em>, which describes the task that the function performs. To use a function, you &ldquo;call&rdquo; that function with its name and pass it input values (known as <em>arguments</em>) that match the types of the function&rsquo;s parameters. A function&rsquo;s arguments must always be provided in the same order as the function&rsquo;s parameter list.</p>
 <p>The function in the example below is called <code class="docutils literal notranslate"><span class="pre">greet(person:)</span></code>, because that&rsquo;s what it does&mdash;it takes a person&rsquo;s name as input and returns a greeting for that person. To accomplish this, you define one input parameter&mdash;a <code class="docutils literal notranslate"><span class="pre">String</span></code> value called <code class="docutils literal notranslate"><span class="pre">person</span></code>&mdash;and a return type of <code class="docutils literal notranslate"><span class="pre">String</span></code>, which will contain a greeting for that person:</p>
@@ -168,7 +168,7 @@
 </li></ol></div></div></div>
 </div>
 <div class="section" id="ID160">
-<a class="dashingAutolink" name="autolink-93"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Function%20Parameters%20and%20Return%20Values"></a><h2>Function Parameters and Return Values<a class="headerlink" href="Functions.html#ID160" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-95"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Function%20Parameters%20and%20Return%20Values"></a><h2>Function Parameters and Return Values<a class="headerlink" href="Functions.html#ID160" title="Permalink to this headline"></a></h2>
 <p>Function parameters and return values are extremely flexible in Swift. You can define anything from a simple utility function with a single unnamed parameter to a complex function with expressive parameter names and different parameter options.</p>
 <div class="section" id="ID162">
 <h3>Functions Without Parameters<a class="headerlink" href="Functions.html#ID162" title="Permalink to this headline"></a></h3>
@@ -303,10 +303,14 @@
 </li></ol></div></div></div>
 <p>The entire definition of the <code class="docutils literal notranslate"><span class="pre">greeting(for:)</span></code> function is the greeting message that it returns, which means it can use this shorter form. The <code class="docutils literal notranslate"><span class="pre">anotherGreeting(for:)</span></code> function returns the same greeting message, using the <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword like a longer function. Any function that you write as just one <code class="docutils literal notranslate"><span class="pre">return</span></code> line can omit the <code class="docutils literal notranslate"><span class="pre">return</span></code>.</p>
 <p>As you&rsquo;ll see in <a class="reference internal" href="Properties.html#ID608"><span class="std std-ref">Shorthand Getter Declaration</span></a>, property getters can also use an implicit return.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The code you write as an implicit return value needs to return some value. For example, you can&rsquo;t use <code class="docutils literal notranslate"><span class="pre">fatalError(&#34;Oh</span> <span class="pre">no!&#34;)</span></code> or <code class="docutils literal notranslate"><span class="pre">print(13)</span></code> as an implicit return value.</p>
+</div>
 </div>
 </div>
 <div class="section" id="ID166">
-<a class="dashingAutolink" name="autolink-94"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Function%20Argument%20Labels%20and%20Parameter%20Names"></a><h2>Function Argument Labels and Parameter Names<a class="headerlink" href="Functions.html#ID166" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-96"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Function%20Argument%20Labels%20and%20Parameter%20Names"></a><h2>Function Argument Labels and Parameter Names<a class="headerlink" href="Functions.html#ID166" title="Permalink to this headline"></a></h2>
 <p>Each function parameter has both an <em>argument label</em> and a <em>parameter name</em>. The argument label is used when calling the function; each argument is written in the function call with its argument label before it. The parameter name is used in the implementation of the function. By default, parameters use their parameter name as their argument label.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">func</span> <span class="nv">someFunction</span>(<span class="nv">firstParameterName</span>: <span class="nc">Int</span>, <span class="nv">secondParameterName</span>: <span class="nc">Int</span>) {
 </li><li>    <span class="c">// In the function body, firstParameterName and secondParameterName</span>
@@ -409,7 +413,7 @@
 </div>
 </div>
 <div class="section" id="ID174">
-<a class="dashingAutolink" name="autolink-95"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Function%20Types"></a><h2>Function Types<a class="headerlink" href="Functions.html#ID174" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-97"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Function%20Types"></a><h2>Function Types<a class="headerlink" href="Functions.html#ID174" title="Permalink to this headline"></a></h2>
 <p>Every function has a specific <em>function type</em>, made up of the parameter types and the return type of the function.</p>
 <p>For example:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">func</span> <span class="nv">addTwoInts</span>(<span class="k">_</span> <span class="nv">a</span>: <span class="nc">Int</span>, <span class="k">_</span> <span class="nv">b</span>: <span class="nc">Int</span>) -&gt; <span class="nc">Int</span> {
@@ -502,7 +506,7 @@
 </div>
 </div>
 <div class="section" id="ID178">
-<a class="dashingAutolink" name="autolink-96"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Nested%20Functions"></a><h2>Nested Functions<a class="headerlink" href="Functions.html#ID178" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-98"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Nested%20Functions"></a><h2>Nested Functions<a class="headerlink" href="Functions.html#ID178" title="Permalink to this headline"></a></h2>
 <p>All of the functions you have encountered so far in this chapter have been examples of <em>global functions</em>, which are defined at a global scope. You can also define functions inside the bodies of other functions, known as <em>nested functions</em>.</p>
 <p>Nested functions are hidden from the outside world by default, but can still be called and used by their enclosing function. An enclosing function can also return one of its nested functions to allow the nested function to be used in another scope.</p>
 <p>You can rewrite the <code class="docutils literal notranslate"><span class="pre">chooseStepFunction(backward:)</span></code> example above to use and return nested functions:</p>
@@ -543,7 +547,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2019 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>

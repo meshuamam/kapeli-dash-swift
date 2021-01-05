@@ -3,12 +3,12 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>Automatic Reference Counting &mdash; The Swift Programming Language (Swift 5.1)</title>
+    <title>Automatic Reference Counting &mdash; The Swift Programming Language (Swift 5.3)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css"/>
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://docs.swift.org/favicon.ico"/>
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico"/>
     <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png"/>
     <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png"/>
     <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png"/>
@@ -34,7 +34,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.1</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
 
     <ul>
     <ul class="current">
@@ -99,6 +99,7 @@
 <li><a class="reference internal" href="AutomaticReferenceCounting.html#ID52">Resolving Strong Reference Cycles Between Class Instances</a><ul>
 <li><a class="reference internal" href="AutomaticReferenceCounting.html#ID53">Weak References</a></li>
 <li><a class="reference internal" href="AutomaticReferenceCounting.html#ID54">Unowned References</a></li>
+<li><a class="reference internal" href="AutomaticReferenceCounting.html#ID625">Unowned Optional References</a></li>
 <li><a class="reference internal" href="AutomaticReferenceCounting.html#ID55">Unowned References and Implicitly Unwrapped Optional Properties</a></li>
 </ul>
 </li>
@@ -156,7 +157,7 @@
 </li><li><span class="c">// Prints &#34;John Appleseed is being initialized&#34;</span>
 </li></ol></div></div></div>
 <p>Note that the message <code class="docutils literal notranslate"><span class="pre">&#34;John</span> <span class="pre">Appleseed</span> <span class="pre">is</span> <span class="pre">being</span> <span class="pre">initialized&#34;</span></code> is printed at the point that you call the <code class="docutils literal notranslate"><span class="pre">Person</span></code> class&rsquo;s initializer. This confirms that initialization has taken place.</p>
-<p>Because the new <code class="docutils literal notranslate"><span class="pre">Person</span></code> instance has been assigned to the <code class="docutils literal notranslate"><span class="pre">reference1</span></code> variable, there is now a strong reference from <code class="docutils literal notranslate"><span class="pre">reference1</span></code> to the new <code class="docutils literal notranslate"><span class="pre">Person</span></code> instance. Because there is at least one strong reference, ARC makes sure that this <code class="docutils literal notranslate"><span class="pre">Person</span></code> is kept in memory and is not deallocated.</p>
+<p>Because the new <code class="docutils literal notranslate"><span class="pre">Person</span></code> instance has been assigned to the <code class="docutils literal notranslate"><span class="pre">reference1</span></code> variable, there&rsquo;s now a strong reference from <code class="docutils literal notranslate"><span class="pre">reference1</span></code> to the new <code class="docutils literal notranslate"><span class="pre">Person</span></code> instance. Because there&rsquo;s at least one strong reference, ARC makes sure that this <code class="docutils literal notranslate"><span class="pre">Person</span></code> is kept in memory and is not deallocated.</p>
 <p>If you assign the same <code class="docutils literal notranslate"><span class="pre">Person</span></code> instance to two more variables, two more strong references to that instance are established:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">reference2</span> = <span class="nv">reference1</span>
 </li><li><span class="nv">reference3</span> = <span class="nv">reference1</span>
@@ -204,7 +205,7 @@
 </li></ol></div></div></div>
 <p>Here&rsquo;s how the strong references look after creating and assigning these two instances. The <code class="docutils literal notranslate"><span class="pre">john</span></code> variable now has a strong reference to the new <code class="docutils literal notranslate"><span class="pre">Person</span></code> instance, and the <code class="docutils literal notranslate"><span class="pre">unit4A</span></code> variable has a strong reference to the new <code class="docutils literal notranslate"><span class="pre">Apartment</span></code> instance:</p>
 <img alt="../_images/referenceCycle01_2x.png" class="align-center" src="../_images/referenceCycle01_2x.png" style="width: 626px;"/>
-<p>You can now link the two instances together so that the person has an apartment, and the apartment has a tenant. Note that an exclamation mark (<code class="docutils literal notranslate"><span class="pre">!</span></code>) is used to unwrap and access the instances stored inside the <code class="docutils literal notranslate"><span class="pre">john</span></code> and <code class="docutils literal notranslate"><span class="pre">unit4A</span></code> optional variables, so that the properties of those instances can be set:</p>
+<p>You can now link the two instances together so that the person has an apartment, and the apartment has a tenant. Note that an exclamation point (<code class="docutils literal notranslate"><span class="pre">!</span></code>) is used to unwrap and access the instances stored inside the <code class="docutils literal notranslate"><span class="pre">john</span></code> and <code class="docutils literal notranslate"><span class="pre">unit4A</span></code> optional variables, so that the properties of those instances can be set:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="nv">john</span>!.<span class="nv">apartment</span> = <span class="nv">unit4A</span>
 </li><li><span class="nv">unit4A</span>!.<span class="nv">tenant</span> = <span class="nv">john</span>
 </li></ol></div></div></div>
@@ -280,7 +281,7 @@
 <div class="section" id="ID54">
 <h3>Unowned References<a class="headerlink" href="AutomaticReferenceCounting.html#ID54" title="Permalink to this headline"></a></h3>
 <p>Like a weak reference, an <em>unowned reference</em> does not keep a strong hold on the instance it refers to. Unlike a weak reference, however, an unowned reference is used when the other instance has the same lifetime or a longer lifetime. You indicate an unowned reference by placing the <code class="docutils literal notranslate"><span class="pre">unowned</span></code> keyword before a property or variable declaration.</p>
-<p>An unowned reference is expected to always have a value. As a result, ARC never sets an unowned reference&rsquo;s value to <code class="docutils literal notranslate"><span class="pre">nil</span></code>, which means that unowned references are defined using non-optional types.</p>
+<p>Unlike a weak reference, an unowned reference is expected to always have a value. As a result, marking a value as unowned doesn&rsquo;t make it optional, and ARC never sets an unowned reference&rsquo;s value to <code class="docutils literal notranslate"><span class="pre">nil</span></code>.</p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p>Use an unowned reference only when you are sure that the reference <em>always</em> refers to an instance that has not been deallocated.</p>
@@ -337,12 +338,58 @@
 <p class="last">You indicate an unsafe unowned reference by writing <code class="docutils literal notranslate"><span class="pre">unowned(unsafe)</span></code>. If you try to access an unsafe unowned reference after the instance that it refers to is deallocated, your program will try to access the memory location where the instance used to be, which is an unsafe operation.</p>
 </div>
 </div>
+<div class="section" id="ID625">
+<h3>Unowned Optional References<a class="headerlink" href="AutomaticReferenceCounting.html#ID625" title="Permalink to this headline"></a></h3>
+<p>You can mark an optional reference to a class as unowned. In terms of the ARC ownership model, an unowned optional reference and a weak reference can both be used in the same contexts. The difference is that when you use an unowned optional reference, you&rsquo;re responsible for making sure it always refers to a valid object or is set to <code class="docutils literal notranslate"><span class="pre">nil</span></code>.</p>
+<p>Here&rsquo;s an example that keeps track of the courses offered by a particular department at a school:</p>
+<div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">Department</span> {
+</li><li>    <span class="k">var</span> <span class="nv">name</span>: <span class="nc">String</span>
+</li><li>    <span class="k">var</span> <span class="nv">courses</span>: [<span class="nc">Course</span>]
+</li><li>    <span class="k">init</span>(<span class="nv">name</span>: <span class="nc">String</span>) {
+</li><li>        <span class="k">self</span>.<span class="nv">name</span> = <span class="nv">name</span>
+</li><li>        <span class="k">self</span>.<span class="nv">courses</span> = []
+</li><li>    }
+</li><li>}
+</li><li>
+</li><li><span class="k">class</span> <span class="nv">Course</span> {
+</li><li>    <span class="k">var</span> <span class="nv">name</span>: <span class="nc">String</span>
+</li><li>    <span class="k">unowned</span> <span class="k">var</span> <span class="nv">department</span>: <span class="nc">Department</span>
+</li><li>    <span class="k">unowned</span> <span class="k">var</span> <span class="nv">nextCourse</span>: <span class="nc">Course</span>?
+</li><li>    <span class="k">init</span>(<span class="nv">name</span>: <span class="nc">String</span>, <span class="nv">in</span> <span class="nv">department</span>: <span class="nc">Department</span>) {
+</li><li>        <span class="k">self</span>.<span class="nv">name</span> = <span class="nv">name</span>
+</li><li>        <span class="k">self</span>.<span class="nv">department</span> = <span class="nv">department</span>
+</li><li>        <span class="k">self</span>.<span class="nv">nextCourse</span> = <span class="k">nil</span>
+</li><li>    }
+</li><li>}
+</li></ol></div></div></div>
+<p><code class="docutils literal notranslate"><span class="pre">Department</span></code> maintains a strong reference to each course that the department offers. In the ARC ownership model, a department owns its courses. <code class="docutils literal notranslate"><span class="pre">Course</span></code> has two unowned references, one to the department and one to the next course a student should take; a course doesn&rsquo;t own either of these objects. Every course is part of some department so the <code class="docutils literal notranslate"><span class="pre">department</span></code> property isn&rsquo;t an optional. However, because some courses don&rsquo;t have a recommended follow-on course, the <code class="docutils literal notranslate"><span class="pre">nextCourse</span></code> property is an optional.</p>
+<p>Here&rsquo;s an example of using these classes:</p>
+<div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">department</span> = <span class="nv">Department</span>(<span class="nv">name</span>: <span class="s">&#34;Horticulture&#34;</span>)
+</li><li>
+</li><li><span class="k">let</span> <span class="nv">intro</span> = <span class="nv">Course</span>(<span class="nv">name</span>: <span class="s">&#34;Survey of Plants&#34;</span>, <span class="nv">in</span>: <span class="nv">department</span>)
+</li><li><span class="k">let</span> <span class="nv">intermediate</span> = <span class="nv">Course</span>(<span class="nv">name</span>: <span class="s">&#34;Growing Common Herbs&#34;</span>, <span class="nv">in</span>: <span class="nv">department</span>)
+</li><li><span class="k">let</span> <span class="nv">advanced</span> = <span class="nv">Course</span>(<span class="nv">name</span>: <span class="s">&#34;Caring for Tropical Plants&#34;</span>, <span class="nv">in</span>: <span class="nv">department</span>)
+</li><li>
+</li><li><span class="nv">intro</span>.<span class="nv">nextCourse</span> = <span class="nv">intermediate</span>
+</li><li><span class="nv">intermediate</span>.<span class="nv">nextCourse</span> = <span class="nv">advanced</span>
+</li><li><span class="nv">department</span>.<span class="nv">courses</span> = [<span class="nv">intro</span>, <span class="nv">intermediate</span>, <span class="nv">advanced</span>]
+</li></ol></div></div></div>
+<p>The code above creates a department and its three courses. The intro and intermediate courses both have a suggested next course stored in their <code class="docutils literal notranslate"><span class="pre">nextCourse</span></code> property, which maintains an unowned optional reference to the course a student should take after after completing this one.</p>
+<img alt="../_images/unownedOptionalReference_2x.png" class="align-center" src="../_images/unownedOptionalReference_2x.png" style="width: 628px;"/>
+<p>An unowned optional reference doesn&rsquo;t keep a strong hold on the instance of the class that it wraps, and so it doesn&rsquo;t prevent ARC from deallocating the instance. It behaves the same as an unowned reference does under ARC, except that an unowned optional reference can be <code class="docutils literal notranslate"><span class="pre">nil</span></code>.</p>
+<p>Like non-optional unowned references, you&rsquo;re responsible for ensuring that <code class="docutils literal notranslate"><span class="pre">nextCourse</span></code> always refers to a course that hasn&rsquo;t been deallocated. In this case, for example, when you delete a course from <code class="docutils literal notranslate"><span class="pre">department.courses</span></code> you also need to remove any references to it that other courses might have.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The underlying type of an optional value is <code class="docutils literal notranslate"><span class="pre">Optional</span></code>, which is an enumeration in the Swift standard library. However, optionals are an exception to the rule that value types can&rsquo;t be marked with <code class="docutils literal notranslate"><span class="pre">unowned</span></code>.</p>
+<p class="last">The optional that wraps the class doesn&rsquo;t use reference counting, so you don&rsquo;t need to maintain a strong reference to the optional.</p>
+</div>
+</div>
 <div class="section" id="ID55">
 <h3>Unowned References and Implicitly Unwrapped Optional Properties<a class="headerlink" href="AutomaticReferenceCounting.html#ID55" title="Permalink to this headline"></a></h3>
 <p>The examples for weak and unowned references above cover two of the more common scenarios in which it&rsquo;s necessary to break a strong reference cycle.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Person</span></code> and <code class="docutils literal notranslate"><span class="pre">Apartment</span></code> example shows a situation where two properties, both of which are allowed to be <code class="docutils literal notranslate"><span class="pre">nil</span></code>, have the potential to cause a strong reference cycle. This scenario is best resolved with a weak reference.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Customer</span></code> and <code class="docutils literal notranslate"><span class="pre">CreditCard</span></code> example shows a situation where one property that is allowed to be <code class="docutils literal notranslate"><span class="pre">nil</span></code> and another property that cannot be <code class="docutils literal notranslate"><span class="pre">nil</span></code> have the potential to cause a strong reference cycle. This scenario is best resolved with an unowned reference.</p>
-<p>However, there is a third scenario, in which <em>both</em> properties should always have a value, and neither property should ever be <code class="docutils literal notranslate"><span class="pre">nil</span></code> once initialization is complete. In this scenario, it&rsquo;s useful to combine an unowned property on one class with an implicitly unwrapped optional property on the other class.</p>
+<p>However, there&rsquo;s a third scenario, in which <em>both</em> properties should always have a value, and neither property should ever be <code class="docutils literal notranslate"><span class="pre">nil</span></code> once initialization is complete. In this scenario, it&rsquo;s useful to combine an unowned property on one class with an implicitly unwrapped optional property on the other class.</p>
 <p>This enables both properties to be accessed directly (without optional unwrapping) once initialization is complete, while still avoiding a reference cycle. This section shows you how to set up such a relationship.</p>
 <p>The example below defines two classes, <code class="docutils literal notranslate"><span class="pre">Country</span></code> and <code class="docutils literal notranslate"><span class="pre">City</span></code>, each of which stores an instance of the other class as a property. In this data model, every country must always have a capital city, and every city must always belong to a country. To represent this, the <code class="docutils literal notranslate"><span class="pre">Country</span></code> class has a <code class="docutils literal notranslate"><span class="pre">capitalCity</span></code> property, and the <code class="docutils literal notranslate"><span class="pre">City</span></code> class has a <code class="docutils literal notranslate"><span class="pre">country</span></code> property:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">Country</span> {
@@ -365,9 +412,9 @@
 </li></ol></div></div></div>
 <p>To set up the interdependency between the two classes, the initializer for <code class="docutils literal notranslate"><span class="pre">City</span></code> takes a <code class="docutils literal notranslate"><span class="pre">Country</span></code> instance, and stores this instance in its <code class="docutils literal notranslate"><span class="pre">country</span></code> property.</p>
 <p>The initializer for <code class="docutils literal notranslate"><span class="pre">City</span></code> is called from within the initializer for <code class="docutils literal notranslate"><span class="pre">Country</span></code>. However, the initializer for <code class="docutils literal notranslate"><span class="pre">Country</span></code> cannot pass <code class="docutils literal notranslate"><span class="pre">self</span></code> to the <code class="docutils literal notranslate"><span class="pre">City</span></code> initializer until a new <code class="docutils literal notranslate"><span class="pre">Country</span></code> instance is fully initialized, as described in <a class="reference internal" href="Initialization.html#ID220"><span class="std std-ref">Two-Phase Initialization</span></a>.</p>
-<p>To cope with this requirement, you declare the <code class="docutils literal notranslate"><span class="pre">capitalCity</span></code> property of <code class="docutils literal notranslate"><span class="pre">Country</span></code> as an implicitly unwrapped optional property, indicated by the exclamation mark at the end of its type annotation (<code class="docutils literal notranslate"><span class="pre">City!</span></code>). This means that the <code class="docutils literal notranslate"><span class="pre">capitalCity</span></code> property has a default value of <code class="docutils literal notranslate"><span class="pre">nil</span></code>, like any other optional, but can be accessed without the need to unwrap its value as described in <a class="reference internal" href="TheBasics.html#ID334"><span class="std std-ref">Implicitly Unwrapped Optionals</span></a>.</p>
+<p>To cope with this requirement, you declare the <code class="docutils literal notranslate"><span class="pre">capitalCity</span></code> property of <code class="docutils literal notranslate"><span class="pre">Country</span></code> as an implicitly unwrapped optional property, indicated by the exclamation point at the end of its type annotation (<code class="docutils literal notranslate"><span class="pre">City!</span></code>). This means that the <code class="docutils literal notranslate"><span class="pre">capitalCity</span></code> property has a default value of <code class="docutils literal notranslate"><span class="pre">nil</span></code>, like any other optional, but can be accessed without the need to unwrap its value as described in <a class="reference internal" href="TheBasics.html#ID334"><span class="std std-ref">Implicitly Unwrapped Optionals</span></a>.</p>
 <p>Because <code class="docutils literal notranslate"><span class="pre">capitalCity</span></code> has a default <code class="docutils literal notranslate"><span class="pre">nil</span></code> value, a new <code class="docutils literal notranslate"><span class="pre">Country</span></code> instance is considered fully initialized as soon as the <code class="docutils literal notranslate"><span class="pre">Country</span></code> instance sets its <code class="docutils literal notranslate"><span class="pre">name</span></code> property within its initializer. This means that the <code class="docutils literal notranslate"><span class="pre">Country</span></code> initializer can start to reference and pass around the implicit <code class="docutils literal notranslate"><span class="pre">self</span></code> property as soon as the <code class="docutils literal notranslate"><span class="pre">name</span></code> property is set. The <code class="docutils literal notranslate"><span class="pre">Country</span></code> initializer can therefore pass <code class="docutils literal notranslate"><span class="pre">self</span></code> as one of the parameters for the <code class="docutils literal notranslate"><span class="pre">City</span></code> initializer when the <code class="docutils literal notranslate"><span class="pre">Country</span></code> initializer is setting its own <code class="docutils literal notranslate"><span class="pre">capitalCity</span></code> property.</p>
-<p>All of this means that you can create the <code class="docutils literal notranslate"><span class="pre">Country</span></code> and <code class="docutils literal notranslate"><span class="pre">City</span></code> instances in a single statement, without creating a strong reference cycle, and the <code class="docutils literal notranslate"><span class="pre">capitalCity</span></code> property can be accessed directly, without needing to use an exclamation mark to unwrap its optional value:</p>
+<p>All of this means that you can create the <code class="docutils literal notranslate"><span class="pre">Country</span></code> and <code class="docutils literal notranslate"><span class="pre">City</span></code> instances in a single statement, without creating a strong reference cycle, and the <code class="docutils literal notranslate"><span class="pre">capitalCity</span></code> property can be accessed directly, without needing to use an exclamation point to unwrap its optional value:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">country</span> = <span class="nv">Country</span>(<span class="nv">name</span>: <span class="s">&#34;Canada&#34;</span>, <span class="nv">capitalName</span>: <span class="s">&#34;Ottawa&#34;</span>)
 </li><li><span class="nv">print</span>(<span class="s">&#34;</span>\<span class="p">(</span><span class="nv">country</span>.<span class="nv">name</span><span class="p">)</span><span class="s">&#39;s capital city is called </span>\<span class="p">(</span><span class="nv">country</span>.<span class="nv">capitalCity</span>.<span class="nv">name</span><span class="p">)</span><span class="s">&#34;</span>)
 </li><li><span class="c">// Prints &#34;Canada&#39;s capital city is called Ottawa&#34;</span>
@@ -535,7 +582,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2019 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>

@@ -9,12 +9,12 @@
     <meta name="author" content="Apple Inc." />
     <meta name="viewport" content="width=device-width initial-scale=1" />
     
-    <title>Error Handling &mdash; The Swift Programming Language (Swift 5.1)</title>
+    <title>Error Handling &mdash; The Swift Programming Language (Swift 5.3)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css" />
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://docs.swift.org/favicon.ico" />
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico" />
     <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png" />
@@ -40,7 +40,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.1</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
 
     <ul>
     <ul class="current">
@@ -233,6 +233,8 @@
 </li><li>    <span class="gi">statements</span>
 </li><li>} <span class="k">catch</span> <span class="gi">pattern 2</span> <span class="k">where</span> <span class="gi">condition</span> {
 </li><li>    <span class="gi">statements</span>
+</li><li>} <span class="k">catch</span> <span class="gi">pattern 3</span>, <span class="gi">pattern 4</span> <span class="k">where</span> <span class="gi">condition</span> {
+</li><li>    <span class="gi">statements</span>
 </li><li>} <span class="k">catch</span> {
 </li><li>    <span class="gi">statements</span>
 </li><li>}
@@ -256,13 +258,13 @@
 </li><li><span class="c">// Prints &quot;Insufficient funds. Please insert an additional 2 coins.&quot;</span>
 </li></ol></div></div></div>
 <p>In the above example, the <code class="docutils literal notranslate"><span class="pre">buyFavoriteSnack(person:vendingMachine:)</span></code> function is called in a <code class="docutils literal notranslate"><span class="pre">try</span></code> expression, because it can throw an error. If an error is thrown, execution immediately transfers to the <code class="docutils literal notranslate"><span class="pre">catch</span></code> clauses, which decide whether to allow propagation to continue. If no pattern is matched, the error gets caught by the final <code class="docutils literal notranslate"><span class="pre">catch</span></code> clause and is bound to a local <code class="docutils literal notranslate"><span class="pre">error</span></code> constant. If no error is thrown, the remaining statements in the <code class="docutils literal notranslate"><span class="pre">do</span></code> statement are executed.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">catch</span></code> clauses don’t have to handle every possible error that the code in the <code class="docutils literal notranslate"><span class="pre">do</span></code> clause can throw. If none of the <code class="docutils literal notranslate"><span class="pre">catch</span></code> clauses handle the error, the error propagates to the surrounding scope. However, the propagated error must be handled by <em>some</em> surrounding scope. In a nonthrowing function, an enclosing <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">catch</span></code> clause must handle the error. In a throwing function, either an enclosing <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">catch</span></code> clause or the caller must handle the error. If the error propagates to the top-level scope without being handled, you’ll get a runtime error.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">catch</span></code> clauses don’t have to handle every possible error that the code in the <code class="docutils literal notranslate"><span class="pre">do</span></code> clause can throw. If none of the <code class="docutils literal notranslate"><span class="pre">catch</span></code> clauses handle the error, the error propagates to the surrounding scope. However, the propagated error must be handled by <em>some</em> surrounding scope. In a nonthrowing function, an enclosing <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">catch</span></code> statement must handle the error. In a throwing function, either an enclosing <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">catch</span></code> statement or the caller must handle the error. If the error propagates to the top-level scope without being handled, you’ll get a runtime error.</p>
 <p>For example, the above example can be written so any error that isn’t a <code class="docutils literal notranslate"><span class="pre">VendingMachineError</span></code> is instead caught by the calling function:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">func</span> <span class="nv">nourish</span>(<span class="nv">with</span> <span class="nv">item</span>: <span class="nc">String</span>) <span class="k">throws</span> {
 </li><li>    <span class="k">do</span> {
 </li><li>        <span class="k">try</span> <span class="nv">vendingMachine</span>.<span class="nv">vend</span>(<span class="nv">itemNamed</span>: <span class="nv">item</span>)
 </li><li>    } <span class="k">catch</span> <span class="k">is</span> <span class="nc">VendingMachineError</span> {
-</li><li>        <span class="nv">print</span>(<span class="s">&quot;Invalid selection, out of stock, or not enough money.&quot;</span>)
+</li><li>        <span class="nv">print</span>(<span class="s">&quot;Couldn&#39;t buy that from the vending machine.&quot;</span>)
 </li><li>    }
 </li><li>}
 </li><li>
@@ -271,9 +273,19 @@
 </li><li>} <span class="k">catch</span> {
 </li><li>    <span class="nv">print</span>(<span class="s">&quot;Unexpected non-vending-machine-related error: </span>\<span class="p">(</span><span class="nv">error</span><span class="p">)</span><span class="s">&quot;</span>)
 </li><li>}
-</li><li><span class="c">// Prints &quot;Invalid selection, out of stock, or not enough money.&quot;</span>
+</li><li><span class="c">// Prints &quot;Couldn&#39;t buy that from the vending machine.&quot;</span>
 </li></ol></div></div></div>
 <p>In the <code class="docutils literal notranslate"><span class="pre">nourish(with:)</span></code> function, if <code class="docutils literal notranslate"><span class="pre">vend(itemNamed:)</span></code> throws an error that’s one of the cases of the <code class="docutils literal notranslate"><span class="pre">VendingMachineError</span></code> enumeration, <code class="docutils literal notranslate"><span class="pre">nourish(with:)</span></code> handles the error by printing a message. Otherwise, <code class="docutils literal notranslate"><span class="pre">nourish(with:)</span></code> propagates the error to its call site. The error is then caught by the general <code class="docutils literal notranslate"><span class="pre">catch</span></code> clause.</p>
+<p>Another way to catch several related errors is to list them after <code class="docutils literal notranslate"><span class="pre">catch</span></code>, separated by commas. For example:</p>
+<div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">func</span> <span class="nv">eat</span>(<span class="nv">item</span>: <span class="nc">String</span>) <span class="k">throws</span> {
+</li><li>    <span class="k">do</span> {
+</li><li>        <span class="k">try</span> <span class="nv">vendingMachine</span>.<span class="nv">vend</span>(<span class="nv">itemNamed</span>: <span class="nv">item</span>)
+</li><li>    } <span class="k">catch</span> <span class="nv">VendingMachineError</span>.<span class="nv">invalidSelection</span>, <span class="nv">VendingMachineError</span>.<span class="nv">insufficientFunds</span>, <span class="nv">VendingMachineError</span>.<span class="nv">outOfStock</span> {
+</li><li>        <span class="nv">print</span>(<span class="s">&quot;Invalid selection, out of stock, or not enough money.&quot;</span>)
+</li><li>    }
+</li><li>}
+</li></ol></div></div></div>
+<p>The <code class="docutils literal notranslate"><span class="pre">eat(item:)</span></code> function lists the vending machine errors to catch, and its error text corresponds to the items in that list. If any of the three listed errors are thrown, this <code class="docutils literal notranslate"><span class="pre">catch</span></code> clause handles them by printing a message. Any other errors are propagated to the surrounding scope, including any vending-machine errors that might be added later.</p>
 </div>
 <div class="section" id="ID542">
 <h3>Converting Errors to Optional Values<a class="headerlink" href="ErrorHandling.html#ID542" title="Permalink to this headline"></a></h3>
@@ -348,7 +360,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2019 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>

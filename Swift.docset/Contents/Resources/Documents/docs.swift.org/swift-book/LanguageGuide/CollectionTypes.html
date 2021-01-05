@@ -3,12 +3,12 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>Collection Types &mdash; The Swift Programming Language (Swift 5.1)</title>
+    <title>Collection Types &mdash; The Swift Programming Language (Swift 5.3)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css"/>
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://docs.swift.org/favicon.ico"/>
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico"/>
     <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png"/>
     <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png"/>
     <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png"/>
@@ -34,7 +34,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.1</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
 
     <ul>
     <ul class="current">
@@ -321,18 +321,11 @@
 </div>
 <div class="section" id="ID493">
 <h3>Hash Values for Set Types<a class="headerlink" href="CollectionTypes.html#ID493" title="Permalink to this headline"></a></h3>
-<p>A type must be <em>hashable</em> in order to be stored in a set&mdash;that is, the type must provide a way to compute a <em>hash value</em> for itself. A hash value is an <code class="docutils literal notranslate"><span class="pre">Int</span></code> value that is the same for all objects that compare equally, such that if <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code>, it follows that <code class="docutils literal notranslate"><span class="pre">a.hashValue</span> <span class="pre">==</span> <span class="pre">b.hashValue</span></code>.</p>
+<p>A type must be <em>hashable</em> in order to be stored in a set&mdash;that is, the type must provide a way to compute a <em>hash value</em> for itself. A hash value is an <code class="docutils literal notranslate"><span class="pre">Int</span></code> value that is the same for all objects that compare equally, such that if <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code>, the hash value of <code class="docutils literal notranslate"><span class="pre">a</span></code> is equal to the hash value of <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
 <p>All of Swift&rsquo;s basic types (such as <code class="docutils literal notranslate"><span class="pre">String</span></code>, <code class="docutils literal notranslate"><span class="pre">Int</span></code>, <code class="docutils literal notranslate"><span class="pre">Double</span></code>, and <code class="docutils literal notranslate"><span class="pre">Bool</span></code>) are hashable by default, and can be used as set value types or dictionary key types. Enumeration case values without associated values (as described in <a class="reference internal" href="Enumerations.html"><span class="doc">Enumerations</span></a>) are also hashable by default.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>You can use your own custom types as set value types or dictionary key types by making them conform to the <code class="docutils literal notranslate"><span class="pre">Hashable</span></code> protocol from Swift&rsquo;s standard library. Types that conform to the <code class="docutils literal notranslate"><span class="pre">Hashable</span></code> protocol must provide a gettable <code class="docutils literal notranslate"><span class="pre">Int</span></code> property called <code class="docutils literal notranslate"><span class="pre">hashValue</span></code>. The value returned by a type&rsquo;s <code class="docutils literal notranslate"><span class="pre">hashValue</span></code> property is not required to be the same across different executions of the same program, or in different programs.</p>
-<p>Because the <code class="docutils literal notranslate"><span class="pre">Hashable</span></code> protocol conforms to <code class="docutils literal notranslate"><span class="pre">Equatable</span></code>, conforming types must also provide an implementation of the equals operator (<code class="docutils literal notranslate"><span class="pre">==</span></code>). The <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> protocol requires any conforming implementation of <code class="docutils literal notranslate"><span class="pre">==</span></code> to be an equivalence relation. That is, an implementation of <code class="docutils literal notranslate"><span class="pre">==</span></code> must satisfy the following three conditions, for all values <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, and <code class="docutils literal notranslate"><span class="pre">c</span></code>:</p>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">a</span></code> (Reflexivity)</li>
-<li><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code> implies <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">==</span> <span class="pre">a</span></code> (Symmetry)</li>
-<li><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span> <span class="pre">&amp;&amp;</span> <span class="pre">b</span> <span class="pre">==</span> <span class="pre">c</span></code> implies <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">c</span></code> (Transitivity)</li>
-</ul>
-<p class="last">For more information about conforming to protocols, see <a class="reference internal" href="Protocols.html"><span class="doc">Protocols</span></a>.</p>
+<p class="last">You can use your own custom types as set value types or dictionary key types by making them conform to the <code class="docutils literal notranslate"><span class="pre">Hashable</span></code> protocol from the Swift standard library. For information about implementing the required <code class="docutils literal notranslate"><span class="pre">hash(into:)</span></code> method, see <a class="reference external" href="https://developer.apple.com/documentation/swift/hashable"><code class="docutils literal notranslate"><span class="pre">Hashable</span></code></a>. For information about conforming to protocols, see <a class="reference internal" href="Protocols.html"><span class="doc">Protocols</span></a>.</p>
 </div>
 </div>
 <div class="section" id="ID485">
@@ -637,7 +630,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2019 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>

@@ -3,12 +3,12 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>Basic Operators &mdash; The Swift Programming Language (Swift 5.1)</title>
+    <title>Basic Operators &mdash; The Swift Programming Language (Swift 5.3)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css"/>
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://docs.swift.org/favicon.ico"/>
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico"/>
     <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png"/>
     <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png"/>
     <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png"/>
@@ -34,7 +34,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.1</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
 
     <ul>
     <ul class="current">
@@ -132,7 +132,7 @@
   <div class="section" id="basic-operators">
 <a class="dashingAutolink" name="autolink-29"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Basic%20Operators"></a><h1>Basic Operators<a class="headerlink" href="BasicOperators.html#basic-operators" title="Permalink to this headline"></a></h1>
 <p>An <em>operator</em> is a special symbol or phrase that you use to check, change, or combine values. For example, the addition operator (<code class="docutils literal notranslate"><span class="pre">+</span></code>) adds two numbers, as in <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span></code>, and the logical AND operator (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>) combines two Boolean values, as in <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">enteredDoorCode</span> <span class="pre">&amp;&amp;</span> <span class="pre">passedRetinaScan</span></code>.</p>
-<p>Swift supports most standard C operators and improves several capabilities to eliminate common coding errors. The assignment operator (<code class="docutils literal notranslate"><span class="pre">=</span></code>) doesn&rsquo;t return a value, to prevent it from being mistakenly used when the equal to operator (<code class="docutils literal notranslate"><span class="pre">==</span></code>) is intended. Arithmetic operators (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code> and so forth) detect and disallow value overflow, to avoid unexpected results when working with numbers that become larger or smaller than the allowed value range of the type that stores them. You can opt in to value overflow behavior by using Swift&rsquo;s overflow operators, as described in <a class="reference internal" href="AdvancedOperators.html#ID37"><span class="std std-ref">Overflow Operators</span></a>.</p>
+<p>Swift supports the operators you may already know from languages like C, and improves several capabilities to eliminate common coding errors. The assignment operator (<code class="docutils literal notranslate"><span class="pre">=</span></code>) doesn&rsquo;t return a value, to prevent it from being mistakenly used when the equal to operator (<code class="docutils literal notranslate"><span class="pre">==</span></code>) is intended. Arithmetic operators (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code> and so forth) detect and disallow value overflow, to avoid unexpected results when working with numbers that become larger or smaller than the allowed value range of the type that stores them. You can opt in to value overflow behavior by using Swift&rsquo;s overflow operators, as described in <a class="reference internal" href="AdvancedOperators.html#ID37"><span class="std std-ref">Overflow Operators</span></a>.</p>
 <p>Swift also provides range operators that aren&rsquo;t found in C, such as <code class="docutils literal notranslate"><span class="pre">a..&lt;b</span></code> and <code class="docutils literal notranslate"><span class="pre">a...b</span></code>, as a shortcut for expressing a range of values.</p>
 <p>This chapter describes the common operators in Swift. <a class="reference internal" href="AdvancedOperators.html"><span class="doc">Advanced Operators</span></a> covers Swift&rsquo;s advanced operators, and describes how to define your own custom operators and implement the standard operators for your own custom types.</p>
 <div class="section" id="ID61">
@@ -242,7 +242,7 @@
 </div>
 <div class="section" id="ID70">
 <a class="dashingAutolink" name="autolink-34"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Comparison%20Operators"></a><h2>Comparison Operators<a class="headerlink" href="BasicOperators.html#ID70" title="Permalink to this headline"></a></h2>
-<p>Swift supports all standard C <em>comparison operators</em>:</p>
+<p>Swift supports the following comparison operators:</p>
 <ul class="simple">
 <li>Equal to (<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code>)</li>
 <li>Not equal to (<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">!=</span> <span class="pre">b</span></code>)</li>
@@ -507,7 +507,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2019 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>

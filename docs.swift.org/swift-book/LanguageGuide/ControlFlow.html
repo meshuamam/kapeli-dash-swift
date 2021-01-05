@@ -9,12 +9,12 @@
     <meta name="author" content="Apple Inc." />
     <meta name="viewport" content="width=device-width initial-scale=1" />
     
-    <title>Control Flow &mdash; The Swift Programming Language (Swift 5.1)</title>
+    <title>Control Flow &mdash; The Swift Programming Language (Swift 5.3)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css" />
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://docs.swift.org/favicon.ico" />
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico" />
     <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png" />
@@ -40,7 +40,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.1</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
 
     <ul>
     <ul class="current">
@@ -141,8 +141,8 @@
         </menu>
 
         
-  <div class="section" id="ID462">
-<h1>Control Flow<a class="headerlink" href="ControlFlow.html#ID462" title="Permalink to this headline"></a></h1>
+  <div class="section" id="control-flow">
+<h1>Control Flow<a class="headerlink" href="ControlFlow.html#control-flow" title="Permalink to this headline"></a></h1>
 <p>Swift provides a variety of control flow statements. These include <code class="docutils literal notranslate"><span class="pre">while</span></code> loops to perform a task multiple times; <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">guard</span></code>, and <code class="docutils literal notranslate"><span class="pre">switch</span></code> statements to execute different branches of code based on certain conditions; and statements such as <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> to transfer the flow of execution to another point in your code.</p>
 <p>Swift also provides a <code class="docutils literal notranslate"><span class="pre">for</span></code>-<code class="docutils literal notranslate"><span class="pre">in</span></code> loop that makes it easy to iterate over arrays, dictionaries, ranges, strings, and other sequences.</p>
 <p>Swift’s <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement is considerably more powerful than its counterpart in many C-like languages. Cases can match many different patterns, including interval matches, tuples, and casts to a specific type. Matched values in a <code class="docutils literal notranslate"><span class="pre">switch</span></code> case can be bound to temporary constants or variables for use within the case’s body, and complex matching conditions can be expressed with a <code class="docutils literal notranslate"><span class="pre">where</span></code> clause for each case.</p>
@@ -685,7 +685,7 @@
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>If the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement above did not use the <code class="docutils literal notranslate"><span class="pre">gameLoop</span></code> label, it would break out of the <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement, not the <code class="docutils literal notranslate"><span class="pre">while</span></code> statement. Using the <code class="docutils literal notranslate"><span class="pre">gameLoop</span></code> label makes it clear which control statement should be terminated.</p>
-<p class="last">It is not strictly necessary to use the <code class="docutils literal notranslate"><span class="pre">gameLoop</span></code> label when calling <code class="docutils literal notranslate"><span class="pre">continue</span> <span class="pre">gameLoop</span></code> to jump to the next iteration of the loop. There is only one loop in the game, and therefore no ambiguity as to which loop the <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement will affect. However, there is no harm in using the <code class="docutils literal notranslate"><span class="pre">gameLoop</span></code> label with the <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement. Doing so is consistent with the label’s use alongside the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement and helps make the game’s logic clearer to read and understand.</p>
+<p class="last">It is not strictly necessary to use the <code class="docutils literal notranslate"><span class="pre">gameLoop</span></code> label when calling <code class="docutils literal notranslate"><span class="pre">continue</span> <span class="pre">gameLoop</span></code> to jump to the next iteration of the loop. there’s only one loop in the game, and therefore no ambiguity as to which loop the <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement will affect. However, there’s no harm in using the <code class="docutils literal notranslate"><span class="pre">gameLoop</span></code> label with the <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement. Doing so is consistent with the label’s use alongside the <code class="docutils literal notranslate"><span class="pre">break</span></code> statement and helps make the game’s logic clearer to read and understand.</p>
 </div>
 </div>
 </div>
@@ -755,7 +755,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2019 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>

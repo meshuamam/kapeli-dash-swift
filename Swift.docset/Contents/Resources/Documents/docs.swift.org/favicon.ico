@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swift.org - Not Found</title>
+  <meta name="author" content="Apple Inc." />
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <link rel="license" href="https://swift.org/LICENSE.txt" />
+  <link rel="stylesheet" media="all" href="https://swift.org/assets/stylesheets/application.css" />
+  <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://swift.org/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://swift.org/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="https://swift.org/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="https://swift.org/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="https://swift.org/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="https://swift.org/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="https://swift.org/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="https://swift.org/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="https://swift.org/apple-touch-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://swift.org/apple-touch-icon-180x180.png" />
+  <link rel="mask-icon" href="https://swift.org/assets/images/icon-swift.svg" color="#F05339" />
+  
+
+  
+  <link rel="canonical" href="favicon.ico" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@SwiftLang" />
+  
+  <meta name="twitter:title" content="Swift.org" />
+  <meta name="twitter:description" content="Swift is a general-purpose programming language built using a modern approach to safety, performance, and software design patterns." />
+  
+
+  <meta property="og:site_name" content="Swift.org" />
+  <meta property="og:image" content="https://swift.org/touch-icon-ipad-180x180.png" />
+  
+  
+  <meta property="og:title" content="Swift.org" />
+  <meta property="og:url" content="https://swift.org" />
+  <meta property="og:description" content="Swift is a general-purpose programming language built using a modern approach to safety, performance, and software design patterns." />
+  
+</head>
+
+<body>
+
+<nav role="navigation">
+  <header role="banner">
+    <h1 id="logo">
+      <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
+        Swift.org
+      </a>
+    </h1>
+  </header>
+
+  <div id="menu-toggle" class="menu-toggle open"></div>
+
+  
+  
+  <ul>
+    
+    
+    <li>
+    
+      <a href="https://swift.org/about/">About Swift</a>
+      
+    </li>
+    
+    
+    <li>
+    
+      <a href="https://swift.org/blog/">Blog</a>
+      
+    </li>
+    
+    
+    <li>
+    
+      <a href="https://swift.org/getting-started/">Getting Started</a>
+      
+    </li>
+    
+    
+    <li>
+    
+      <a href="https://swift.org/download/">Download</a>
+      
+    </li>
+    
+    
+    <li>
+    
+      <a href="https://swift.org/platform-support/">Platform Support</a>
+      
+    </li>
+    
+    
+    <li>
+    
+      <a href="https://swift.org/documentation/">Documentation</a>
+      
+    </li>
+    
+  </ul>
+  
+  
+  <h2>Community</h2>
+  
+  <ul>
+    
+    
+    <li>
+    
+      <a href="https://swift.org/community/">Community Overview</a>
+      
+    </li>
+    
+    
+    <li>
+    
+      <a href="https://swift.org/diversity/">Diversity</a>
+      
+    </li>
+    
+    
+    <li>
+    
+      <a href="https://swift.org/contributing/">Contributing</a>
+      
+    </li>
+    
+    
+    <li>
+    
+      <a href="https://swift.org/code-of-conduct/">Code of Conduct</a>
+      
+    </li>
+    
+  </ul>
+  
+  
+  <h2>Open Source Development</h2>
+  
+  <ul>
+    
+    
+    <li>
+    
+      <a href="https://swift.org/source-code/">Source Code</a>
+      
+    </li>
+    
+    
+    <li>
+    
+      <a href="https://swift.org/continuous-integration/">Continuous Integration</a>
+      
+    </li>
+    
+    
+    <li>
+    
+      <a href="https://swift.org/source-compatibility/">Source Compatibility</a>
+      
+    </li>
+    
+  </ul>
+  
+  
+  <h2>Open Source Efforts</h2>
+  
+  <ul>
+    
+    
+    <li>
+    
+      <a href="https://swift.org/swift-compiler/">Swift Compiler</a>
+      
+    </li>
+    
+    
+    <li>
+    
+      <a href="https://swift.org/standard-library/">Standard Library</a>
+      
+    </li>
+    
+    
+    <li>
+    
+      <a href="https://swift.org/package-manager/">Package Manager</a>
+      
+    </li>
+    
+    
+    <li>
+    
+      <a href="https://swift.org/core-libraries/">Core Libraries</a>
+      
+    </li>
+    
+    
+    <li>
+    
+      <a href="https://swift.org/lldb/">REPL, Debugger & Playgrounds</a>
+      
+    </li>
+    
+    
+    <li>
+    
+      <a href="https://swift.org/server/">Server Work Group</a>
+      
+    </li>
+    
+  </ul>
+  
+</nav>
+
+
+<main role="main">
+  <h1 id="not-found">Not Found</h1>
+
+<p>The page you’re looking for can’t be found.</p>
+
+
+</main>
+
+<footer role="contentinfo">
+  <aside>
+    <a href="https://swift.org/atom.xml" title="Subscribe to Site Updates"><i class="feed"></i></a>
+    <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter"></i></a>
+  </aside>
+
+  <p class="copyright">Copyright © 2021 Apple Inc. All rights reserved.</p>
+  <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
+  <p class="privacy">
+    <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>
+    <a href="https://www.apple.com/legal/privacy/en-ww/cookies/">Cookies</a>
+  </p>
+</footer>
+
+
+<script src="https://swift.org/assets/javascripts/application.js"></script>
+<!-- metrics -->
+<script>
+    /* RSID: */
+    var s_account="awdswiftorg"
+</script>   
+<script src="https://developer.apple.com/assets/metrics/scripts/analytics.js"></script>
+<script>
+    s.pageName= AC && AC.Tracking && AC.Tracking.pageName();
+    
+    /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+    var s_code=s.t();if(s_code)document.write(s_code)
+</script>
+<!-- /metrics -->
+</body>
+</html>
