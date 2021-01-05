@@ -3,12 +3,12 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>Properties &mdash; The Swift Programming Language (Swift 5.1)</title>
+    <title>Properties &mdash; The Swift Programming Language (Swift 5.3)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css"/>
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://docs.swift.org/favicon.ico"/>
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico"/>
     <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png"/>
     <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png"/>
     <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <a class="dashingAutolink" name="autolink-157"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
+      <a class="dashingAutolink" name="autolink-158"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -34,7 +34,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.1</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
 
     <ul>
     <ul class="current">
@@ -128,13 +128,13 @@
 
         
   <div class="section" id="properties">
-<a class="dashingAutolink" name="autolink-158"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Properties"></a><h1>Properties<a class="headerlink" href="Properties.html#properties" title="Permalink to this headline"></a></h1>
+<a class="dashingAutolink" name="autolink-159"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Properties"></a><h1>Properties<a class="headerlink" href="Properties.html#properties" title="Permalink to this headline"></a></h1>
 <p><em>Properties</em> associate values with a particular class, structure, or enumeration. Stored properties store constant and variable values as part of an instance, whereas computed properties calculate (rather than store) a value. Computed properties are provided by classes, structures, and enumerations. Stored properties are provided only by classes and structures.</p>
 <p>Stored and computed properties are usually associated with instances of a particular type. However, properties can also be associated with the type itself. Such properties are known as type properties.</p>
 <p>In addition, you can define property observers to monitor changes in a property&rsquo;s value, which you can respond to with custom actions. Property observers can be added to stored properties you define yourself, and also to properties that a subclass inherits from its superclass.</p>
 <p>You can also use a property wrapper to reuse code in the getter and setter of multiple properties.</p>
 <div class="section" id="ID255">
-<a class="dashingAutolink" name="autolink-159"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Stored%20Properties"></a><h2>Stored Properties<a class="headerlink" href="Properties.html#ID255" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-160"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Stored%20Properties"></a><h2>Stored Properties<a class="headerlink" href="Properties.html#ID255" title="Permalink to this headline"></a></h2>
 <p>In its simplest form, a stored property is a constant or variable that is stored as part of an instance of a particular class or structure. Stored properties can be either <em>variable stored properties</em> (introduced by the <code class="docutils literal notranslate"><span class="pre">var</span></code> keyword) or <em>constant stored properties</em> (introduced by the <code class="docutils literal notranslate"><span class="pre">let</span></code> keyword).</p>
 <p>You can provide a default value for a stored property as part of its definition, as described in <a class="reference internal" href="Initialization.html#ID206"><span class="std std-ref">Default Property Values</span></a>. You can also set and modify the initial value for a stored property during initialization. This is true even for constant stored properties, as described in <a class="reference internal" href="Initialization.html#ID212"><span class="std std-ref">Assigning Constant Properties During Initialization</span></a>.</p>
 <p>The example below defines a structure called <code class="docutils literal notranslate"><span class="pre">FixedLengthRange</span></code>, which describes a range of integers whose range length cannot be changed after it is created:</p>
@@ -199,7 +199,7 @@
 </li></ol></div></div></div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If a property marked with the <code class="docutils literal notranslate"><span class="pre">lazy</span></code> modifier is accessed by multiple threads simultaneously and the property has not yet been initialized, there is no guarantee that the property will be initialized only once.</p>
+<p class="last">If a property marked with the <code class="docutils literal notranslate"><span class="pre">lazy</span></code> modifier is accessed by multiple threads simultaneously and the property has not yet been initialized, there&rsquo;s no guarantee that the property will be initialized only once.</p>
 </div>
 </div>
 <div class="section" id="ID258">
@@ -209,7 +209,7 @@
 </div>
 </div>
 <div class="section" id="ID259">
-<a class="dashingAutolink" name="autolink-160"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Computed%20Properties"></a><h2>Computed Properties<a class="headerlink" href="Properties.html#ID259" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-161"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Computed%20Properties"></a><h2>Computed Properties<a class="headerlink" href="Properties.html#ID259" title="Permalink to this headline"></a></h2>
 <p>In addition to stored properties, classes, structures, and enumerations can define <em>computed properties</em>, which do not actually store a value. Instead, they provide a getter and an optional setter to retrieve and set other properties and values indirectly.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">Point</span> {
 </li><li>    <span class="k">var</span> <span class="nv">x</span> = <span class="m">0.0</span>, <span class="nv">y</span> = <span class="m">0.0</span>
@@ -312,9 +312,15 @@
 </div>
 </div>
 <div class="section" id="ID262">
-<a class="dashingAutolink" name="autolink-161"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Property%20Observers"></a><h2>Property Observers<a class="headerlink" href="Properties.html#ID262" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-162"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Property%20Observers"></a><h2>Property Observers<a class="headerlink" href="Properties.html#ID262" title="Permalink to this headline"></a></h2>
 <p>Property observers observe and respond to changes in a property&rsquo;s value. Property observers are called every time a property&rsquo;s value is set, even if the new value is the same as the property&rsquo;s current value.</p>
-<p>You can add property observers to any stored properties you define, except for lazy stored properties. You can also add property observers to any inherited property (whether stored or computed) by overriding the property within a subclass. You don&rsquo;t need to define property observers for nonoverridden computed properties, because you can observe and respond to changes to their value in the computed property&rsquo;s setter. Property overriding is described in <a class="reference internal" href="Inheritance.html#ID196"><span class="std std-ref">Overriding</span></a>.</p>
+<p>You can add property observers in the following places:</p>
+<ul class="simple">
+<li>Stored properties that you define</li>
+<li>Stored properties that you inherit</li>
+<li>Computed properties that you inherit</li>
+</ul>
+<p>For an inherited property, you add a property observer by overriding that property in a subclass. For a computed property that you define, use the property&rsquo;s setter to observe and respond to value changes, instead of trying to create an observer. Overriding properties is described in <a class="reference internal" href="Inheritance.html#ID196"><span class="std std-ref">Overriding</span></a>.</p>
 <p>You have the option to define either or both of these observers on a property:</p>
 <ul class="simple">
 <li><code class="docutils literal notranslate"><span class="pre">willSet</span></code> is called just before the value is stored.</li>
@@ -361,12 +367,13 @@
 </div>
 </div>
 <div class="section" id="ID617">
-<a class="dashingAutolink" name="autolink-162"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Property%20Wrappers"></a><h2>Property Wrappers<a class="headerlink" href="Properties.html#ID617" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-163"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Property%20Wrappers"></a><h2>Property Wrappers<a class="headerlink" href="Properties.html#ID617" title="Permalink to this headline"></a></h2>
 <p>A property wrapper adds a layer of separation between code that manages how a property is stored and the code that defines a property. For example, if you have properties that provide thread-safety checks or store their underlying data in a database, you have to write that code on every property. When you use a property wrapper, you write the management code once when you define the wrapper, and then reuse that management code by applying it to multiple properties.</p>
 <p>To define a property wrapper, you make a structure, enumeration, or class that defines a <code class="docutils literal notranslate"><span class="pre">wrappedValue</span></code> property. In the code below, the <code class="docutils literal notranslate"><span class="pre">TwelveOrLess</span></code> structure ensures that the value it wraps always contains a number less than or equal to 12. If you ask it to store a larger number, it stores 12 instead.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li>@<span class="nv">propertyWrapper</span>
 </li><li><span class="k">struct</span> <span class="nv">TwelveOrLess</span> {
-</li><li>    <span class="k">private</span> <span class="k">var</span> <span class="nv">number</span> = <span class="m">0</span>
+</li><li>    <span class="k">private</span> <span class="k">var</span> <span class="nv">number</span>: <span class="nc">Int</span>
+</li><li>    <span class="k">init</span>() { <span class="k">self</span>.<span class="nv">number</span> = <span class="m">0</span> }
 </li><li>    <span class="k">var</span> <span class="nv">wrappedValue</span>: <span class="nc">Int</span> {
 </li><li>        <span class="k">get</span> { <span class="k">return</span> <span class="nv">number</span> }
 </li><li>        <span class="k">set</span> { <span class="nv">number</span> = <span class="nv">min</span>(<span class="nv">newValue</span>, <span class="m">12</span>) }
@@ -501,8 +508,12 @@
 <p>In the <code class="docutils literal notranslate"><span class="pre">SmallNumber</span></code> example above, if you try to set the property to a number that&rsquo;s too large, the property wrapper adjusts the number before storing it. The code below adds a <code class="docutils literal notranslate"><span class="pre">projectedValue</span></code> property to the <code class="docutils literal notranslate"><span class="pre">SmallNumber</span></code> structure to keep track of whether the property wrapper adjusted the new value for the property before storing that new value.</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li>@<span class="nv">propertyWrapper</span>
 </li><li><span class="k">struct</span> <span class="nv">SmallNumber</span> {
-</li><li>    <span class="k">private</span> <span class="k">var</span> <span class="nv">number</span> = <span class="m">0</span>
-</li><li>    <span class="k">var</span> <span class="nv">projectedValue</span> = <span class="k">false</span>
+</li><li>    <span class="k">private</span> <span class="k">var</span> <span class="nv">number</span>: <span class="nc">Int</span>
+</li><li>    <span class="k">var</span> <span class="nv">projectedValue</span>: <span class="nc">Bool</span>
+</li><li>    <span class="k">init</span>() {
+</li><li>        <span class="k">self</span>.<span class="nv">number</span> = <span class="m">0</span>
+</li><li>        <span class="k">self</span>.<span class="nv">projectedValue</span> = <span class="k">false</span>
+</li><li>    }
 </li><li>    <span class="k">var</span> <span class="nv">wrappedValue</span>: <span class="nc">Int</span> {
 </li><li>        <span class="k">get</span> { <span class="k">return</span> <span class="nv">number</span> }
 </li><li>        <span class="k">set</span> {
@@ -529,7 +540,7 @@
 </li><li><span class="nv">print</span>(<span class="nv">someStructure</span>.<span class="nv">$someNumber</span>)
 </li><li><span class="c">// Prints &#34;true&#34;</span>
 </li></ol></div></div></div>
-<p>Writing <code class="docutils literal notranslate"><span class="pre">s.$someNumber</span></code> accesses the wrapper&rsquo;s projected value. After storing a small number like four, the value of <code class="docutils literal notranslate"><span class="pre">s.$someNumber</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>. However, the projected value is <code class="docutils literal notranslate"><span class="pre">true</span></code> after trying to store a number that&rsquo;s too large, like 55.</p>
+<p>Writing <code class="docutils literal notranslate"><span class="pre">someStructure.$someNumber</span></code> accesses the wrapper&rsquo;s projected value. After storing a small number like four, the value of <code class="docutils literal notranslate"><span class="pre">someStructure.$someNumber</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>. However, the projected value is <code class="docutils literal notranslate"><span class="pre">true</span></code> after trying to store a number that&rsquo;s too large, like 55.</p>
 <p>A property wrapper can return a value of any type as its projected value. In this example, the property wrapper exposes only one piece of information&mdash;whether the number was adjusted&mdash;so it exposes that Boolean value as its projected value. A wrapper that needs to expose more information can return an instance of some other data type, or it can return <code class="docutils literal notranslate"><span class="pre">self</span></code> to expose the instance of the wrapper as its projected value.</p>
 <p>When you access a projected value from code that&rsquo;s part of the type, like a property getter or an instance method, you can omit <code class="docutils literal notranslate"><span class="pre">self.</span></code> before the property name, just like accessing other properties. The code in the following example refers to the projected value of the wrapper around <code class="docutils literal notranslate"><span class="pre">height</span></code> and <code class="docutils literal notranslate"><span class="pre">width</span></code> as <code class="docutils literal notranslate"><span class="pre">$height</span></code> and <code class="docutils literal notranslate"><span class="pre">$width</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">enum</span> <span class="nv">Size</span> {
@@ -557,7 +568,7 @@
 </div>
 </div>
 <div class="section" id="ID263">
-<a class="dashingAutolink" name="autolink-163"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Global%20and%20Local%20Variables"></a><h2>Global and Local Variables<a class="headerlink" href="Properties.html#ID263" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-164"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Global%20and%20Local%20Variables"></a><h2>Global and Local Variables<a class="headerlink" href="Properties.html#ID263" title="Permalink to this headline"></a></h2>
 <p>The capabilities described above for computing and observing properties are also available to <em>global variables</em> and <em>local variables</em>. Global variables are variables that are defined outside of any function, method, closure, or type context. Local variables are variables that are defined within a function, method, or closure context.</p>
 <p>The global and local variables you have encountered in previous chapters have all been <em>stored variables</em>. Stored variables, like stored properties, provide storage for a value of a certain type and allow that value to be set and retrieved.</p>
 <p>However, you can also define <em>computed variables</em> and define observers for stored variables, in either a global or local scope. Computed variables calculate their value, rather than storing it, and they are written in the same way as computed properties.</p>
@@ -568,7 +579,7 @@
 </div>
 </div>
 <div class="section" id="ID264">
-<a class="dashingAutolink" name="autolink-164"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Properties"></a><h2>Type Properties<a class="headerlink" href="Properties.html#ID264" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-165"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Properties"></a><h2>Type Properties<a class="headerlink" href="Properties.html#ID264" title="Permalink to this headline"></a></h2>
 <p>Instance properties are properties that belong to an instance of a particular type. Every time you create a new instance of that type, it has its own set of property values, separate from any other instance.</p>
 <p>You can also define properties that belong to the type itself, not to any one instance of that type. There will only ever be one copy of these properties, no matter how many instances of that type you create. These kinds of properties are called <em>type properties</em>.</p>
 <p>Type properties are useful for defining values that are universal to <em>all</em> instances of a particular type, such as a constant property that all instances can use (like a static constant in C), or a variable property that stores a value that is global to all instances of that type (like a static variable in C).</p>
@@ -692,7 +703,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2019 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>

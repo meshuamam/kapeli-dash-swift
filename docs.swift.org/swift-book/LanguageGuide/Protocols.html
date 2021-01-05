@@ -9,12 +9,12 @@
     <meta name="author" content="Apple Inc." />
     <meta name="viewport" content="width=device-width initial-scale=1" />
     
-    <title>Protocols &mdash; The Swift Programming Language (Swift 5.1)</title>
+    <title>Protocols &mdash; The Swift Programming Language (Swift 5.3)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css" />
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://docs.swift.org/favicon.ico" />
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico" />
     <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png" />
@@ -40,7 +40,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.1</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
 
     <ul>
     <ul class="current">
@@ -115,6 +115,7 @@
 <li><a class="reference internal" href="Protocols.html#ID278">Declaring Protocol Adoption with an Extension</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="Protocols.html#ID627">Adopting a Protocol Using a Synthesized Implementation</a></li>
 <li><a class="reference internal" href="Protocols.html#ID279">Collections of Protocol Types</a></li>
 <li><a class="reference internal" href="Protocols.html#ID280">Protocol Inheritance</a></li>
 <li><a class="reference internal" href="Protocols.html#ID281">Class-Only Protocols</a></li>
@@ -522,6 +523,53 @@
 </div>
 </div>
 </div>
+<div class="section" id="ID627">
+<h2>Adopting a Protocol Using a Synthesized Implementation<a class="headerlink" href="Protocols.html#ID627" title="Permalink to this headline"></a></h2>
+<p>Swift can automatically provide the protocol conformance for <code class="docutils literal notranslate"><span class="pre">Equatable</span></code>, <code class="docutils literal notranslate"><span class="pre">Hashable</span></code>, and <code class="docutils literal notranslate"><span class="pre">Comparable</span></code> in many simple cases. Using this synthesized implementation means you don’t have to write repetitive boilerplate code to implement the protocol requirements yourself.</p>
+<p>Swift provides a synthesized implementation of <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> for the following kinds of custom types:</p>
+<ul class="simple">
+<li>Structures that have only stored properties that conform to the <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> protocol</li>
+<li>Enumerations that have only associated types that conform to the <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> protocol</li>
+<li>Enumerations that have no associated types</li>
+</ul>
+<p>To receive a synthesized implementation of <code class="docutils literal notranslate"><span class="pre">==</span></code>, declare conformance to <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> in the file that contains the original declaration, without implementing an <code class="docutils literal notranslate"><span class="pre">==</span></code> operator yourself. The <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> protocol provides a default implementation of <code class="docutils literal notranslate"><span class="pre">!=</span></code>.</p>
+<p>The example below defines a <code class="docutils literal notranslate"><span class="pre">Vector3D</span></code> structure for a three-dimensional position vector <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code>, similar to the <code class="docutils literal notranslate"><span class="pre">Vector2D</span></code> structure. Because the <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, and <code class="docutils literal notranslate"><span class="pre">z</span></code> properties are all of an <code class="docutils literal notranslate"><span class="pre">Equatable</span></code> type, <code class="docutils literal notranslate"><span class="pre">Vector3D</span></code> receives synthesized implementations of the equivalence operators.</p>
+<div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">Vector3D</span>: <span class="nc">Equatable</span> {
+</li><li>    <span class="k">var</span> <span class="nv">x</span> = <span class="m">0.0</span>, <span class="nv">y</span> = <span class="m">0.0</span>, <span class="nv">z</span> = <span class="m">0.0</span>
+</li><li>}
+</li><li>
+</li><li><span class="k">let</span> <span class="nv">twoThreeFour</span> = <span class="nv">Vector3D</span>(<span class="nv">x</span>: <span class="m">2.0</span>, <span class="nv">y</span>: <span class="m">3.0</span>, <span class="nv">z</span>: <span class="m">4.0</span>)
+</li><li><span class="k">let</span> <span class="nv">anotherTwoThreeFour</span> = <span class="nv">Vector3D</span>(<span class="nv">x</span>: <span class="m">2.0</span>, <span class="nv">y</span>: <span class="m">3.0</span>, <span class="nv">z</span>: <span class="m">4.0</span>)
+</li><li><span class="k">if</span> <span class="nv">twoThreeFour</span> == <span class="nv">anotherTwoThreeFour</span> {
+</li><li>    <span class="nv">print</span>(<span class="s">&quot;These two vectors are also equivalent.&quot;</span>)
+</li><li>}
+</li><li><span class="c">// Prints &quot;These two vectors are also equivalent.&quot;</span>
+</li></ol></div></div></div>
+<p>Swift provides a synthesized implementation of <code class="docutils literal notranslate"><span class="pre">Hashable</span></code> for the following kinds of custom types:</p>
+<ul class="simple">
+<li>Structures that have only stored properties that conform to the <code class="docutils literal notranslate"><span class="pre">Hashable</span></code> protocol</li>
+<li>Enumerations that have only associated types that conform to the <code class="docutils literal notranslate"><span class="pre">Hashable</span></code> protocol</li>
+<li>Enumerations that have no associated types</li>
+</ul>
+<p>To receive a synthesized implementation of <code class="docutils literal notranslate"><span class="pre">hash(into:)</span></code>, declare conformance to <code class="docutils literal notranslate"><span class="pre">Hashable</span></code> in the file that contains the original declaration, without implementing a <code class="docutils literal notranslate"><span class="pre">hash(into:)</span></code> method yourself.</p>
+<p>Swift provides a synthesized implementation of <code class="docutils literal notranslate"><span class="pre">Comparable</span></code> for enumerations that don’t have a raw value. If the enumeration has associated types, they must all conform to the <code class="docutils literal notranslate"><span class="pre">Comparable</span></code> protocol. To receive a synthesized implementation of <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, declare conformance to <code class="docutils literal notranslate"><span class="pre">Comparable</span></code> in the file that contains the original enumeration declaration, without implementing a <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operator yourself. The <code class="docutils literal notranslate"><span class="pre">Comparable</span></code> protocol’s default implementation of <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> provides the remaining comparison operators.</p>
+<p>The example below defines a <code class="docutils literal notranslate"><span class="pre">SkillLevel</span></code> enumeration with cases for beginners, intermediates, and experts. Experts are additionally ranked by the number of stars they have.</p>
+<div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">enum</span> <span class="nv">SkillLevel</span>: <span class="nc">Comparable</span> {
+</li><li>    <span class="k">case</span> <span class="nv">beginner</span>
+</li><li>    <span class="k">case</span> <span class="nv">intermediate</span>
+</li><li>    <span class="k">case</span> <span class="nv">expert</span>(<span class="nv">stars</span>: <span class="nv">Int</span>)
+</li><li>}
+</li><li><span class="k">var</span> <span class="nv">levels</span> = [<span class="nv">SkillLevel</span>.<span class="nv">intermediate</span>, <span class="nv">SkillLevel</span>.<span class="nv">beginner</span>,
+</li><li>              <span class="nv">SkillLevel</span>.<span class="nv">expert</span>(<span class="nv">stars</span>: <span class="m">5</span>), <span class="nv">SkillLevel</span>.<span class="nv">expert</span>(<span class="nv">stars</span>: <span class="m">3</span>)]
+</li><li><span class="k">for</span> <span class="nv">level</span> <span class="k">in</span> <span class="nv">levels</span>.<span class="nv">sorted</span>() {
+</li><li>    <span class="nv">print</span>(<span class="nv">level</span>)
+</li><li>}
+</li><li><span class="c">// Prints &quot;beginner&quot;</span>
+</li><li><span class="c">// Prints &quot;intermediate&quot;</span>
+</li><li><span class="c">// Prints &quot;expert(stars: 3)&quot;</span>
+</li><li><span class="c">// Prints &quot;expert(stars: 5)&quot;</span>
+</li></ol></div></div></div>
+</div>
 <div class="section" id="ID279">
 <h2>Collections of Protocol Types<a class="headerlink" href="Protocols.html#ID279" title="Permalink to this headline"></a></h2>
 <p>A protocol can be used as the type to be stored in a collection such as an array or a dictionary, as mentioned in <a class="reference internal" href="Protocols.html#ID275"><span class="std std-ref">Protocols as Types</span></a>. This example creates an array of <code class="docutils literal notranslate"><span class="pre">TextRepresentable</span></code> things:</p>
@@ -863,7 +911,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2019 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>

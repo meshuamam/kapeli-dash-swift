@@ -9,12 +9,12 @@
     <meta name="author" content="Apple Inc." />
     <meta name="viewport" content="width=device-width initial-scale=1" />
     
-    <title>Nested Types &mdash; The Swift Programming Language (Swift 5.1)</title>
+    <title>Nested Types &mdash; The Swift Programming Language (Swift 5.3)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css" />
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://docs.swift.org/favicon.ico" />
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico" />
     <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png" />
@@ -40,7 +40,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.1</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
 
     <ul>
     <ul class="current">
@@ -165,7 +165,7 @@
 <li><code class="docutils literal notranslate"><span class="pre">second</span></code>, of type <code class="docutils literal notranslate"><span class="pre">Int?</span></code>, or “optional <code class="docutils literal notranslate"><span class="pre">Int</span></code>”</li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">Rank</span></code> also defines a computed property, <code class="docutils literal notranslate"><span class="pre">values</span></code>, which returns an instance of the <code class="docutils literal notranslate"><span class="pre">Values</span></code> structure. This computed property considers the rank of the card and initializes a new <code class="docutils literal notranslate"><span class="pre">Values</span></code> instance with appropriate values based on its rank. It uses special values for <code class="docutils literal notranslate"><span class="pre">jack</span></code>, <code class="docutils literal notranslate"><span class="pre">queen</span></code>, <code class="docutils literal notranslate"><span class="pre">king</span></code>, and <code class="docutils literal notranslate"><span class="pre">ace</span></code>. For the numeric cards, it uses the rank’s raw <code class="docutils literal notranslate"><span class="pre">Int</span></code> value.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">BlackjackCard</span></code> structure itself has two properties—<code class="docutils literal notranslate"><span class="pre">rank</span></code> and <code class="docutils literal notranslate"><span class="pre">suit</span></code>. It also defines a computed property called <code class="docutils literal notranslate"><span class="pre">description</span></code>, which uses the values stored in <code class="docutils literal notranslate"><span class="pre">rank</span></code> and <code class="docutils literal notranslate"><span class="pre">suit</span></code> to build a description of the name and value of the card. The <code class="docutils literal notranslate"><span class="pre">description</span></code> property uses optional binding to check whether there is a second value to display, and if so, inserts additional description detail for that second value.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">BlackjackCard</span></code> structure itself has two properties—<code class="docutils literal notranslate"><span class="pre">rank</span></code> and <code class="docutils literal notranslate"><span class="pre">suit</span></code>. It also defines a computed property called <code class="docutils literal notranslate"><span class="pre">description</span></code>, which uses the values stored in <code class="docutils literal notranslate"><span class="pre">rank</span></code> and <code class="docutils literal notranslate"><span class="pre">suit</span></code> to build a description of the name and value of the card. The <code class="docutils literal notranslate"><span class="pre">description</span></code> property uses optional binding to check whether there’s a second value to display, and if so, inserts additional description detail for that second value.</p>
 <p>Because <code class="docutils literal notranslate"><span class="pre">BlackjackCard</span></code> is a structure with no custom initializers, it has an implicit memberwise initializer, as described in <a class="reference internal" href="Initialization.html#ID214"><span class="std std-ref">Memberwise Initializers for Structure Types</span></a>. You can use this initializer to initialize a new constant called <code class="docutils literal notranslate"><span class="pre">theAceOfSpades</span></code>:</p>
 <div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">theAceOfSpades</span> = <span class="nv">BlackjackCard</span>(<span class="nv">rank</span>: .<span class="nv">ace</span>, <span class="nv">suit</span>: .<span class="nv">spades</span>)
 </li><li><span class="nv">print</span>(<span class="s">&quot;theAceOfSpades: </span>\<span class="p">(</span><span class="nv">theAceOfSpades</span>.<span class="nv">description</span><span class="p">)</span><span class="s">&quot;</span>)
@@ -198,7 +198,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2019 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>

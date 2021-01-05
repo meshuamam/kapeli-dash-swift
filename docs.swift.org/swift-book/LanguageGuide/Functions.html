@@ -9,12 +9,12 @@
     <meta name="author" content="Apple Inc." />
     <meta name="viewport" content="width=device-width initial-scale=1" />
     
-    <title>Functions &mdash; The Swift Programming Language (Swift 5.1)</title>
+    <title>Functions &mdash; The Swift Programming Language (Swift 5.3)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css" />
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://docs.swift.org/favicon.ico" />
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico" />
     <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png" />
@@ -40,7 +40,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.1</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
 
     <ul>
     <ul class="current">
@@ -309,6 +309,10 @@
 </li></ol></div></div></div>
 <p>The entire definition of the <code class="docutils literal notranslate"><span class="pre">greeting(for:)</span></code> function is the greeting message that it returns, which means it can use this shorter form. The <code class="docutils literal notranslate"><span class="pre">anotherGreeting(for:)</span></code> function returns the same greeting message, using the <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword like a longer function. Any function that you write as just one <code class="docutils literal notranslate"><span class="pre">return</span></code> line can omit the <code class="docutils literal notranslate"><span class="pre">return</span></code>.</p>
 <p>As you’ll see in <a class="reference internal" href="Properties.html#ID608"><span class="std std-ref">Shorthand Getter Declaration</span></a>, property getters can also use an implicit return.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The code you write as an implicit return value needs to return some value. For example, you can’t use <code class="docutils literal notranslate"><span class="pre">fatalError(&quot;Oh</span> <span class="pre">no!&quot;)</span></code> or <code class="docutils literal notranslate"><span class="pre">print(13)</span></code> as an implicit return value.</p>
+</div>
 </div>
 </div>
 <div class="section" id="ID166">
@@ -549,7 +553,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2019 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>

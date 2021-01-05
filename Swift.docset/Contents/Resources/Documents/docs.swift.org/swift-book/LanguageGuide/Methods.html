@@ -3,12 +3,12 @@
     <meta name="author" content="Apple Inc."/>
     <meta name="viewport" content="width=device-width initial-scale=1"/>
     
-    <title>Methods &mdash; The Swift Programming Language (Swift 5.1)</title>
+    <title>Methods &mdash; The Swift Programming Language (Swift 5.3)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css"/>
     <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css"/>
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://docs.swift.org/favicon.ico"/>
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico"/>
     <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png"/>
     <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png"/>
     <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png"/>
@@ -25,7 +25,7 @@
 
 <nav role="navigation">
     <header role="banner">
-      <a class="dashingAutolink" name="autolink-137"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
+      <a class="dashingAutolink" name="autolink-136"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Swift.org"></a><h1 id="logo">
         <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
           Swift.org
         </a>
@@ -34,7 +34,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.1</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
 
     <ul>
     <ul class="current">
@@ -111,11 +111,11 @@
 
         
   <div class="section" id="methods">
-<a class="dashingAutolink" name="autolink-138"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Methods"></a><h1>Methods<a class="headerlink" href="Methods.html#methods" title="Permalink to this headline"></a></h1>
+<a class="dashingAutolink" name="autolink-137"></a><a class="dashAnchor" name="//apple_ref/cpp/Guide/Methods"></a><h1>Methods<a class="headerlink" href="Methods.html#methods" title="Permalink to this headline"></a></h1>
 <p><em>Methods</em> are functions that are associated with a particular type. Classes, structures, and enumerations can all define instance methods, which encapsulate specific tasks and functionality for working with an instance of a given type. Classes, structures, and enumerations can also define type methods, which are associated with the type itself. Type methods are similar to class methods in Objective-C.</p>
 <p>The fact that structures and enumerations can define methods in Swift is a major difference from C and Objective-C. In Objective-C, classes are the only types that can define methods. In Swift, you can choose whether to define a class, structure, or enumeration, and still have the flexibility to define methods on the type you create.</p>
 <div class="section" id="ID235">
-<a class="dashingAutolink" name="autolink-135"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Instance%20Methods"></a><h2>Instance Methods<a class="headerlink" href="Methods.html#ID235" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-138"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Instance%20Methods"></a><h2>Instance Methods<a class="headerlink" href="Methods.html#ID235" title="Permalink to this headline"></a></h2>
 <p><em>Instance methods</em> are functions that belong to instances of a particular class, structure, or enumeration. They support the functionality of those instances, either by providing ways to access and modify instance properties, or by providing functionality related to the instance&rsquo;s purpose. Instance methods have exactly the same syntax as functions, as described in <a class="reference internal" href="Functions.html"><span class="doc">Functions</span></a>.</p>
 <p>You write an instance method within the opening and closing braces of the type it belongs to. An instance method has implicit access to all other instance methods and properties of that type. An instance method can be called only on a specific instance of the type it belongs to. It cannot be called in isolation without an existing instance.</p>
 <p>Here&rsquo;s an example that defines a simple <code class="docutils literal notranslate"><span class="pre">Counter</span></code> class, which can be used to count the number of times an action occurs:</p>
@@ -234,7 +234,7 @@
 </div>
 </div>
 <div class="section" id="ID241">
-<a class="dashingAutolink" name="autolink-136"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Methods"></a><h2>Type Methods<a class="headerlink" href="Methods.html#ID241" title="Permalink to this headline"></a></h2>
+<a class="dashingAutolink" name="autolink-139"></a><a class="dashAnchor" name="//apple_ref/cpp/Section/Type%20Methods"></a><h2>Type Methods<a class="headerlink" href="Methods.html#ID241" title="Permalink to this headline"></a></h2>
 <p>Instance methods, as described above, are methods that you call on an instance of a particular type. You can also define methods that are called on the type itself. These kinds of methods are called <em>type methods</em>. You indicate type methods by writing the <code class="docutils literal notranslate"><span class="pre">static</span></code> keyword before the method&rsquo;s <code class="docutils literal notranslate"><span class="pre">func</span></code> keyword. Classes can use the <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword instead, to allow subclasses to override the superclass&rsquo;s implementation of that method.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -326,7 +326,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2019 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>

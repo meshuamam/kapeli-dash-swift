@@ -9,12 +9,12 @@
     <meta name="author" content="Apple Inc." />
     <meta name="viewport" content="width=device-width initial-scale=1" />
     
-    <title>Generics &mdash; The Swift Programming Language (Swift 5.1)</title>
+    <title>Generics &mdash; The Swift Programming Language (Swift 5.3)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css" />
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://docs.swift.org/favicon.ico" />
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico" />
     <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png" />
@@ -40,7 +40,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.1</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
 
     <ul>
     <ul class="current">
@@ -119,6 +119,7 @@
 </li>
 <li><a class="reference internal" href="Generics.html#ID192">Generic Where Clauses</a></li>
 <li><a class="reference internal" href="Generics.html#ID553">Extensions with a Generic Where Clause</a></li>
+<li><a class="reference internal" href="Generics.html#ID628">Contextual Where Clauses</a></li>
 <li><a class="reference internal" href="Generics.html#ID557">Associated Types with a Generic Where Clause</a></li>
 <li><a class="reference internal" href="Generics.html#ID558">Generic Subscripts</a></li>
 </ul>
@@ -308,7 +309,7 @@
 <h2>Type Constraints<a class="headerlink" href="Generics.html#ID186" title="Permalink to this headline"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">swapTwoValues(_:_:)</span></code> function and the <code class="docutils literal notranslate"><span class="pre">Stack</span></code> type can work with any type. However, it’s sometimes useful to enforce certain <em>type constraints</em> on the types that can be used with generic functions and generic types. Type constraints specify that a type parameter must inherit from a specific class, or conform to a particular protocol or protocol composition.</p>
 <p>For example, Swift’s <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> type places a limitation on the types that can be used as keys for a dictionary. As described in <a class="reference internal" href="CollectionTypes.html#ID113"><span class="std std-ref">Dictionaries</span></a>, the type of a dictionary’s keys must be <em>hashable</em>. That is, it must provide a way to make itself uniquely representable. <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> needs its keys to be hashable so that it can check whether it already contains a value for a particular key. Without this requirement, <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code> could not tell whether it should insert or replace a value for a particular key, nor would it be able to find a value for a given key that is already in the dictionary.</p>
-<p>This requirement is enforced by a type constraint on the key type for <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code>, which specifies that the key type must conform to the <code class="docutils literal notranslate"><span class="pre">Hashable</span></code> protocol, a special protocol defined in the Swift standard library. All of Swift’s basic types (such as <code class="docutils literal notranslate"><span class="pre">String</span></code>, <code class="docutils literal notranslate"><span class="pre">Int</span></code>, <code class="docutils literal notranslate"><span class="pre">Double</span></code>, and <code class="docutils literal notranslate"><span class="pre">Bool</span></code>) are hashable by default.</p>
+<p>This requirement is enforced by a type constraint on the key type for <code class="docutils literal notranslate"><span class="pre">Dictionary</span></code>, which specifies that the key type must conform to the <code class="docutils literal notranslate"><span class="pre">Hashable</span></code> protocol, a special protocol defined in the Swift standard library. All of Swift’s basic types (such as <code class="docutils literal notranslate"><span class="pre">String</span></code>, <code class="docutils literal notranslate"><span class="pre">Int</span></code>, <code class="docutils literal notranslate"><span class="pre">Double</span></code>, and <code class="docutils literal notranslate"><span class="pre">Bool</span></code>) are hashable by default. For information about making your own custom types conform to the <code class="docutils literal notranslate"><span class="pre">Hashable</span></code> protocol, see <a class="reference external" href="https://developer.apple.com/documentation/swift/hashable#2849490">Conforming to the Hashable Protocol</a>.</p>
 <p>You can define your own type constraints when creating custom generic types, and these constraints provide much of the power of generic programming. Abstract concepts like <code class="docutils literal notranslate"><span class="pre">Hashable</span></code> characterize types in terms of their conceptual characteristics, rather than their concrete type.</p>
 <div class="section" id="ID187">
 <h3>Type Constraint Syntax<a class="headerlink" href="Generics.html#ID187" title="Permalink to this headline"></a></h3>
@@ -627,6 +628,46 @@
 <p>This example adds an <code class="docutils literal notranslate"><span class="pre">average()</span></code> method to containers whose <code class="docutils literal notranslate"><span class="pre">Item</span></code> type is <code class="docutils literal notranslate"><span class="pre">Double</span></code>. It iterates over the items in the container to add them up, and divides by the container’s count to compute the average. It explicitly converts the count from <code class="docutils literal notranslate"><span class="pre">Int</span></code> to <code class="docutils literal notranslate"><span class="pre">Double</span></code> to be able to do floating-point division.</p>
 <p>You can include multiple requirements in a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause that is part of an extension, just like you can for a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause that you write elsewhere. Separate each requirement in the list with a comma.</p>
 </div>
+<div class="section" id="ID628">
+<h2>Contextual Where Clauses<a class="headerlink" href="Generics.html#ID628" title="Permalink to this headline"></a></h2>
+<p>You can write a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause as part of a declaration that doesn’t have its own generic type constraints, when you’re already working in the context of generic types. For example, you can write a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause on a subscript of a generic type or on a method in an extension to a generic type. The <code class="docutils literal notranslate"><span class="pre">Container</span></code> structure is generic, and the <code class="docutils literal notranslate"><span class="pre">where</span></code> clauses in the example below specify what type constraints have to be satisfied to make these new methods available on a container.</p>
+<div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">Container</span> {
+</li><li>    <span class="k">func</span> <span class="nv">average</span>() -&gt; <span class="nc">Double</span> <span class="k">where</span> <span class="nv">Item</span> == <span class="nv">Int</span> {
+</li><li>        <span class="k">var</span> <span class="nv">sum</span> = <span class="m">0.0</span>
+</li><li>        <span class="k">for</span> <span class="nv">index</span> <span class="k">in</span> <span class="m">0</span>..&lt;<span class="nv">count</span> {
+</li><li>            <span class="nv">sum</span> += <span class="nv">Double</span>(<span class="k">self</span>[<span class="nv">index</span>])
+</li><li>        }
+</li><li>        <span class="k">return</span> <span class="nv">sum</span> / <span class="nv">Double</span>(<span class="nv">count</span>)
+</li><li>    }
+</li><li>    <span class="k">func</span> <span class="nv">endsWith</span>(<span class="k">_</span> <span class="nv">item</span>: <span class="nc">Item</span>) -&gt; <span class="nc">Bool</span> <span class="k">where</span> <span class="nv">Item</span>: <span class="nv">Equatable</span> {
+</li><li>        <span class="k">return</span> <span class="nv">count</span> &gt;= <span class="m">1</span> &amp;&amp; <span class="k">self</span>[<span class="nv">count</span>-<span class="m">1</span>] == <span class="nv">item</span>
+</li><li>    }
+</li><li>}
+</li><li><span class="k">let</span> <span class="nv">numbers</span> = [<span class="m">1260</span>, <span class="m">1200</span>, <span class="m">98</span>, <span class="m">37</span>]
+</li><li><span class="nv">print</span>(<span class="nv">numbers</span>.<span class="nv">average</span>())
+</li><li><span class="c">// Prints &quot;648.75&quot;</span>
+</li><li><span class="nv">print</span>(<span class="nv">numbers</span>.<span class="nv">endsWith</span>(<span class="m">37</span>))
+</li><li><span class="c">// Prints &quot;true&quot;</span>
+</li></ol></div></div></div>
+<p>This example adds an <code class="docutils literal notranslate"><span class="pre">average()</span></code> method to <code class="docutils literal notranslate"><span class="pre">Container</span></code> when the items are integers, and it adds an <code class="docutils literal notranslate"><span class="pre">endsWith(_:)</span></code> method when the items are equatable. Both functions include a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause that adds type constraints to the generic <code class="docutils literal notranslate"><span class="pre">Item</span></code> type parameter from the original declaration of <code class="docutils literal notranslate"><span class="pre">Container</span></code>.</p>
+<p>If you want to write this code without using contextual <code class="docutils literal notranslate"><span class="pre">where</span></code> clauses, you write two extensions, one for each generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause. The example above and the example below have the same behavior.</p>
+<div class="highlight-swift notranslate"><div class="code-sample"><div class="Swift highlight"><ol class="code-lines"><li><span class="k">extension</span> <span class="nc">Container</span> <span class="k">where</span> <span class="nc">Item</span> == <span class="nc">Int</span> {
+</li><li>    <span class="k">func</span> <span class="nv">average</span>() -&gt; <span class="nc">Double</span> {
+</li><li>        <span class="k">var</span> <span class="nv">sum</span> = <span class="m">0.0</span>
+</li><li>        <span class="k">for</span> <span class="nv">index</span> <span class="k">in</span> <span class="m">0</span>..&lt;<span class="nv">count</span> {
+</li><li>            <span class="nv">sum</span> += <span class="nv">Double</span>(<span class="k">self</span>[<span class="nv">index</span>])
+</li><li>        }
+</li><li>        <span class="k">return</span> <span class="nv">sum</span> / <span class="nv">Double</span>(<span class="nv">count</span>)
+</li><li>    }
+</li><li>}
+</li><li><span class="k">extension</span> <span class="nc">Container</span> <span class="k">where</span> <span class="nc">Item</span>: <span class="nc">Equatable</span> {
+</li><li>    <span class="k">func</span> <span class="nv">endsWith</span>(<span class="k">_</span> <span class="nv">item</span>: <span class="nc">Item</span>) -&gt; <span class="nc">Bool</span> {
+</li><li>        <span class="k">return</span> <span class="nv">count</span> &gt;= <span class="m">1</span> &amp;&amp; <span class="k">self</span>[<span class="nv">count</span>-<span class="m">1</span>] == <span class="nv">item</span>
+</li><li>    }
+</li><li>}
+</li></ol></div></div></div>
+<p>In the version of this example that uses contextual <code class="docutils literal notranslate"><span class="pre">where</span></code> clauses, the implementation of <code class="docutils literal notranslate"><span class="pre">average()</span></code> and <code class="docutils literal notranslate"><span class="pre">endsWith(_:)</span></code> are both in the same extension because each method’s generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause states the requirements that need to be satisfied to make that method available. Moving those requirements to the extensions’ generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clauses makes the methods available in the same situations, but requires one extension per requirement.</p>
+</div>
 <div class="section" id="ID557">
 <h2>Associated Types with a Generic Where Clause<a class="headerlink" href="Generics.html#ID557" title="Permalink to this headline"></a></h2>
 <p>You can include a generic <code class="docutils literal notranslate"><span class="pre">where</span></code> clause on an associated type. For example, suppose you want to make a version of <code class="docutils literal notranslate"><span class="pre">Container</span></code> that includes an iterator, like what the <code class="docutils literal notranslate"><span class="pre">Sequence</span></code> protocol uses in the standard library. Here’s how you write that:</p>
@@ -684,7 +725,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2019 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>
