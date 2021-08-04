@@ -9,12 +9,12 @@
     <meta name="author" content="Apple Inc." />
     <meta name="viewport" content="width=device-width initial-scale=1" />
     
-    <title>Opaque Types &mdash; The Swift Programming Language (Swift 5.3)</title>
+    <title>Opaque Types &mdash; The Swift Programming Language (Swift 5.5)</title>
     
     <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
     <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css" />
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico" />
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://docs.swift.org/favicon.ico" />
     <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png" />
@@ -40,7 +40,7 @@
 
     <div id="menu-toggle" class="menu-toggle open"></div>
 
-    <h2>The Swift Programming Language<div>Swift 5.3</div></h2>
+    <h2>The Swift Programming Language<div>Swift 5.5</div></h2>
 
     <ul>
     <ul class="current">
@@ -63,6 +63,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Deinitialization.html">Deinitialization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OptionalChaining.html">Optional Chaining</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ErrorHandling.html">Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Concurrency.html">Concurrency</a></li>
 <li class="toctree-l2"><a class="reference internal" href="TypeCasting.html">Type Casting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="NestedTypes.html">Nested Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Extensions.html">Extensions</a></li>
@@ -125,7 +126,7 @@
 </li><li><span class="k">struct</span> <span class="nv">Triangle</span>: <span class="nc">Shape</span> {
 </li><li>    <span class="k">var</span> <span class="nv">size</span>: <span class="nc">Int</span>
 </li><li>    <span class="k">func</span> <span class="nv">draw</span>() -&gt; <span class="nc">String</span> {
-</li><li>        <span class="k">var</span> <span class="nv">result</span> = [<span class="nv">String</span>]()
+</li><li>        <span class="k">var</span> <span class="nv">result</span>: [<span class="nc">String</span>] = []
 </li><li>        <span class="k">for</span> <span class="nv">length</span> <span class="k">in</span> <span class="m">1</span>...<span class="nv">size</span> {
 </li><li>            <span class="nv">result</span>.<span class="nv">append</span>(<span class="nv">String</span>(<span class="nv">repeating</span>: <span class="s">&quot;*&quot;</span>, <span class="nv">count</span>: <span class="nv">length</span>))
 </li><li>        }
@@ -316,6 +317,14 @@
         <p class="previous"><a href="Generics.html">Generics</a></p>
         <p class="next"><a href="AutomaticReferenceCounting.html">Automatic Reference Counting</a></p>
     </div>
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple's beta software</a></p>
+    </div>
 </main>
 
 
@@ -325,7 +334,7 @@
     <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
   </aside>
 
-  <p class="copyright">Copyright &copy; 2020 Apple Inc. All rights reserved.</p>
+  <p class="copyright">Copyright &copy; 2021 Apple Inc. All rights reserved.</p>
   <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
   <p class="privacy">
     <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>
